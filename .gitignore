@@ -1,0 +1,16 @@
+/local data/
+/Database/local data/
+/Database/financial_db.sqlite
+/flat_files/Project 2/MIE377_FactorReturns_4_Trial1.csv
+/flat_files/Project 2/MIE377_FactorReturns_5_Trial2.csv
+/flat_files/Project 1/MIE377_FactorReturns_Trial1.csv
+/flat_files/Project 1/MIE377_FactorReturns_Trial2.csv
+/flat_files/DailyAssetPricesETF.csv
+/flat_files/DailyAssetPricesSP.csv
+/flat_files/etf_data.pkl
+/flat_files/MonthlyAssetPricesETF.csv
+/flat_files/MonthlyAssetPricesSP.csv
+/flat_files/MultivariateWRDS.csv
+/flat_files/TechnicalAnalysisETF.csv
+/flat_files/TechnicalAnalysisSP.csv
+/flat_files/UnivariateWRDS.csv
