@@ -23,23 +23,21 @@ def populate_exponential_weighted_estimator(Strategy, env):
 
 
 # Standard MVO
+# def populateMVO(Strategy, env):
+#     optimization_info = {'mu': Strategy.current_estimates[0], 'Q': Strategy.current_estimates[1]}
+#     return optimization_info
+
+
 def populateMVO(Strategy, env):
     optimization_info = {'mu': Strategy.current_estimates[0], 'Q': Strategy.current_estimates[1]}
-    return optimization_info
+    # inspect the return constraint function
+    ret_Constr_fnc = Strategy.investor_preferences['target_return_strategy']
+    args = Strategy.investor_preferences['target_return_strategy_args']
 
-
-# MVO with premium adjustment on expected return
-def populateMVOPremiumAdjusted(Strategy, env):
-    optimization_info = {'mu': Strategy.current_estimates[0], 'Q': Strategy.current_estimates[1],
-                         'premium': Strategy.investor_preferences['premium']}
-    return optimization_info
-
-
-# MVO with return exceeding a benchmark index
-def populateMVOIndexBenchmark(Strategy, env):
-    optimization_info = {'mu': Strategy.current_estimates[0], 'Q': Strategy.current_estimates[1]}
-    target_index_str = Strategy.investor_preferences['target_index']
-    optimization_info['target_index'] = env.periodReturns.columns.get_loc(target_index_str)
+    targetRetkwargs = {'mu': Strategy.current_estimates[0]}
+    for arg in args:
+        targetRetkwargs[arg] = Strategy.investor_preferences[arg]
+    optimization_info['targetRet'] = ret_Constr_fnc(**targetRetkwargs)
     return optimization_info
 
 
@@ -51,18 +49,6 @@ def addTurnoverConstraint(optimization_info, Strategy, env):
 
 def populateMVOTurnover(Strategy, env):
     optimization_info = populateMVO(Strategy, env)
-    addTurnoverConstraint(optimization_info, Strategy, env)
-    return optimization_info
-
-
-def populateMVOPremiumAdjustedTurnover(Strategy, env):
-    optimization_info = populateMVOPremiumAdjusted(Strategy, env)
-    addTurnoverConstraint(optimization_info, Strategy, env)
-    return optimization_info
-
-
-def populateMVOIndexBenchmarkTurnover(Strategy, env):
-    optimization_info = populateMVOIndexBenchmark(Strategy, env)
     addTurnoverConstraint(optimization_info, Strategy, env)
     return optimization_info
 
@@ -83,21 +69,6 @@ def populateCardMVO(Strategy, env):
     return optimization_info
 
 
-def populateCardMVOPremiumAdjusted(Strategy, env):
-    optimization_info = {'mu': Strategy.current_estimates[0], 'Q': Strategy.current_estimates[1],
-                         'premium': Strategy.investor_preferences['premium']}
-    addCardinalityConstraint(optimization_info, Strategy, env)
-    return optimization_info
-
-
-# Card MVO with return exceeding a benchmark index
-def populateCardMVOIndexBenchmark(Strategy, env):
-    optimization_info = {'mu': Strategy.current_estimates[0], 'Q': Strategy.current_estimates[1]}
-    target_index_str = Strategy.investor_preferences['target_index']
-    optimization_info['target_index'] = env.periodReturns.columns.get_loc(target_index_str)
-    addCardinalityConstraint(optimization_info, Strategy, env)
-    return optimization_info
-
 # Card MVO with Turnover
 def populateCardMVOTurnover(Strategy, env):
     optimization_info = populateMVO(Strategy, env)
@@ -106,19 +77,13 @@ def populateCardMVOTurnover(Strategy, env):
     return optimization_info
 
 
-def populateCardMVOPremiumAdjustedTurnover(Strategy, env):
-    optimization_info = {'mu': Strategy.current_estimates[0], 'Q': Strategy.current_estimates[1],
-                         'premium': Strategy.investor_preferences['premium']}
-    addTurnoverConstraint(optimization_info, Strategy, env)
-    addCardinalityConstraint(optimization_info, Strategy, env)
-    return optimization_info
+def mean_target(mu):
+    return mu.mean()
 
 
-# Card MVO with return exceeding a benchmark index
-def populateCardMVOIndexBenchmarkTurnover(Strategy, env):
-    optimization_info = {'mu': Strategy.current_estimates[0], 'Q': Strategy.current_estimates[1]}
-    target_index_str = Strategy.investor_preferences['target_index']
-    optimization_info['target_index'] = env.periodReturns.columns.get_loc(target_index_str)
-    addTurnoverConstraint(optimization_info, Strategy, env)
-    addCardinalityConstraint(optimization_info, Strategy, env)
-    return optimization_info
+def premium_target(mu, premium):
+    return (1 + premium) * mu.mean()
+
+
+def ticker_return_target(mu, ticker_index):
+    return mu[ticker_index]

@@ -45,10 +45,9 @@ def extractSolution(n, m, x_vars, b_vars):
     return obj_value, gap2, x, z
 
 
-def CardMVO(mu, Q, K, limit_time=30, MipGap=0.01):
+def CardMVO(mu, Q, K, targetRet, limit_time=30, MipGap=0.01):
     n = len(mu)
     mu = mu.squeeze()
-    targetRet = np.mean(mu)
 
     start = time.time()
 
@@ -57,39 +56,6 @@ def CardMVO(mu, Q, K, limit_time=30, MipGap=0.01):
     obj_value, gap2, x, z = extractSolution(n, m, x_vars, b_vars)
 
     end = time.time()
-    return {'obj_value': obj_value, 'time': end - start, 'optimality gap': gap2, 'x': x, 'z': z}
-
-
-def CardMVOPremiumAdjusted(mu, Q, K, premium, limit_time=30, MipGap=0.01):
-    n = len(mu)
-    mu = mu.squeeze()
-    targetRet = (1 + premium) * np.mean(mu)
-
-    start = time.time()
-
-    m, x_vars, b_vars = CreateCardMVOModel(mu, targetRet, Q, K, limit_time, MipGap)
-    m.optimize()
-    obj_value, gap2, x, z = extractSolution(n, m, x_vars, b_vars)
-
-    end = time.time()
-
-    return {'obj_value': obj_value, 'time': end - start, 'optimality gap': gap2, 'x': x, 'z': z}
-
-
-def CardMVOIndexBenchmark(mu, Q, K, target_index, limit_time=30, MipGap=0.01):
-    n = len(mu)
-    mu = mu.squeeze()
-
-    targetRet = mu[target_index]
-
-    start = time.time()
-
-    m, x_vars, b_vars = CreateCardMVOModel(mu, targetRet, Q, K, limit_time, MipGap)
-    m.optimize()
-    obj_value, gap2, x, z = extractSolution(n, m, x_vars, b_vars)
-
-    end = time.time()
-
     return {'obj_value': obj_value, 'time': end - start, 'optimality gap': gap2, 'x': x, 'z': z}
 
 
@@ -112,11 +78,10 @@ def smallestTurnoverModel(m, absolute_delta):
     m.optimize()
 
 
-def CardMVOTurnover(mu, Q, K, turnover_limit, previous_portfolio, limit_time=30, MipGap=0.01):
+def CardMVOTurnover(mu, Q, K, targetRet, turnover_limit, previous_portfolio, limit_time=30, MipGap=0.01):
     n = len(mu)
     mu = mu.squeeze()
 
-    targetRet = np.mean(mu)
 
     start = time.time()
 
@@ -138,54 +103,3 @@ def CardMVOTurnover(mu, Q, K, turnover_limit, previous_portfolio, limit_time=30,
     return {'obj_value': obj_value, 'time': end - start, 'optimality gap': gap2, 'x': x, 'z': z}
 
 
-def CardMVOPremiumAdjustedTurnover(mu, Q, K, premium, turnover_limit, previous_portfolio, limit_time=30, MipGap=0.01):
-    n = len(mu)
-    mu = mu.squeeze()
-
-    targetRet = (1 + premium) * np.mean(mu)
-
-    start = time.time()
-
-    m, x_vars, b_vars = CreateCardMVOModel(mu, targetRet, Q, K, limit_time, MipGap)
-
-    if previous_portfolio is not None:
-        absolute_delta = addTurnoverConstraints(m, x_vars, previous_portfolio, turnover_limit)
-
-    m.optimize()
-
-    # model did not solve
-    if m.status in (4, 3):
-        smallestTurnoverModel(m, absolute_delta)
-
-    obj_value, gap2, x, z = extractSolution(n, m, x_vars, b_vars)
-
-    end = time.time()
-
-    return {'obj_value': obj_value, 'time': end - start, 'optimality gap': gap2, 'x': x, 'z': z}
-
-
-def CardMVOIndexBenchmarkTurnover(mu, Q, K, target_index, turnover_limit, previous_portfolio, limit_time=30,
-                                  MipGap=0.01):
-    n = len(mu)
-    mu = mu.squeeze()
-
-    targetRet = mu[target_index]
-
-    start = time.time()
-
-    m, x_vars, b_vars = CreateCardMVOModel(mu, targetRet, Q, K, limit_time, MipGap)
-
-    if previous_portfolio is not None:
-        absolute_delta = addTurnoverConstraints(m, x_vars, previous_portfolio, turnover_limit)
-
-    m.optimize()
-
-    # model did not solve
-    if m.status in (4, 3):
-        smallestTurnoverModel(m, absolute_delta)
-
-    obj_value, gap2, x, z = extractSolution(n, m, x_vars, b_vars)
-
-    end = time.time()
-
-    return {'obj_value': obj_value, 'time': end - start, 'optimality gap': gap2, 'x': x, 'z': z}

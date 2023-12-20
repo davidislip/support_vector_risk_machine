@@ -1,16 +1,15 @@
 import cvxpy as cp
 import numpy as np
 from scipy.linalg import sqrtm
+import time
 
 
-def MVO(mu, Q):
+def CreateMVOModel(mu, Q, targetRet):
     """
-    #---------------------------------------------------------------------- Use this function to construct an example of a MVO portfolio.
-    #
-    # An example of an MVO implementation is given below. You can use this
-    # version of MVO if you like, but feel free to modify this code as much
-    # as you need to. You can also change the inputs and outputs to suit
-    # your needs.
+    #---------------------------------------------------------------------- Use this function to construct an example
+    of a MVO portfolio. # # An example of an MVO implementation is given below. You can use this # version of MVO if
+    you like, but feel free to modify this code as much # as you need to. You can also change the inputs and outputs
+    to suit # your needs.
 
     # You may use quadprog, Gurobi, or any other optimizer you are familiar
     # with. Just be sure to include comments in your code.
@@ -21,9 +20,6 @@ def MVO(mu, Q):
 
     # Find the total number of assets
     n = len(mu)
-
-    # Set the target as the average expected return of all assets
-    targetRet = np.mean(mu)
 
     # Disallow short sales
     lb = np.zeros(n)
@@ -42,29 +38,42 @@ def MVO(mu, Q):
                       [A @ x <= b,
                        Aeq @ x == beq,
                        x >= lb])
+    return x, prob
+
+
+# def MVO(mu, Q):
+#     """
+#     #---------------------------------------------------------------------- Use this function to construct an example of a MVO portfolio.
+#     #
+#     # An example of an MVO implementation is given below. You can use this
+#     # version of MVO if you like, but feel free to modify this code as much
+#     # as you need to. You can also change the inputs and outputs to suit
+#     # your needs.
+#
+#     # You may use quadprog, Gurobi, or any other optimizer you are familiar
+#     # with. Just be sure to include comments in your code.
+#
+#     # *************** WRITE YOUR CODE HERE ***************
+#     #----------------------------------------------------------------------
+#     """
+#     targetRet = mu.mean()
+#     # Find the total number of assets
+#     x, prob = CreateMVOModel(mu, Q, targetRet)
+#     prob.solve(verbose=False, solver='ECOS')
+#     return x.value
+
+
+def MVO(mu, Q, targetRet):
+    start = time.time()
+    x, prob = CreateMVOModel(mu, Q, targetRet)
     prob.solve(verbose=False, solver='ECOS')
-    return x.value
+    end = time.time()
+    return {'x': x.value, 'time': end - start}
 
 
-def MVOPremiumAdjusted(mu, Q, premium):
-    """
-    #---------------------------------------------------------------------- Use this function to construct an example
-    of a MVO portfolio. # # An example of an MVO implementation is given below. You can use this # version of MVO if
-    you like, but feel free to modify this code as much # as you need to. You can also change the inputs and outputs
-    to suit # your needs.
-
-    # You may use quadprog, Gurobi, or any other optimizer you are familiar
-    # with. Just be sure to include comments in your code.
-
-    # *************** WRITE YOUR CODE HERE ***************
-    #----------------------------------------------------------------------
-    """
-
+def CreateMVOTurnoverModel(mu, Q, targetRet, turnover_limit, previous_portfolio):
     # Find the total number of assets
     n = len(mu)
-
-    # Set the target as the average expected return of all assets
-    targetRet = (1 + premium) * np.mean(mu)
 
     # Disallow short sales
     lb = np.zeros(n)
@@ -79,91 +88,7 @@ def MVOPremiumAdjusted(mu, Q, premium):
     covariance_sqrt = np.real(sqrtm(Q))
     # Define and solve using CVXPY
     x = cp.Variable(n)
-    prob = cp.Problem(cp.Minimize((1 / 2) * cp.sum_squares(covariance_sqrt @ x)),
-                      [A @ x <= b,
-                       Aeq @ x == beq,
-                       x >= lb])
-    prob.solve(verbose=False, solver='ECOS')
-    return {'x': x.value}
-
-
-def MVOIndexBenchmark(mu, Q, target_index):
-    """
-    #---------------------------------------------------------------------- Use this function to construct an example of a MVO portfolio.
-    #
-    # An example of an MVO implementation is given below. You can use this
-    # version of MVO if you like, but feel free to modify this code as much
-    # as you need to. You can also change the inputs and outputs to suit
-    # your needs.
-
-    # You may use quadprog, Gurobi, or any other optimizer you are familiar
-    # with. Just be sure to include comments in your code.
-
-    # *************** WRITE YOUR CODE HERE ***************
-    #----------------------------------------------------------------------
-    """
-
-    # Find the total number of assets
-    n = len(mu)
-
-    # Set the target as the average expected return of all assets
-    targetRet = mu[target_index]
-
-    # Disallow short sales
-    lb = np.zeros(n)
-
-    # Add the expected return constraint
-    A = -1 * mu.T
-    b = -1 * targetRet
-
-    # constrain weights to sum to 1
-    Aeq = np.ones([1, n])
-    beq = 1
-    covariance_sqrt = np.real(sqrtm(Q))
-    # Define and solve using CVXPY
-    x = cp.Variable(n)
-    prob = cp.Problem(cp.Minimize((1 / 2) * cp.sum_squares(covariance_sqrt @ x)),
-                      [A @ x <= b,
-                       Aeq @ x == beq,
-                       x >= lb])
-    prob.solve(verbose=False, solver='ECOS')
-    return {'x': x.value}
-
-
-def MVOTurnover(mu, Q, turnover_limit, previous_portfolio):
-    """
-    #---------------------------------------------------------------------- Use this function to construct an example
-    of a MVO portfolio. # # An example of an MVO implementation is given below. You can use this # version of MVO if
-    you like, but feel free to modify this code as much # as you need to. You can also change the inputs and outputs
-    to suit # your needs.
-
-    # You may use quadprog, Gurobi, or any other optimizer you are familiar
-    # with. Just be sure to include comments in your code.
-
-    # *************** WRITE YOUR CODE HERE ***************
-    #----------------------------------------------------------------------
-    """
-
-    # Find the total number of assets
-    n = len(mu)
-
-    # Set the target as the average expected return of all assets
-    targetRet = np.mean(mu)
-
-    # Disallow short sales
-    lb = np.zeros(n)
-
-    # Add the expected return constraint
-    A = -1 * mu.T
-    b = -1 * targetRet
-
-    # constrain weights to sum to 1
-    Aeq = np.ones([1, n])
-    beq = 1
-    covariance_sqrt = np.real(sqrtm(Q))
-    # Define and solve using CVXPY
-    x = cp.Variable(n)
-    delta = cp.Variable(n) # holdings shift
+    delta = cp.Variable(n)  # holdings shift
     if previous_portfolio is None:
         constraints = [A @ x <= b,
                        Aeq @ x == beq,
@@ -175,106 +100,15 @@ def MVOTurnover(mu, Q, turnover_limit, previous_portfolio):
                        cp.norm(delta, 1) <= turnover_limit,
                        x >= lb]
     prob = cp.Problem(cp.Minimize((1 / 2) * cp.sum_squares(covariance_sqrt @ x)), constraints)
+    return x, prob
+
+
+def MVOTurnover(mu, Q, targetRet, turnover_limit, previous_portfolio):
+    start = time.time()
+    x, prob = CreateMVOTurnoverModel(mu, Q, targetRet, turnover_limit, previous_portfolio)
     prob.solve(verbose=False, solver='ECOS')
-    return {'x': x.value}
-
-
-def MVOPremiumAdjustedTurnover(mu, Q, premium, turnover_limit, previous_portfolio):
-    """
-    #---------------------------------------------------------------------- Use this function to construct an example
-    of a MVO portfolio. # # An example of an MVO implementation is given below. You can use this # version of MVO if
-    you like, but feel free to modify this code as much # as you need to. You can also change the inputs and outputs
-    to suit # your needs.
-
-    # You may use quadprog, Gurobi, or any other optimizer you are familiar
-    # with. Just be sure to include comments in your code.
-
-    # *************** WRITE YOUR CODE HERE ***************
-    #----------------------------------------------------------------------
-    """
-
-    # Find the total number of assets
-    n = len(mu)
-
-    # Set the target as the average expected return of all assets
-    targetRet = (1 + premium) * np.mean(mu)
-
-    # Disallow short sales
-    lb = np.zeros(n)
-
-    # Add the expected return constraint
-    A = -1 * mu.T
-    b = -1 * targetRet
-
-    # constrain weights to sum to 1
-    Aeq = np.ones([1, n])
-    beq = 1
-    covariance_sqrt = np.real(sqrtm(Q))
-    # Define and solve using CVXPY
-    x = cp.Variable(n)
-    delta = cp.Variable(n) # holdings shift
-    if previous_portfolio is None:
-        constraints = [A @ x <= b,
-                       Aeq @ x == beq,
-                       x >= lb]
-    else:
-        constraints = [A @ x <= b,
-                       Aeq @ x == beq,
-                       delta == x - previous_portfolio,
-                       cp.norm(delta, 1) <= turnover_limit,
-                       x >= lb]
-    prob = cp.Problem(cp.Minimize((1 / 2) * cp.sum_squares(covariance_sqrt @ x)), constraints)
-    prob.solve(verbose=False, solver='ECOS')
-    return {'x': x.value}
-
-
-def MVOIndexBenchmarkTurnover(mu, Q, target_index, turnover_limit, previous_portfolio):
-    """
-    #---------------------------------------------------------------------- Use this function to construct an example
-    of a MVO portfolio. # # An example of an MVO implementation is given below. You can use this # version of MVO if
-    you like, but feel free to modify this code as much # as you need to. You can also change the inputs and outputs
-    to suit # your needs.
-
-    # You may use quadprog, Gurobi, or any other optimizer you are familiar
-    # with. Just be sure to include comments in your code.
-
-    # *************** WRITE YOUR CODE HERE ***************
-    #----------------------------------------------------------------------
-    """
-
-    # Find the total number of assets
-    n = len(mu)
-
-    # Set the target as the average expected return of all assets
-    targetRet = mu[target_index]
-
-    # Disallow short sales
-    lb = np.zeros(n)
-
-    # Add the expected return constraint
-    A = -1 * mu.T
-    b = -1 * targetRet
-
-    # constrain weights to sum to 1
-    Aeq = np.ones([1, n])
-    beq = 1
-    covariance_sqrt = np.real(sqrtm(Q))
-    # Define and solve using CVXPY
-    x = cp.Variable(n)
-    delta = cp.Variable(n) # holdings shift
-    if previous_portfolio is None:
-        constraints = [A @ x <= b,
-                       Aeq @ x == beq,
-                       x >= lb]
-    else:
-        constraints = [A @ x <= b,
-                       Aeq @ x == beq,
-                       delta == x - previous_portfolio,
-                       cp.norm(delta, 1) <= turnover_limit,
-                       x >= lb]
-    prob = cp.Problem(cp.Minimize((1 / 2) * cp.sum_squares(covariance_sqrt @ x)), constraints)
-    prob.solve(verbose=False, solver='ECOS')
-    return {'x': x.value}
+    end = time.time()
+    return {'x': x.value, 'time': end - start}
 
 
 def RP(mu, Q):

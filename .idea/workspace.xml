@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0232ccc-2632-4987-8a2b-c2db6f7eab89" name="Changes" comment="" />
+    <list default="true" id="c0232ccc-2632-4987-8a2b-c2db6f7eab89" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/support_vector_risk_machine.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/support_vector_risk_machine.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template_Main.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Template_Main.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/wealth.svg" beforeDir="false" afterPath="$PROJECT_DIR$/images/wealth.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/weights.svg" beforeDir="false" afterPath="$PROJECT_DIR$/images/weights.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/binary_optimization.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/binary_optimization.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/environment_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/environment_functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/optimization.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/optimization.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,27 +43,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "database.data.extractors.current.export.id": "Comma-separated (CSV)_id",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/david/PycharmProjects/support_vector_risk_machine",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;database.data.extractors.current.export.id&quot;: &quot;Comma-separated (CSV)_id&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/david/PycharmProjects/support_vector_risk_machine&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "Python"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;Python&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\david\PycharmProjects\support_vector_risk_machine" />
@@ -213,6 +223,8 @@
       <workItem from="1702966045200" duration="4104000" />
       <workItem from="1703010475866" duration="33000" />
       <workItem from="1703010521408" duration="26913000" />
+      <workItem from="1703052964103" duration="5424000" />
+      <workItem from="1703059978350" duration="706000" />
     </task>
     <servers />
   </component>
