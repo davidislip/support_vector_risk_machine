@@ -1,7 +1,7 @@
 import numpy as np
 from services.estimators import *
 from services.optimization import *
-
+import warnings
 
 # this file will produce portfolios as outputs from data - the strategies can be implemented as classes or functions
 # if the strategies have parameters then it probably makes sense to define them as a class
@@ -125,36 +125,63 @@ class general_strategy:
     """
 
     def __init__(self, estimator, optimizer, NumObs=36, investor_preferences=None):
-        if investor_preferences is None:
-            investor_preferences = {}
+
         self.NumObs = NumObs  # number of observations to use
         self.estimator = estimator  # estimator is a function
         self.optimizer = optimizer
-        self.investor_preferences = investor_preferences
+        self.investor_preferences = investor_preferences  # kappa, K, q, epsilon, C, turnover limit
+        self.extract_estimation_info = None
+        self.extract_optimization_info = None
+        self.current_results = None
+        self.current_estimates = None
 
-    def execute_strategy(self, periodReturns, factorReturns, additional_info=None):
+    def execute_strategy(self, periodReturns, factorReturns, environment=None):
         """
         executes the portfolio allocation strategy based on the parameters in the __init__
 
+        :param additional_optimization_info:
+        :param additional_estimation_info:
         :param additional_info:
         :param factorReturns:
         :param periodReturns:
         :return:x
         """
 
+        # Estimation Step
+        if self.extract_estimation_info is not None:
+            estimation_params = self.extract_estimation_info(self, environment)
+        else:
+            estimation_params = None
+
         T, n = periodReturns.shape
         # get the last T observations
         returns = periodReturns.iloc[(-1) * self.NumObs:, :]
         factRet = factorReturns.iloc[(-1) * self.NumObs:, :]
-        if additional_info is None:
+
+        if estimation_params is None:
             estimates = self.estimator(returns, factRet)
         else:
-            estimates = self.estimator(**additional_info)
+            estimates = self.estimator(**estimation_params)
 
-        x = self.optimizer(*estimates, **self.investor_preferences)
-        return x
+        # Optimization Step
+        self.current_estimates = estimates
+        if self.extract_optimization_info is not None:
+            optimization_params = self.extract_optimization_info(self, environment)
+        else:
+            optimization_params = None
 
+        if optimization_params is None:
+            x = self.optimizer(*estimates)
+            results = {'x': x}
+        else:
+            results = self.optimizer(**optimization_params)  # solution, optimality gap, time to solve
+            if type(results) != dict:
+                warnings.warn("Optimizer interaction with environment does not return a dict")
+                results = {'x': results}
 
+        self.current_results = results
+
+        return results['x']
 
 
 class e2e_strategy:
