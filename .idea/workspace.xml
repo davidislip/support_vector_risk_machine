@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0232ccc-2632-4987-8a2b-c2db6f7eab89" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/services/binary_optimization.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/environment_functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/support_vector_risk_machine.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/support_vector_risk_machine.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1. Data_S&amp;P.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/1. Data_S&amp;P.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Template_Main.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Template_Main.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/wealth.svg" beforeDir="false" afterPath="$PROJECT_DIR$/images/wealth.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/weights.svg" beforeDir="false" afterPath="$PROJECT_DIR$/images/weights.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/optimization.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/optimization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/strategies.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/strategies.py" afterDir="false" />
-    </list>
+    <list default="true" id="c0232ccc-2632-4987-8a2b-c2db6f7eab89" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -224,7 +212,7 @@
       <workItem from="1702959248129" duration="6248000" />
       <workItem from="1702966045200" duration="4104000" />
       <workItem from="1703010475866" duration="33000" />
-      <workItem from="1703010521408" duration="26204000" />
+      <workItem from="1703010521408" duration="26913000" />
     </task>
     <servers />
   </component>
