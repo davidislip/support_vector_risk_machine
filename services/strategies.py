@@ -165,6 +165,7 @@ class general_strategy:
 
         # Optimization Step
         self.current_estimates = estimates
+
         if self.extract_optimization_info is not None:
             optimization_params = self.extract_optimization_info(self, environment)
         else:

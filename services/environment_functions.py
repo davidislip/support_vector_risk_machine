@@ -43,38 +43,88 @@ def populateMVO(Strategy, env):
 
 # Helper to add turnover parameters
 def addTurnoverConstraint(optimization_info, Strategy, env):
-    optimization_info['turnover_limit'] = Strategy.investor_preferences['turnover_limit']
+    #optimization_info['turnover_limit'] = Strategy.investor_preferences['turnover_limit']
     optimization_info['previous_portfolio'] = env.previous_portfolio
 
 
-def populateMVOTurnover(Strategy, env):
-    optimization_info = populateMVO(Strategy, env)
-    addTurnoverConstraint(optimization_info, Strategy, env)
-    return optimization_info
-
-
-# helper to add cardinality constraint parameters
 def addCardinalityConstraint(optimization_info, Strategy, env):
-    optimization_info['MipGap'] = Strategy.investor_preferences['MipGap']
-    optimization_info['limit_time'] = Strategy.investor_preferences['limit_time']
-    cardinality_ratio = Strategy.investor_preferences['cardinality_ratio']
-    n = env.n
-    optimization_info['K'] = math.floor(n * cardinality_ratio)
+    # optimization_info['MipGap'] = Strategy.investor_preferences['MipGap']
+    # optimization_info['limit_time'] = Strategy.investor_preferences['limit_time']
+    if 'cardinality_ratio' in Strategy.investor_preferences.keys():
+        cardinality_ratio = Strategy.investor_preferences['cardinality_ratio']
+        n = env.n
+        optimization_info['K'] = math.floor(n * cardinality_ratio)
 
-
-# Cardinality constraints
-def populateCardMVO(Strategy, env):
-    optimization_info = populateMVO(Strategy, env)
-    addCardinalityConstraint(optimization_info, Strategy, env)
-    return optimization_info
-
-
-# Card MVO with Turnover
-def populateCardMVOTurnover(Strategy, env):
+def populate_kwargs(Strategy, env):
+    # custom calculation here
     optimization_info = populateMVO(Strategy, env)
     addTurnoverConstraint(optimization_info, Strategy, env)
     addCardinalityConstraint(optimization_info, Strategy, env)
+    optimization_info['period_Context'] = env.period_Context.rank()/(len(env.period_Context)+1)
+    # get the rest
+    for key, value in Strategy.investor_preferences.items():
+        optimization_info[key] = value
     return optimization_info
+
+
+
+#
+# def populateMVOTurnover(Strategy, env):
+#     optimization_info = populateMVO(Strategy, env)
+#     addTurnoverConstraint(optimization_info, Strategy, env)
+#     return optimization_info
+#
+#
+# # helper to add cardinality constraint parameters
+# def addCardinalityConstraint(optimization_info, Strategy, env):
+#     optimization_info['MipGap'] = Strategy.investor_preferences['MipGap']
+#     optimization_info['limit_time'] = Strategy.investor_preferences['limit_time']
+#     cardinality_ratio = Strategy.investor_preferences['cardinality_ratio']
+#     n = env.n
+#     optimization_info['K'] = math.floor(n * cardinality_ratio)
+#
+#
+# # Cardinality constraints
+# def populateCardMVO(Strategy, env):
+#     optimization_info = populateMVO(Strategy, env)
+#     addCardinalityConstraint(optimization_info, Strategy, env)
+#     return optimization_info
+#
+#
+# # Card MVO with Turnover
+# def populateCardMVOTurnover(Strategy, env):
+#     optimization_info = populateMVO(Strategy, env)
+#     addTurnoverConstraint(optimization_info, Strategy, env)
+#     addCardinalityConstraint(optimization_info, Strategy, env)
+#     return optimization_info
+#
+#
+# # SVMMVO
+#
+# def addHyperplaneInfo(optimization_info, Strategy, env):
+#     optimization_info['epsilon'] = Strategy.investor_preferences['MipGap']
+#     optimization_info['period_Context'] = Strategy.investor_preferences['limit_time']
+#     optimization_info['C'] = Strategy.investor_preferences['C']
+#     optimization_info['separable'] = Strategy.investor_preferences['separable']
+#     optimization_info['bigMStrategy'] = Strategy.investor_preferences['bigMStrategy']
+#     optimization_info['bigMStrategy_args'] = Strategy.investor_preferences['bigMStrategy_args']
+#     return optimization_info
+#
+#
+# def populateSVMMVO(Strategy, env):
+#     optimization_info = populateMVO(Strategy, env)
+#     addCardinalityConstraint(optimization_info, Strategy, env)
+#     addHyperplaneInfo(optimization_info, Strategy, env)
+#     return optimization_info
+#
+#
+# # Card MVO with Turnover
+# def populateSVMMVOTurnover(Strategy, env):
+#     optimization_info = populateMVO(Strategy, env)
+#     addTurnoverConstraint(optimization_info, Strategy, env)
+#     addCardinalityConstraint(optimization_info, Strategy, env)
+#     addHyperplaneInfo(optimization_info, Strategy, env)
+#     return optimization_info
 
 
 def mean_target(mu):
