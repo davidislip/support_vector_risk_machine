@@ -1,5 +1,4 @@
 import math
-
 import gurobipy as gp
 from gurobipy import GRB
 import numpy as np
@@ -43,24 +42,6 @@ def extractSolution(n, m, x_vars, z_vars):
     gap1 = m.MIPGap
     gap2 = gap1 * 100
     return obj_value, gap2, x, z
-
-
-# def CardMVO(limit_time=30, MipGap=0.01, SolutionLimit=GRB.MAXINT, **kwargs):
-#     mu, Q, K, targetRet = kwargs['mu'], kwargs['Q'], kwargs['K'], kwargs['targetRet']
-#     n = len(mu)
-#     mu = mu.squeeze()
-#
-#     start = time.time()
-#
-#     m, x_vars, z_vars = CreateCardMVOModel(mu, targetRet, Q, K, limit_time, MipGap)
-#
-#     m.SolutionLimit = SolutionLimit
-#
-#     m.optimize()
-#     obj_value, gap2, x, z = extractSolution(n, m, x_vars, z_vars)
-#
-#     end = time.time()
-#     return {'obj_value': obj_value, 'time': end - start, 'optimality gap': gap2, 'x': x, 'z': z}
 
 
 def addTurnoverConstraints(m, x_vars, previous_portfolio, turnover_limit):
@@ -318,28 +299,6 @@ def naivebigMStrategyCorollary4(**kwargs):
     return bigM, big_w, big_b, big_xi
 
 
-# def ConstructFeasibleSolution(mu, targetRet, Q, K, q, epsilon, period_Context, C, SolutionLimit,
-#                               separable, limit_time=30, MipGap=0.01):
-#     # card mvo
-#     card_mvo_results = CardMVO(mu, Q, K, targetRet, limit_time=limit_time, MipGap=MipGap, SolutionLimit=SolutionLimit)
-#     z_vals = card_mvo_results['z']
-#     # SVM
-#     svm_phase1_results = SVM(period_Context, z_vals, C, separable, limit_time)
-#     # sort and clip w
-#     w_vals = svm_phase1_results['w']
-#     abs_w = np.abs(w_vals)
-#     q_largest = np.argpartition(abs_w, (-1) * q)[-q:]
-#     # restrict indices
-#     period_Context_subset = period_Context.iloc[:, q_largest]
-#     # SVM again
-#     svm_phase2_results = SVM(period_Context_subset, z_vals, C, separable, limit_time)
-#     # Calculate Objective Value
-#     ObjSVM = svm_phase2_results['obj_value']
-#     ObjMVO = card_mvo_results['obj_value']
-#
-#     return ObjMVO + epsilon * ObjSVM
-
-
 def ConstructFeasibleSolution(bigM_limit_time=10, bigM_MipGap=0.1, bigM_SolutionLimit=10, **kwargs):
     period_Context, C, separable = kwargs['period_Context'], kwargs['C'], kwargs['separable']
     q, epsilon = kwargs['q'], kwargs['epsilon']
@@ -426,7 +385,6 @@ def extractSVMMVOSolution(n, p, m, x_vars, z_vars, w_vars, t_vars, b_var, xi_var
     gap1 = m.MIPGap
     gap2 = gap1 * 100
     return obj_value, gap2, x, z, w, t, b, xi
-
 
 
 def smallestTurnoverModelSVMMVO(m, n, absolute_delta, separable, w_vars, xi_vars, epsilon, C):

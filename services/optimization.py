@@ -41,28 +41,6 @@ def CreateMVOModel(mu, Q, targetRet):
     return x, prob
 
 
-# def MVO(mu, Q):
-#     """
-#     #---------------------------------------------------------------------- Use this function to construct an example of a MVO portfolio.
-#     #
-#     # An example of an MVO implementation is given below. You can use this
-#     # version of MVO if you like, but feel free to modify this code as much
-#     # as you need to. You can also change the inputs and outputs to suit
-#     # your needs.
-#
-#     # You may use quadprog, Gurobi, or any other optimizer you are familiar
-#     # with. Just be sure to include comments in your code.
-#
-#     # *************** WRITE YOUR CODE HERE ***************
-#     #----------------------------------------------------------------------
-#     """
-#     targetRet = mu.mean()
-#     # Find the total number of assets
-#     x, prob = CreateMVOModel(mu, Q, targetRet)
-#     prob.solve(verbose=False, solver='ECOS')
-#     return x.value
-
-
 def MVO(mu, Q, targetRet):
     start = time.time()
     x, prob = CreateMVOModel(mu, Q, targetRet)

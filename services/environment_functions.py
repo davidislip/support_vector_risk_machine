@@ -34,16 +34,16 @@ def populateMVO(Strategy, env):
     ret_Constr_fnc = Strategy.investor_preferences['target_return_strategy']
     args = Strategy.investor_preferences['target_return_strategy_args']
 
-    targetRetkwargs = {'mu': Strategy.current_estimates[0]}
+    targetRet_kwargs = {'mu': Strategy.current_estimates[0]}
     for arg in args:
-        targetRetkwargs[arg] = Strategy.investor_preferences[arg]
-    optimization_info['targetRet'] = ret_Constr_fnc(**targetRetkwargs)
+        targetRet_kwargs[arg] = Strategy.investor_preferences[arg]
+    optimization_info['targetRet'] = ret_Constr_fnc(**targetRet_kwargs)
     return optimization_info
 
 
 # Helper to add turnover parameters
 def addTurnoverConstraint(optimization_info, Strategy, env):
-    #optimization_info['turnover_limit'] = Strategy.investor_preferences['turnover_limit']
+    # optimization_info['turnover_limit'] = Strategy.investor_preferences['turnover_limit']
     optimization_info['previous_portfolio'] = env.previous_portfolio
 
 
@@ -55,17 +55,17 @@ def addCardinalityConstraint(optimization_info, Strategy, env):
         n = env.n
         optimization_info['K'] = math.floor(n * cardinality_ratio)
 
+
 def populate_kwargs(Strategy, env):
     # custom calculation here
     optimization_info = populateMVO(Strategy, env)
     addTurnoverConstraint(optimization_info, Strategy, env)
     addCardinalityConstraint(optimization_info, Strategy, env)
-    optimization_info['period_Context'] = env.period_Context.rank()/(len(env.period_Context)+1)
+    optimization_info['period_Context'] = env.period_Context.rank() / (len(env.period_Context) + 1)
     # get the rest
     for key, value in Strategy.investor_preferences.items():
         optimization_info[key] = value
     return optimization_info
-
 
 
 #
