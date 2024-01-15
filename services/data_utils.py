@@ -84,3 +84,10 @@ def transform_log_stats(one_day_mean, one_day_covariance, k):
     cov_diags_added = (1 / 2) * (cov_ii * np.ones(NbyN)) + (1 / 2) * (cov_ii.transpose() * np.ones(NbyN))
     log_transformed_cov = (np.e ** (means_added + cov_diags_added)) * (np.e ** cov - 1)
     return log_transformed_cov, log_transformed_mean
+
+
+def unpack_kwargs(kwargs):
+    mu, targetRet, Q, K = kwargs['mu'], kwargs['targetRet'], kwargs['Q'], kwargs['K']
+    q, epsilon, period_Context = kwargs['q'], kwargs['epsilon'], kwargs['period_Context']
+    C, separable = kwargs['C'], kwargs['separable']
+    return mu, targetRet, Q, K, q, epsilon, period_Context, C, separable
