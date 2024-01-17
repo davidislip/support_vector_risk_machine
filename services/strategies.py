@@ -377,7 +377,7 @@ class general_strategy:
                 for name in names:
                     self.investor_preferences[name] = param_dict[name]
                 if Verbose:
-                    print("Running configuation ", str(param_dict))
+                    print("Running configuration ", str(param_dict))
                 results = self.optimize(estimates, environment)
                 optimization_results[param_vals] = results
                 reward = evaluate_portfolio(results['x'], t, currentVal, currentPrices, periodPrices)

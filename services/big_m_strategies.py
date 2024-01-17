@@ -3,15 +3,13 @@ from services.data_utils import *
 import warnings
 import math
 
-# Big M strategies begin
-def ConstructFeasibleSolution(bigM_limit_time=10, bigM_MipGap=0.1, bigM_SolutionLimit=10, LogToConsole=True,
-                              Verbose=True, **kwargs):
-    period_Context, C, separable = kwargs['period_Context'], kwargs['C'], kwargs['separable']
-    q, epsilon = kwargs['q'], kwargs['epsilon']
 
+# Big M strategies begin
+def ConstructFeasibleMVO(bigM_limit_time=10, bigM_MipGap=0.1, bigM_SolutionLimit=10, LogToConsole=True,
+                         Verbose=True, **kwargs):
     # take out args into new dict
     if Verbose:
-        print("-"*20)
+        print("-" * 20)
         print("Constructing Feasible Solution...")
     bigM_kwargs_forCardMVO = kwargs.copy()
     bigM_kwargs_forCardMVO['limit_time'] = bigM_limit_time
@@ -24,7 +22,16 @@ def ConstructFeasibleSolution(bigM_limit_time=10, bigM_MipGap=0.1, bigM_Solution
         print("Extracting a cardinality constrained portfolio...")
     card_mvo_results = CardMVO(**bigM_kwargs_forCardMVO)
     z_vals = card_mvo_results['z']
+
+    ObjMVO = card_mvo_results['obj_value']
+
+    return ObjMVO, card_mvo_results['feasible_solution'], z_vals
+
+
+def ConstructFeasibleSolutionSVM(z_vals, period_Context, C, separable, q, bigM_limit_time, LogToConsole, Verbose):
+    # take out args into new dict2
     # SVM
+
     if Verbose:
         print("Phase 1 SVM...")
     svm_phase1_results = SVM(period_Context, z_vals, C, separable, bigM_limit_time, LogToConsole)
@@ -43,9 +50,49 @@ def ConstructFeasibleSolution(bigM_limit_time=10, bigM_MipGap=0.1, bigM_Solution
         print("-" * 20)
     # Calculate Objective Value
     ObjSVM = svm_phase2_results['obj_value']
-    ObjMVO = card_mvo_results['obj_value']
+    w = svm_phase2_results['w']
+    b = svm_phase2_results['b']
+    return ObjSVM, w, b
 
-    return ObjMVO + epsilon * ObjSVM, card_mvo_results['feasible_solution']
+
+def unpack_bigM_params(**kwargs):
+    if 'bigM_limit_time' in kwargs.keys():
+        bigM_limit_time = kwargs['bigM_limit_time']
+    else:
+        bigM_limit_time = 10
+    if 'LogToConsole' in kwargs.keys():
+        LogToConsole = kwargs['LogToConsole']
+    else:
+        LogToConsole = True
+    if 'Verbose' in kwargs.keys():
+        Verbose = kwargs['Verbose']
+    else:
+        Verbose = True
+    return bigM_limit_time, LogToConsole, Verbose
+
+
+def ConstructFeasibleSolution(**kwargs):
+    period_Context, C, separable = kwargs['period_Context'], kwargs['C'], kwargs['separable']
+    q, epsilon = kwargs['q'], kwargs['epsilon']
+
+    # Do Card MVO
+    ObjMVO, feasible_solution, z_vals = ConstructFeasibleMVO(**kwargs)
+
+    # SVM
+    bigM_limit_time, LogToConsole, Verbose = unpack_bigM_params(**kwargs)
+
+    ObjSVM, w, b = ConstructFeasibleSolutionSVM(z_vals, period_Context, C, separable, q,
+                                                bigM_limit_time, LogToConsole, Verbose)
+
+    return ObjMVO + epsilon * ObjSVM, feasible_solution
+
+
+def SelectHyperParams(**kwargs):
+    period_Context, separable = kwargs['period_Context'], kwargs['separable']
+
+    q = kwargs['q']
+
+    ObjMVO, feasible_solution, z_vals = ConstructFeasibleMVO(**kwargs)
 
 
 def size_of_largest_feature(period_Context, q):
@@ -55,7 +102,7 @@ def size_of_largest_feature(period_Context, q):
     n, p = period_Context.shape
     largest_abs = 0
     for i in range(n):
-        candidate = period_Context.iloc[i].abs().sort_values(ascending=False).iloc[:q].sum()
+        candidate = math.sqrt(np.power(period_Context.iloc[i], 2).sort_values(ascending=False).iloc[:q].sum())
         if candidate > largest_abs:
             largest_abs = candidate
     return largest_abs
@@ -67,10 +114,10 @@ def largest_pairwise_distance(period_Context, q):
     n, p = period_Context.shape
     largest_abs_pdist = 0
     pairs = period_Context.values - period_Context.values[:, None]
-    pairs = np.abs(pairs)
+    pairs = np.power(pairs, 2)
     for i in range(n):
         for j in range(i):
-            candidate = np.sort(pairs[i, j])[-1 * q:].sum()
+            candidate = math.sqrt(np.sort(pairs[i, j])[-1 * q:].sum())
             if candidate > largest_abs_pdist:
                 largest_abs_pdist = candidate
 
@@ -127,9 +174,10 @@ def objectiveBigMStrategy(**kwargs):
     theorem3_bool = False
 
     if Verbose:
-        print("-"*20)
+        print("-" * 20)
         print("Calculating Big M")
-    ObjSVMMVO, feasible_solution = ConstructFeasibleSolution(**kwargs)  # kwargs may or may not have big M limit times etc
+    ObjSVMMVO, feasible_solution = ConstructFeasibleSolution(
+        **kwargs)  # kwargs may or may not have big M limit times etc
 
     n, p = period_Context.shape
     largest_abs = size_of_largest_feature(period_Context, q)
@@ -263,7 +311,8 @@ def bounding_b_and_xi_socp(bigM, big_w_inf, big_b, big_xi, ObjSVMMVO, feasible_s
     else:
         m.remove(m.getConstrByName('turnover'))
         if not separable:
-            m.addConstr(absolute_delta.sum() + (epsilon / 2) * (w_vars @ w_vars) + C_epsilon_by_n * xi_vars.sum() <= ObjSVMMVO,
+            m.addConstr(
+                absolute_delta.sum() + (epsilon / 2) * (w_vars @ w_vars) + C_epsilon_by_n * xi_vars.sum() <= ObjSVMMVO,
                 name="suboptimality")
         else:
             m.addConstr(absolute_delta.sum() + (epsilon / 2) * (w_vars @ w_vars) <= ObjSVMMVO, name="suboptimality")
@@ -292,15 +341,15 @@ def bounding_b_and_xi_socp(bigM, big_w_inf, big_b, big_xi, ObjSVMMVO, feasible_s
 
 
 def objectiveBigMStrategyTightening(**kwargs):
-
     period_Context, epsilon, C, q = kwargs['period_Context'], kwargs['epsilon'], kwargs['C'], kwargs['q']
     theorem3_bool = False
     Verbose = kwargs['Verbose']
     if Verbose:
-        print("-"*20)
+        print("-" * 20)
         print("Calculating Big M")
     bounds_improved_grb = True
-    ObjSVMMVO, feasible_solution = ConstructFeasibleSolution(**kwargs)  # kwargs may or may not have big M limit times etc
+    ObjSVMMVO, feasible_solution = ConstructFeasibleSolution(
+        **kwargs)  # kwargs may or may not have big M limit times etc
 
     largest_abs = size_of_largest_feature(period_Context, q)
     largest_abs_pdist = largest_pairwise_distance(period_Context, q)
@@ -328,7 +377,6 @@ def objectiveBigMStrategyTightening(**kwargs):
                                                                   largest_abs,
                                                                   bigM_kwargs_for_SOCP)
 
-
         # Solve SVMMVO using Gurobi?
         user_big_m = {'bigM': bigM, 'big_w_inf': big_w_inf,
                       'big_b': big_b, 'big_xi': big_xi,
@@ -339,7 +387,7 @@ def objectiveBigMStrategyTightening(**kwargs):
                                     user_big_m=user_big_m, SolutionLimit=SVMMVO_SolutionLimit, **kwargs)
         except:
             warnings.warn("No heuristic solution found for SVMMVO")
-            SVMMVO_results = {'obj_value':ObjSVMMVO}
+            SVMMVO_results = {'obj_value': ObjSVMMVO}
         # bounds improved? Keep going
 
         if SVMMVO_results['obj_value'] < ObjSVMMVO:
@@ -355,7 +403,7 @@ def objectiveBigMStrategyTightening(**kwargs):
             # recalculate bounds according to theorem
             bigM = theorem2(largest_abs_pdist, big_w_2, big_xi)
             bigM_cand = theorem3(largest_abs, big_b, big_w_2)
-            #take the best M
+            # take the best M
             if bigM_cand < bigM:
                 theorem3_bool = True
                 bigM = bigM_cand

@@ -87,7 +87,7 @@ def CardMVO(limit_time=30, MipGap=0.01, SolutionLimit=GRB.MAXINT,
         absolute_delta = addTurnoverConstraints(m, x_vars, previous_portfolio, turnover_limit)
 
     if Verbose:
-        print("-"*20)
+        print("-" * 20)
         print("Solving Card MVO...")
     m.optimize()
 
@@ -269,24 +269,7 @@ def smallestTurnoverModelSVMMVO(m, n, absolute_delta, separable, w_vars, xi_vars
     m.optimize()
 
 
-def SVMMVO(limit_time=30, MipGap=0.01, LogToConsole=True, Verbose=True, SolutionLimit=GRB.MAXINT, user_big_m=None,
-           **kwargs):  # if kwargs does not have limit time and mipgap then
-
-    mu, targetRet, Q, K, q, epsilon, period_Context, C, separable = unpack_kwargs(kwargs)
-    bigMStrategy = kwargs['bigMStrategy']
-    turnover_constraints = kwargs['turnover_constraints']
-    previous_portfolio = kwargs['previous_portfolio']
-
-    if turnover_constraints:
-        turnover_limit = kwargs['turnover_limit']
-
-    feasible_solution = True
-
-    n, p = period_Context.shape
-    mu = mu.squeeze()
-
-    start = time.time()
-    # compute big M here
+def SVMMVO_check_bigM(user_big_m, LogToConsole, bigMStrategy, Verbose, kwargs):
     if user_big_m is None:
         bigM_kwargs = kwargs.copy()
         bigM_kwargs['LogToConsole'] = LogToConsole
@@ -301,6 +284,32 @@ def SVMMVO(limit_time=30, MipGap=0.01, LogToConsole=True, Verbose=True, Solution
         bigM, big_w_inf, big_b, big_xi = user_big_m['bigM'], user_big_m['big_w_inf'], user_big_m['big_b'], user_big_m[
             'big_xi']
 
+    return big_M_results, bigM, big_w_inf, big_b, big_xi
+
+
+def SVMMVO(limit_time=30, MipGap=0.01, LogToConsole=True, Verbose=True, SolutionLimit=GRB.MAXINT, user_big_m=None,
+           **kwargs):  # if kwargs does not have limit time and mipgap then
+
+    mu, targetRet, Q, K, q, epsilon, period_Context, C, separable = unpack_kwargs(kwargs)
+
+    bigMStrategy = kwargs['bigMStrategy']
+    turnover_constraints = kwargs['turnover_constraints']
+    previous_portfolio = kwargs['previous_portfolio']
+
+    if turnover_constraints:
+        turnover_limit = kwargs['turnover_limit']
+
+    feasible_solution = True
+
+    n, p = period_Context.shape
+    mu = mu.squeeze()
+
+    start = time.time()
+    # compute big M here
+    big_M_results, bigM, big_w_inf, big_b, big_xi = SVMMVO_check_bigM(user_big_m, LogToConsole,
+                                                                      bigMStrategy, Verbose, kwargs)
+
+    # if epsilon and C in big_M_results --> update epsilon and C: kappa
     # if the big M strategy yields feasibility information then
     # update the feasible solution flag
     if 'feasible_solution' in big_M_results.keys():
