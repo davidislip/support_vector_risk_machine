@@ -25,6 +25,15 @@ def exponential_weighted_estimator(daily_prices, k, alpha=1 - 0.985):
     return log_transformed_mean, log_transformed_cov
 
 
+def exponential_weighted_estimator(daily_prices, k, alpha=1 - 0.985):
+    # Use this function to perform naive sample estimation
+    # ----------------------------------------------------------------------
+    daily_log_returns = np.log(daily_prices).diff().dropna()
+    one_day_covariance, one_day_mean = exponential_weighted_average(daily_log_returns, alpha)
+    log_transformed_cov, log_transformed_mean = transform_log_stats(one_day_mean, one_day_covariance, k)
+
+    return log_transformed_mean, log_transformed_cov + 0.005*np.eye(log_transformed_cov.shape[0])
+
 def OLS(returns, factRet):
     # Use this function to perform a basic OLS regression with all factors.
     # You can modify this function (inputs, outputs and code) as much as
