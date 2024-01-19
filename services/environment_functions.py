@@ -1,4 +1,7 @@
 import math
+from sklearn.preprocessing import StandardScaler
+import numpy as np
+import pandas as pd
 
 
 class environment:
@@ -15,12 +18,25 @@ class environment:
         self.n = None
 
 
+def cov2cor(c):
+    """
+    Return a correlation matrix given a covariance matrix.
+    : c = covariance matrix
+    """
+    D = 1 / np.sqrt(np.diag(c))  # takes the inverse of sqrt of diag.
+    return D * c * D
+
+
 # Estimators
 def populate_exponential_weighted_estimator(Strategy, env):
     estimation_info = {'k': Strategy.investor_preferences['k'], 'alpha': Strategy.investor_preferences['alpha'],
                        'daily_prices': env.period_daily_adjClose}
     return estimation_info
 
+def populate_exponential_weighted_estimator_shrinkage(Strategy, env):
+    estimation_info = {'k': Strategy.investor_preferences['k'], 'alpha': Strategy.investor_preferences['alpha'],
+                       'daily_prices': env.period_daily_adjClose, 'EstNumObs':Strategy.investor_preferences['EstNumObs']}
+    return estimation_info
 
 # Standard MVO
 # def populateMVO(Strategy, env):
@@ -61,7 +77,25 @@ def populate_kwargs(Strategy, env):
     optimization_info = populateMVO(Strategy, env)
     addTurnoverConstraint(optimization_info, Strategy, env)
     addCardinalityConstraint(optimization_info, Strategy, env)
-    optimization_info['period_Context'] = env.period_Context.rank() / (len(env.period_Context) + 1)
+    # optimization_info['period_Context'] = env.period_Context.rank() / (len(env.period_Context) + 1)
+    period_Context = env.period_Context
+    mu, cov = Strategy.current_estimates
+    corr = cov2cor(cov)
+    corr = corr.astype('float64')
+    # Fill diagonal elements with np.nan
+    np.fill_diagonal(corr, np.nan)
+
+    period_Context['mean'] = mu
+    period_Context['variance'] = np.diag(cov)
+    period_Context['average_correlation'] = np.nanmean(corr, axis=1)
+    period_Context['average_abs_correlation'] = np.nanmean(np.abs(corr), axis=1)
+    period_Context['standard_deviation_of_corr'] = np.nanstd(corr, axis=1)
+    scaler = StandardScaler()
+    scaler.fit(period_Context)
+
+    optimization_info['period_Context'] = pd.DataFrame(scaler.transform(period_Context), index=period_Context.index,
+                                                       columns=period_Context.columns)
+    # period_Context.rank() / (len(period_Context) + 1) #
     # get the rest
     for key, value in Strategy.investor_preferences.items():
         optimization_info[key] = value

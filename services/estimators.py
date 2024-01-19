@@ -1,5 +1,6 @@
 import numpy as np
 from services.data_utils import *
+from sklearn.covariance import ledoit_wolf
 
 
 def sample_estimator(returns, factRet=None):
@@ -25,14 +26,18 @@ def exponential_weighted_estimator(daily_prices, k, alpha=1 - 0.985):
     return log_transformed_mean, log_transformed_cov
 
 
-def exponential_weighted_estimator(daily_prices, k, alpha=1 - 0.985):
+def exponential_weighted_estimator_shrinkage(daily_prices, k, alpha=1 - 0.985, EstNumObs=500):
     # Use this function to perform naive sample estimation
     # ----------------------------------------------------------------------
     daily_log_returns = np.log(daily_prices).diff().dropna()
     one_day_covariance, one_day_mean = exponential_weighted_average(daily_log_returns, alpha)
-    log_transformed_cov, log_transformed_mean = transform_log_stats(one_day_mean, one_day_covariance, k)
+    one_day_covariance, alpha = ledoit_wolf(daily_log_returns.iloc[-1 * EstNumObs:])
 
-    return log_transformed_mean, log_transformed_cov + 0.005*np.eye(log_transformed_cov.shape[0])
+    log_transformed_cov, log_transformed_mean = transform_log_stats(one_day_mean, one_day_covariance, k)
+    # log_transformed_mean = daily_prices.pct_change().mean().values
+    # print(log_transformed_mean)
+    return log_transformed_mean, log_transformed_cov
+
 
 def OLS(returns, factRet):
     # Use this function to perform a basic OLS regression with all factors.

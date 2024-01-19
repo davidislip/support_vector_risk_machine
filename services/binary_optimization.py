@@ -2,6 +2,9 @@ import gurobipy as gp
 from gurobipy import GRB
 import time
 from services.data_utils import *
+from sklearn.svm import SVC
+import warnings
+from sklearn.metrics import hinge_loss
 
 
 # Cardinality Constrained Optimization
@@ -217,15 +220,82 @@ def extractSVMSolution(n, p, m, w_vars, b_var, xi_vars):
 def SVM(period_Context, z_vals, C, separable, limit_time, LogToConsole):
     n, p = period_Context.shape
 
-    start = time.time()
-
     m, w_vars, b_var, xi_vars = CreateSVMModel(period_Context, z_vals, C, separable, limit_time, LogToConsole)
-
+    start = time.time()
     m.optimize()
-
+    end = time.time()
     obj_value, w, b, xi = extractSVMSolution(n, p, m, w_vars, b_var, xi_vars)
 
+    return {'obj_value': obj_value, 'time': end - start, 'w': w, 'b': b, 'xi': xi}
+
+
+def sklearn_SVM(period_Context, z_vals, C, separable):
+    if separable is True:
+        warnings.warn("SVM is no longer separable")
+
+    n, p = period_Context.shape
+
+    svc = SVC(C=C / n, kernel='linear')
+    u = 2 * z_vals - 1
+    start = time.time()
+    svc.fit(period_Context, u)
     end = time.time()
+    w = np.squeeze(svc.coef_)
+    b = svc.intercept_
+    pred_decision = svc.decision_function(period_Context)
+    margin = u * pred_decision
+    xi = np.maximum(0, 1 - margin)
+    obj_value = (1 / 2) * np.power(w, 2).sum() + C * np.mean(xi)
+
+    return {'obj_value': obj_value, 'time': end - start, 'w': w, 'b': b, 'xi': xi, 'svc': svc}
+
+
+def CreateBestSubsetSVMModel(period_Context, z_vals, C, separable, q, big_w2, limit_time, LogToConsole):
+    n, p = period_Context.shape
+
+    m = gp.Model("miqp")
+
+    m.Params.timeLimit = limit_time
+
+    m.Params.LogToConsole = int(LogToConsole)
+
+    w_vars = m.addMVar(p, lb=-1 * GRB.INFINITY, ub=GRB.INFINITY, vtype=gp.GRB.CONTINUOUS, name="w_vars")
+    t_vars = m.addMVar(p, vtype=gp.GRB.BINARY, name="t_vars")
+
+    b_var = m.addMVar(shape=1, lb=-1 * GRB.INFINITY, name="b_var", vtype=gp.GRB.CONTINUOUS)
+
+    if separable:
+        xi_vars = None
+        m.setObjective((1 / 2) * (w_vars @ w_vars), gp.GRB.MINIMIZE)
+        for i in range(n):
+            y_i = period_Context.iloc[i].values
+            m.addConstr((2 * z_vals[i] - 1) * (y_i @ w_vars + b_var) >= 1)
+    else:
+        xi_vars = m.addMVar(n, lb=0.0, vtype=gp.GRB.CONTINUOUS, name="xi_vars")
+        C_by_n = C / n
+        m.setObjective((1 / 2) * (w_vars @ w_vars) + C_by_n * xi_vars.sum(), gp.GRB.MINIMIZE)
+        for i in range(n):
+            y_i = period_Context.iloc[i].values
+            m.addConstr((2 * z_vals[i] - 1) * (y_i @ w_vars + b_var) + xi_vars[i] >= 1)
+
+    m.addConstr(t_vars.sum() <= q)
+
+    m.addConstr(w_vars <= big_w2 * t_vars)
+    m.addConstr((-1) * w_vars <= big_w2 * t_vars)
+
+    return m, w_vars, b_var, xi_vars, t_vars
+
+
+def BestSubsetSVM(period_Context, z_vals, C, separable, q, big_w2, limit_time, LogToConsole):
+    n, p = period_Context.shape
+
+    m, w_vars, b_var, xi_vars, t_vars = CreateBestSubsetSVMModel(period_Context, z_vals, C, separable, q, big_w2,
+                                                                 limit_time, LogToConsole)
+    start = time.time()
+    m.optimize()
+    end = time.time()
+    obj_value, w, b, xi = extractSVMSolution(n, p, m, w_vars, b_var, xi_vars)
+
     return {'obj_value': obj_value, 'time': end - start, 'w': w, 'b': b, 'xi': xi}
 
 
@@ -310,6 +380,10 @@ def SVMMVO(limit_time=30, MipGap=0.01, LogToConsole=True, Verbose=True, Solution
                                                                       bigMStrategy, Verbose, kwargs)
 
     # if epsilon and C in big_M_results --> update epsilon and C: kappa
+    if 'epsilon' in big_M_results.keys() and 'C' in big_M_results.keys():
+        C, epsilon = big_M_results['C'], big_M_results['epsilon']
+        if Verbose:
+            print("C and epsilon updated from big M")
     # if the big M strategy yields feasibility information then
     # update the feasible solution flag
     if 'feasible_solution' in big_M_results.keys():
@@ -353,4 +427,5 @@ def SVMMVO(limit_time=30, MipGap=0.01, LogToConsole=True, Verbose=True, Solution
         print("Classification errors ", np.sum(xi))
     end = time.time()
     return {'obj_value': obj_value, 'time': end - start, 'bigM_time': bigM_finish_time - start, 'optimality gap': gap2,
-            'x': x, 'z': z, 'w': w, 't': t, 'b': b, 'xi': xi, 'feasible_solution': feasible_solution}
+            'x': x, 'z': z, 'w': w, 't': t, 'b': b, 'xi': xi, 'feasible_solution': feasible_solution,
+            'C':C, 'epsilon':epsilon}
