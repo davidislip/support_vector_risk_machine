@@ -34,7 +34,7 @@ def exponential_weighted_estimator_shrinkage(daily_prices, k, alpha=1 - 0.985, E
     one_day_covariance, alpha = ledoit_wolf(daily_log_returns.iloc[-1 * EstNumObs:])
 
     log_transformed_cov, log_transformed_mean = transform_log_stats(one_day_mean, one_day_covariance, k)
-    # log_transformed_mean = daily_prices.pct_change().mean().values
+    log_transformed_mean = daily_prices.pct_change().iloc[-1 * EstNumObs:].mean().values
     # print(log_transformed_mean)
     return log_transformed_mean, log_transformed_cov
 

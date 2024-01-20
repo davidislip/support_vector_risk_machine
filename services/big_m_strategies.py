@@ -173,7 +173,7 @@ def ConstructFeasibleSolutionandHyperParams(**kwargs):
     if Verbose:
         print("Largest epsilon value guaranteeing ", 1 + kappa, " risk: ", epsilon)
 
-    return ObjMVO + epsilon * ObjSVM, feasible_solution, C, epsilon
+    return ObjMVO + epsilon * ObjSVM, feasible_solution, bestC, epsilon
 
 
 def size_of_largest_feature(period_Context, q):
@@ -515,6 +515,7 @@ def HyperparameterBigMStrategy(**kwargs):
     end = time.time()
     if Verbose:
         print("Feasible solution constructed in ", end - start, " seconds")
+        print("Feasible solution objective value ", ObjSVMMVO)
     n, p = period_Context.shape
     largest_abs = size_of_largest_feature(period_Context, q)
     largest_abs_pdist = largest_pairwise_distance(period_Context, q)

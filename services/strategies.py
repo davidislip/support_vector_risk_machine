@@ -265,6 +265,7 @@ class OLS_RP:
         return x
 
 
+
 class general_strategy:
     """
     a general strategy where the estimator and optimizer are specified,
@@ -332,9 +333,11 @@ class general_strategy:
             results = {'x': x}
         else:
             results = self.optimizer(**optimization_params)  # solution, optimality gap, time to solve
+            if type(results) == dict:
+                results['optimization_params'] = optimization_params
             if type(results) != dict:
                 warnings.warn("Optimizer interaction with environment does not return a dict")
-                results = {'x': results}
+                results = {'x': results, 'optimization_params':optimization_params}
         return results
 
     def optimize_hyperparameters(self, t, currentVal, currentPrices, periodPrices, Q,

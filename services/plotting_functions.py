@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 from scipy.stats import gmean
+from IPython.display import clear_output
 
 
 def plot_results_relative_ticker(CardMVO_results, MVO_results, turnovers, cardinalities, card_strings,
@@ -191,3 +192,30 @@ def make_turnover_table(CardMVO_results, MVO_results, turnovers, cardinalities, 
         df_cols.append(column)
 
     return pd.concat(df_cols, axis=1)
+
+
+def efficient_frontier_premium(Strategy, max_return, min_return, NumPts, periodReturns, periodFactRet, env):
+    max_premium = max_return / Strategy.current_estimates[0].mean()
+    min_premium = min_return / Strategy.current_estimates[0].mean()
+
+    premiums = np.linspace(min_premium, max_premium, NumPts)
+    vols = np.zeros(NumPts)
+    rets = np.zeros(NumPts)
+    cardinalities = np.zeros(NumPts)
+    mip_gaps = np.zeros(NumPts)
+    oldVerbose = Strategy.investor_preferences['Verbose']
+    oldLogToConsole = Strategy.investor_preferences['LogToConsole']
+    Strategy.investor_preferences['Verbose'] = False
+    Strategy.investor_preferences['LogToConsole'] = False
+
+    for i, premium in enumerate(premiums):
+        clear_output(wait=True)
+        Strategy.investor_preferences['premium'] = premium
+        Strategy.execute_strategy(periodReturns, periodFactRet, environment=env)
+        vols[i] = Strategy.current_results['obj_value']
+        rets[i] = (1 + premium) * Strategy.current_estimates[0].mean()
+        cardinalities[i] = (Strategy.current_results['x'] >= 0.001).sum()
+        mip_gaps[i] = Strategy.current_results['optimality gap']
+    Strategy.investor_preferences['Verbose'] = oldVerbose
+    Strategy.investor_preferences['LogToConsole'] = oldLogToConsole
+    return vols, rets,  premiums, cardinalities, mip_gaps
