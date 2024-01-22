@@ -195,8 +195,14 @@ def make_turnover_table(CardMVO_results, MVO_results, turnovers, cardinalities, 
 
 
 def efficient_frontier_premium(Strategy, max_return, min_return, NumPts, periodReturns, periodFactRet, env):
-    max_premium = max_return / Strategy.current_estimates[0].mean()
-    min_premium = min_return / Strategy.current_estimates[0].mean()
+    """
+    compute the efficient frontier
+    using Strategy, from min_return to max_return with NumPts between
+    The covariance estimation is done using periodReturns and periodFactRet and
+    other data is stored in the environment (env)
+    """
+    max_premium = max_return / Strategy.current_estimates[0].mean() - 1
+    min_premium = min_return / Strategy.current_estimates[0].mean() - 1
 
     premiums = np.linspace(min_premium, max_premium, NumPts)
     vols = np.zeros(NumPts)
@@ -207,7 +213,7 @@ def efficient_frontier_premium(Strategy, max_return, min_return, NumPts, periodR
     oldLogToConsole = Strategy.investor_preferences['LogToConsole']
     Strategy.investor_preferences['Verbose'] = False
     Strategy.investor_preferences['LogToConsole'] = False
-
+    results = {}
     for i, premium in enumerate(premiums):
         clear_output(wait=True)
         Strategy.investor_preferences['premium'] = premium
@@ -216,6 +222,11 @@ def efficient_frontier_premium(Strategy, max_return, min_return, NumPts, periodR
         rets[i] = (1 + premium) * Strategy.current_estimates[0].mean()
         cardinalities[i] = (Strategy.current_results['x'] >= 0.001).sum()
         mip_gaps[i] = Strategy.current_results['optimality gap']
+        # asset_eligibilities[i] = Strategy.current_results['z']
+        # hyperplane_coefficients[i] = Strategy.current_results['w']
+        # biases[i] = Strategy.current_results['b']
+        # feature_vectors[i] = Strategy.current_results['optimization_params']['period_Context']
+        results[i] = Strategy.current_results
     Strategy.investor_preferences['Verbose'] = oldVerbose
     Strategy.investor_preferences['LogToConsole'] = oldLogToConsole
-    return vols, rets,  premiums, cardinalities, mip_gaps
+    return vols, rets,  premiums, cardinalities, mip_gaps, results

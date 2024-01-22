@@ -128,15 +128,26 @@ def ConstructFeasibleSolutionandHyperParams(**kwargs):
             # print(f"  Train: index={train_index}")
             # print(f"  Test:  index={test_index}")
             # solve SVM
-            svm_phase1_results = sklearn_SVM(period_Context.iloc[train_index], z_vals[train_index], C, separable)
+            try:
+                svm_phase1_results = sklearn_SVM(period_Context.iloc[train_index], z_vals[train_index], C, separable)
+            except ValueError:
+                if Verbose:
+                    print("Value Error - sklearn . . . using Gurobi")
+                svm_phase1_results = SVM(period_Context.iloc[train_index], z_vals[train_index], C, separable, bigM_limit_time, LogToConsole)
             w_vals = svm_phase1_results['w']
             abs_w = np.abs(w_vals)
             q_largest = np.argpartition(abs_w, (-1) * q)[-q:]
             # restrict indices
             period_Context_subset = period_Context.iloc[:, q_largest]
-            svm_phase2_results = sklearn_SVM(period_Context_subset.iloc[train_index], z_vals[train_index], C, separable)
-            svc = svm_phase2_results['svc']
-            pred_decision = svc.decision_function(period_Context_subset.iloc[test_index])
+            try:
+                svm_phase2_results = sklearn_SVM(period_Context_subset.iloc[train_index], z_vals[train_index], C, separable)
+                svc = svm_phase2_results['svc']
+                pred_decision = svc.decision_function(period_Context_subset.iloc[test_index])
+            except ValueError:
+                svm_phase2_results = SVM(period_Context_subset.iloc[train_index], z_vals[train_index], C, separable,
+                                         bigM_limit_time, LogToConsole)
+                w, b = svm_phase2_results['w'], svm_phase2_results['b']
+                pred_decision = period_Context_subset.iloc[test_index].values @ svm_phase2_results['w'] + b
             margin = u[test_index] * pred_decision
             xi_test = np.maximum(0, 1 - margin)
             errors[i] = np.sum(xi_test)
@@ -154,13 +165,19 @@ def ConstructFeasibleSolutionandHyperParams(**kwargs):
     if norm_w > 10 ** (-7) and Verbose:
         print("Non degenerate solution found")
     # calculate ObjSVM and construct bound on ||w||_1
-    svm_phase1_results = sklearn_SVM(period_Context, z_vals, bestC, separable)
+    try:
+        svm_phase1_results = sklearn_SVM(period_Context, z_vals, bestC, separable)
+    except ValueError:
+        svm_phase1_results = SVM(period_Context, z_vals, bestC, separable, bigM_limit_time, LogToConsole)
     w_vals = svm_phase1_results['w']
     abs_w = np.abs(w_vals)
     q_largest = np.argpartition(abs_w, (-1) * q)[-q:]
     # restrict indices
     period_Context_subset = period_Context.iloc[:, q_largest]
-    svm_phase2_results = sklearn_SVM(period_Context_subset, z_vals, bestC, separable)
+    try:
+        svm_phase2_results = sklearn_SVM(period_Context_subset, z_vals, bestC, separable)
+    except ValueError:
+        svm_phase2_results = SVM(period_Context_subset, z_vals, bestC, separable, bigM_limit_time, LogToConsole)
     # sqrt(2 ObjSVM) is the soln is big_w2 and hence big w
     ObjFeasibleSVM = svm_phase2_results['obj_value']
     big_w2 = math.sqrt(2 * ObjFeasibleSVM)

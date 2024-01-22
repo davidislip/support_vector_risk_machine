@@ -50,7 +50,7 @@ def extractSolution(n, m, x_vars, z_vars):
 
 def addTurnoverConstraints(m, x_vars, previous_portfolio, turnover_limit):
     n = len(previous_portfolio)
-    absolute_delta = m.addMVar(n, lb=-GRB.INFINITY, ub=GRB.INFINITY,
+    absolute_delta = m.addMVar(n, lb=0, ub=GRB.INFINITY,
                                vtype=gp.GRB.CONTINUOUS, name="magnitude of portfolio changes")
     m.addConstr(absolute_delta >= x_vars - previous_portfolio)
     m.addConstr(absolute_delta >= previous_portfolio - x_vars)
@@ -64,6 +64,7 @@ def smallestTurnoverModel(m, absolute_delta):
     m.remove(m.getConstrByName('turnover'))
     m.reset()
     m.setObjective(absolute_delta.sum())
+    m.update()
     m.optimize()
 
 
