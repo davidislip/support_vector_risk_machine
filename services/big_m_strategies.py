@@ -185,8 +185,15 @@ def ConstructFeasibleSolutionandHyperParams(**kwargs):
     ObjFeasibleSVM = svm_phase2_results['obj_value']
     big_w2 = math.sqrt(2 * ObjFeasibleSVM)
     # solve BSS SVM
+    w_vals = np.zeros(p)
+    t_vals = np.zeros(p)
+    w_vals[q_largest] = svm_phase2_results['w']
+    t_vals[q_largest] = np.ones(len(q_largest))
+    b_val = svm_phase2_results['b']
+
+    warm_start = {'w_vals' : w_vals, 'b_val':b_val, 't_vals':t_vals}
     BestSubsetSVM_results = BestSubsetSVM(period_Context, z_vals, bestC, separable, q, big_w2, bigM_limit_time,
-                                          LogToConsole)
+                                          LogToConsole, warm_start)
     ObjSVM = BestSubsetSVM_results['obj_value']
     # set epsilon so that the risk guarantee is satisfied
     epsilon = (kappa * ObjMVO) / ObjSVM # this is the big line
