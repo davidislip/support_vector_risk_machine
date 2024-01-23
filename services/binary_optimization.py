@@ -84,7 +84,7 @@ def CardMVO(limit_time=30, MipGap=0.01, SolutionLimit=GRB.MAXINT,
     start = time.time()
 
     m, x_vars, z_vars = CreateCardMVOModel(mu, targetRet, Q, K, limit_time, MipGap, LogToConsole)
-
+    m.Params.FeasibilityTol = 1e-8
     m.Params.SolutionLimit = SolutionLimit
 
     if previous_portfolio is not None and turnover_constraints:
@@ -122,7 +122,7 @@ def CreateSVMMVOModel(mu, targetRet, Q, K, q, epsilon,
     m = gp.Model("miqp")
 
     m.Params.timeLimit = limit_time
-
+    m.Params.FeasibilityTol = 1e-8
     m.Params.MIPGap = MipGap
 
     m.Params.LogToConsole = int(LogToConsole)
@@ -178,7 +178,7 @@ def CreateSVMModel(period_Context, z_vals, C, separable, limit_time, LogToConsol
     m = gp.Model("miqp")
 
     m.Params.timeLimit = limit_time
-
+    m.Params.FeasibilityTol = 1e-8
     m.Params.LogToConsole = int(LogToConsole)
 
     w_vars = m.addMVar(p, lb=-1 * GRB.INFINITY, ub=GRB.INFINITY, vtype=gp.GRB.CONTINUOUS, name="w_vars")
@@ -257,7 +257,7 @@ def CreateBestSubsetSVMModel(period_Context, z_vals, C, separable, q, big_w2, li
     m = gp.Model("miqp")
 
     m.Params.timeLimit = limit_time
-
+    m.Params.FeasibilityTol = 1e-8
     m.Params.LogToConsole = int(LogToConsole)
 
     w_vars = m.addMVar(p, lb=-1 * GRB.INFINITY, ub=GRB.INFINITY, vtype=gp.GRB.CONTINUOUS, name="w_vars")
@@ -287,17 +287,25 @@ def CreateBestSubsetSVMModel(period_Context, z_vals, C, separable, q, big_w2, li
     return m, w_vars, b_var, xi_vars, t_vars
 
 
-def BestSubsetSVM(period_Context, z_vals, C, separable, q, big_w2, limit_time, LogToConsole):
+def BestSubsetSVM(period_Context, z_vals, C, separable, q, big_w2, limit_time, LogToConsole, warm_start):
     n, p = period_Context.shape
 
     m, w_vars, b_var, xi_vars, t_vars = CreateBestSubsetSVMModel(period_Context, z_vals, C, separable, q, big_w2,
                                                                  limit_time, LogToConsole)
+
+    w_vars.Start = warm_start['w_vals']
+    b_var.Start = warm_start['b_val']
+    t_vars.Start = warm_start['t_vals']
+
     start = time.time()
     m.optimize()
     end = time.time()
     obj_value, w, b, xi = extractSVMSolution(n, p, m, w_vars, b_var, xi_vars)
+    t = np.zeros(p)
+    for i in range(p):
+        t[i] = t_vars[i].X
 
-    return {'obj_value': obj_value, 'time': end - start, 'w': w, 'b': b, 'xi': xi}
+    return {'obj_value': obj_value, 'time': end - start, 'w': w, 'b': b, 'xi': xi, 't': t}
 
 
 def extractSVMMVOSolution(n, p, m, x_vars, z_vars, w_vars, t_vars, b_var, xi_vars):
@@ -403,7 +411,18 @@ def SVMMVO(limit_time=30, MipGap=0.01, LogToConsole=True, Verbose=True, Solution
                                                                           period_Context, C=C,
                                                                           separable=separable, limit_time=limit_time,
                                                                           MipGap=MipGap, LogToConsole=LogToConsole)
+
     m.Params.SolutionLimit = SolutionLimit
+    if 'warm_start' in big_M_results.keys():
+        warm_start = big_M_results['warm_start']
+        x_vars.Start = warm_start['x_vals']
+        z_vars.Start = warm_start['z_vals']
+        w_vars.Start = warm_start['w_vals']
+        b_var.Start = warm_start['b_val']
+        t_vars.Start = warm_start['t_vals']
+        # xi_vars.Start = warm_start['xi_vals']
+        # print("Warm Start")
+        # m.Params.LogToConsole = True
 
     if previous_portfolio is not None and turnover_constraints:  # add turnover constraints
         absolute_delta = addTurnoverConstraints(m, x_vars, previous_portfolio, turnover_limit)
@@ -427,6 +446,7 @@ def SVMMVO(limit_time=30, MipGap=0.01, LogToConsole=True, Verbose=True, Solution
         print("Norm of w ", np.power(w, 2).sum())
         print("Classification errors ", np.sum(xi))
     end = time.time()
+    # m.Params.LogToConsole = False
     return {'obj_value': obj_value, 'time': end - start, 'bigM_time': bigM_finish_time - start, 'optimality gap': gap2,
             'x': x, 'z': z, 'w': w, 't': t, 'b': b, 'xi': xi, 'feasible_solution': feasible_solution,
-            'C':C, 'epsilon':epsilon}
+            'C': C, 'epsilon': epsilon}

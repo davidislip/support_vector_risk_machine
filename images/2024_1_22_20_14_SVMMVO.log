@@ -1,0 +1,36 @@
+INFO:root:kamma is 0.2
+INFO:root:Elasped time is 1122.8655543327332 seconds
+INFO:root:Annualized return: 0.24013180420610425
+INFO:root:Annualized vol: 0.2661284400470235
+INFO:root:Annualized Sharpe ratio: 0.90231545401038
+INFO:root:Avg. turnover: 0.8068333862210403
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
