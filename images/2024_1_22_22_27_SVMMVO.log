@@ -1,0 +1,2873 @@
+INFO:root:kamma is 0.1
+INFO:root:Elasped time is 1097.1245591640472 seconds
+INFO:root:Annualized return: 0.243828320769925
+INFO:root:Annualized vol: 0.2626648774100601
+INFO:root:Annualized Sharpe ratio: 0.9282867324102552
+INFO:root:Avg. turnover: 0.8039276448821315
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1152 rows, 1149 columns and 86811 nonzeros
+INFO:gurobipy:Model fingerprint: 0xf5bee3d2
+INFO:gurobipy:Model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 718 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [8e-06, 7e+02]
+INFO:gurobipy:  Objective range  [2e-04, 2e-04]
+INFO:gurobipy:  QObjective range [1e-05, 2e+00]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [5e-01, 7e+02]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 0.0370263 (0.09s)
+INFO:gurobipy:Loaded user MIP start with objective 0.0370263
+INFO:gurobipy:
+INFO:gurobipy:Presolve time: 0.30s
+INFO:gurobipy:Presolved: 1254 rows, 1200 columns, 87015 nonzeros
+INFO:gurobipy:Presolved model has 41237 quadratic objective terms
+INFO:gurobipy:Variable types: 769 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 3.366027e-02, 96 iterations, 0.02 seconds (0.01 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    0.03366    0   23    0.03703    0.03366  9.09%     -    0s
+INFO:gurobipy:     0     0    0.03366    0   23    0.03703    0.03366  9.09%     -    0s
+INFO:gurobipy:     0     0    0.03366    0   23    0.03703    0.03366  9.09%     -    0s
+INFO:gurobipy:     0     0    0.03366    0   23    0.03703    0.03366  9.09%     -    1s
+INFO:gurobipy:     0     0    0.03366    0   23    0.03703    0.03366  9.09%     -    1s
+INFO:gurobipy:     0     0    0.03366    0   23    0.03703    0.03366  9.09%     -    1s
+INFO:gurobipy:     0     0    0.03366    0   23    0.03703    0.03366  9.09%     -    1s
+INFO:gurobipy:     0     0    0.03366    0   23    0.03703    0.03366  9.09%     -    1s
+INFO:gurobipy:     0     0    0.03366    0   23    0.03703    0.03366  9.09%     -    1s
+INFO:gurobipy:     0     0    0.03366    0   23    0.03703    0.03366  9.09%     -    1s
+INFO:gurobipy:     0     2    0.03366    0   23    0.03703    0.03366  9.09%     -    2s
+INFO:gurobipy:    95    86    0.03698   11  396    0.03703    0.03366  9.09%   185    5s
+INFO:gurobipy:H  135   124                       0.0364880    0.03366  7.75%   170    7s
+INFO:gurobipy:H  138   124                       0.0361965    0.03366  7.01%   168    7s
+INFO:gurobipy:H  142   124                       0.0361856    0.03366  6.98%   166    7s
+INFO:gurobipy:H  143   124                       0.0359429    0.03366  6.35%   165    7s
+INFO:gurobipy:   188   132    0.03366   16  332    0.03594    0.03366  6.35%   141   12s
+INFO:gurobipy:   391   327    0.03372   29  390    0.03594    0.03366  6.35%   165   19s
+INFO:gurobipy:   405   355    0.03373   30  375    0.03594    0.03366  6.35%   167   20s
+INFO:gurobipy:
+INFO:gurobipy:Cutting planes:
+INFO:gurobipy:  Cover: 1
+INFO:gurobipy:  MIR: 3
+INFO:gurobipy:  Flow cover: 1
+INFO:gurobipy:
+INFO:gurobipy:Explored 438 nodes (74782 simplex iterations) in 20.05 seconds (16.79 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 5: 0.0359429 0.0361856 0.0361965 ... 0.0370263
+INFO:gurobipy:
+INFO:gurobipy:Time limit reached
+INFO:gurobipy:Best objective 3.594286531345e-02, best bound 3.366030796321e-02, gap 6.3505%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1725 rows, 1435 columns and 88241 nonzeros
+INFO:gurobipy:Model fingerprint: 0x1f993441
+INFO:gurobipy:Model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [4e-06, 2e+01]
+INFO:gurobipy:  Objective range  [2e-04, 2e-04]
+INFO:gurobipy:  QObjective range [4e-06, 1e+01]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [2e-03, 3e+01]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 0.0744894 (0.06s)
+INFO:gurobipy:Loaded user MIP start with objective 0.0744894
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 285 rows and 19 columns
+INFO:gurobipy:Presolve time: 0.21s
+INFO:gurobipy:Presolved: 1490 rows, 1441 columns, 87790 nonzeros
+INFO:gurobipy:Presolved model has 41211 quadratic objective terms
+INFO:gurobipy:Variable types: 1010 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 6.993385e-02, 1065 iterations, 0.26 seconds (0.32 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    0.06993    0  422    0.07449    0.06993  6.12%     -    0s
+INFO:gurobipy:     0     0    0.07019    0  422    0.07449    0.07019  5.77%     -    1s
+INFO:gurobipy:
+INFO:gurobipy:Cutting planes:
+INFO:gurobipy:  MIR: 66
+INFO:gurobipy:
+INFO:gurobipy:Explored 1 nodes (1071 simplex iterations) in 2.05 seconds (1.01 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 1: 0.0744894 
+INFO:gurobipy:
+INFO:gurobipy:Optimal solution found (tolerance 5.00e-02)
+INFO:gurobipy:Best objective 7.448941664033e-02, best bound 7.077622510013e-02, gap 4.9849%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1725 rows, 1435 columns and 88241 nonzeros
+INFO:gurobipy:Model fingerprint: 0x703a8919
+INFO:gurobipy:Model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [2e-05, 2e+01]
+INFO:gurobipy:  Objective range  [6e-05, 6e-05]
+INFO:gurobipy:  QObjective range [6e-06, 7e+01]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [1e-02, 3e+01]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 0.0376181 (0.03s)
+INFO:gurobipy:Loaded user MIP start with objective 0.0376181
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 273 rows and 5 columns
+INFO:gurobipy:Presolve time: 0.12s
+INFO:gurobipy:Presolved: 1520 rows, 1464 columns, 87849 nonzeros
+INFO:gurobipy:Presolved model has 41220 quadratic objective terms
+INFO:gurobipy:Variable types: 1033 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 3.515196e-02, 1363 iterations, 0.19 seconds (0.33 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    0.03515    0  400    0.03762    0.03515  6.56%     -    0s
+INFO:gurobipy:     0     0    0.03515    0  400    0.03762    0.03515  6.55%     -    0s
+INFO:gurobipy:     0     0    0.03515    0  400    0.03762    0.03515  6.55%     -    1s
+INFO:gurobipy:     0     0    0.03515    0  398    0.03762    0.03515  6.55%     -    1s
+INFO:gurobipy:     0     0    0.03515    0  398    0.03762    0.03515  6.55%     -    2s
+INFO:gurobipy:     0     0    0.03515    0  399    0.03762    0.03515  6.55%     -    2s
+INFO:gurobipy:     0     0    0.03515    0  399    0.03762    0.03515  6.55%     -    2s
+INFO:gurobipy:     0     0    0.03515    0  399    0.03762    0.03515  6.55%     -    2s
+INFO:gurobipy:     0     0    0.03515    0  376    0.03762    0.03515  6.55%     -    2s
+INFO:gurobipy:     0     0    0.03528    0  394    0.03762    0.03528  6.23%     -    3s
+INFO:gurobipy:     0     2    0.03528    0  394    0.03762    0.03528  6.20%     -    3s
+INFO:gurobipy:H  123   125                       0.0375650    0.03541  5.75%   264    4s
+INFO:gurobipy:H  130   125                       0.0373673    0.03541  5.25%   260    4s
+INFO:gurobipy:   136   140    0.03654   10  385    0.03737    0.03541  5.25%   260    5s
+INFO:gurobipy:H  168   171                       0.0373599    0.03541  5.23%   244    9s
+INFO:gurobipy:H  170   171                       0.0371315    0.03541  4.65%   243    9s
+INFO:gurobipy:H  175   171                       0.0370947    0.03541  4.55%   241    9s
+INFO:gurobipy:
+INFO:gurobipy:Cutting planes:
+INFO:gurobipy:  MIR: 21
+INFO:gurobipy:  Flow cover: 4
+INFO:gurobipy:
+INFO:gurobipy:Explored 182 nodes (46028 simplex iterations) in 9.24 seconds (8.33 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 5: 0.0370947 0.0371315 0.0373599 ... 0.0376181
+INFO:gurobipy:
+INFO:gurobipy:Optimal solution found (tolerance 5.00e-02)
+INFO:gurobipy:Best objective 3.709467909586e-02, best bound 3.540567041725e-02, gap 4.5532%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1725 rows, 1435 columns and 88241 nonzeros
+INFO:gurobipy:Model fingerprint: 0x9b85dad2
+INFO:gurobipy:Model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [8e-06, 6e+02]
+INFO:gurobipy:  Objective range  [6e-05, 6e-05]
+INFO:gurobipy:  QObjective range [9e-06, 5e+00]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [3e-03, 6e+02]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 0.0296983 (0.03s)
+INFO:gurobipy:Loaded user MIP start with objective 0.0296983
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 265 rows and 5 columns
+INFO:gurobipy:Presolve time: 0.16s
+INFO:gurobipy:Presolved: 1530 rows, 1465 columns, 87877 nonzeros
+INFO:gurobipy:Presolved model has 41221 quadratic objective terms
+INFO:gurobipy:Variable types: 1034 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 2.607418e-02, 997 iterations, 0.10 seconds (0.13 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    0.02607    0  275    0.02970    0.02607  12.2%     -    0s
+INFO:gurobipy:     0     0    0.02607    0  275    0.02970    0.02607  12.2%     -    0s
+INFO:gurobipy:     0     0    0.02607    0  276    0.02970    0.02607  12.2%     -    1s
+INFO:gurobipy:     0     0    0.02607    0  276    0.02970    0.02607  12.2%     -    1s
+INFO:gurobipy:     0     0    0.02607    0  276    0.02970    0.02607  12.2%     -    1s
+INFO:gurobipy:     0     0    0.02607    0  276    0.02970    0.02607  12.2%     -    1s
+INFO:gurobipy:     0     0    0.02607    0  276    0.02970    0.02607  12.2%     -    1s
+INFO:gurobipy:     0     0    0.02607    0  276    0.02970    0.02607  12.2%     -    1s
+INFO:gurobipy:     0     0    0.02607    0  276    0.02970    0.02607  12.2%     -    1s
+INFO:gurobipy:     0     0    0.02607    0  277    0.02970    0.02607  12.2%     -    1s
+INFO:gurobipy:     0     2    0.02608    0  277    0.02970    0.02608  12.2%     -    2s
+INFO:gurobipy:H  129   139                       0.0295662    0.02608  11.8%   162    3s
+INFO:gurobipy:H  130   139                       0.0295008    0.02608  11.6%   161    3s
+INFO:gurobipy:H  132   139                       0.0294030    0.02608  11.3%   159    3s
+INFO:gurobipy:H  143   139                       0.0293609    0.02608  11.2%   149    3s
+INFO:gurobipy:H  182   192                       0.0290927    0.02608  10.4%   145    4s
+INFO:gurobipy:H  229   238                       0.0287341    0.02608  9.25%   138    6s
+INFO:gurobipy:H  238   238                       0.0286791    0.02608  9.07%   143    6s
+INFO:gurobipy:   760   748    0.02660   32  354    0.02868    0.02608  9.07%   138   10s
+INFO:gurobipy:   816   802    0.02677   36  326    0.02868    0.02608  9.07%   139   15s
+INFO:gurobipy:H  925   823                       0.0286571    0.02608  9.00%   134   17s
+INFO:gurobipy:H  927   821                       0.0286476    0.02608  8.97%   135   17s
+INFO:gurobipy:H  929   820                       0.0286425    0.02608  8.96%   135   17s
+INFO:gurobipy:  1505  1315    0.02629   13  384    0.02864    0.02608  8.96%   126   20s
+INFO:gurobipy:
+INFO:gurobipy:Cutting planes:
+INFO:gurobipy:  Implied bound: 6
+INFO:gurobipy:  MIR: 9
+INFO:gurobipy:  Flow cover: 4
+INFO:gurobipy:
+INFO:gurobipy:Explored 1579 nodes (198731 simplex iterations) in 20.07 seconds (22.66 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 10: 0.0286425 0.0286476 0.0286571 ... 0.0295662
+INFO:gurobipy:
+INFO:gurobipy:Time limit reached
+INFO:gurobipy:Best objective 2.864250808863e-02, best bound 2.607663554036e-02, gap 8.9583%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1725 rows, 1435 columns and 88241 nonzeros
+INFO:gurobipy:Model fingerprint: 0x33fb9f05
+INFO:gurobipy:Model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [2e-05, 5e+02]
+INFO:gurobipy:  Objective range  [2e-04, 2e-04]
+INFO:gurobipy:  QObjective range [5e-07, 4e+00]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [2e-03, 5e+02]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 0.0703637 (0.04s)
+INFO:gurobipy:Loaded user MIP start with objective 0.0703637
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 264 rows and 5 columns
+INFO:gurobipy:Presolve time: 0.15s
+INFO:gurobipy:Presolved: 1521 rows, 1460 columns, 87859 nonzeros
+INFO:gurobipy:Presolved model has 41216 quadratic objective terms
+INFO:gurobipy:Variable types: 1029 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 6.396702e-02, 1080 iterations, 0.08 seconds (0.14 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    0.06397    0  268    0.07036    0.06397  9.09%     -    0s
+INFO:gurobipy:     0     0    0.06397    0  268    0.07036    0.06397  9.09%     -    0s
+INFO:gurobipy:     0     0    0.06397    0  268    0.07036    0.06397  9.09%     -    0s
+INFO:gurobipy:     0     2    0.06397    0  268    0.07036    0.06397  9.09%     -    1s
+INFO:gurobipy:   179   183    0.06398   12  401    0.07036    0.06397  9.09%   146    6s
+INFO:gurobipy:   264   277    0.06419   17  396    0.07036    0.06397  9.09%   141   10s
+INFO:gurobipy:  1762  1442    0.06767   19  398    0.07036    0.06397  9.09%  91.8   16s
+INFO:gurobipy:
+INFO:gurobipy:Cutting planes:
+INFO:gurobipy:  Implied bound: 2
+INFO:gurobipy:  MIR: 2
+INFO:gurobipy:  Flow cover: 2
+INFO:gurobipy:
+INFO:gurobipy:Explored 2294 nodes (211695 simplex iterations) in 20.06 seconds (18.95 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 1: 0.0703637 
+INFO:gurobipy:
+INFO:gurobipy:Time limit reached
+INFO:gurobipy:Best objective 7.036372660377e-02, best bound 6.397089593727e-02, gap 9.0854%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1725 rows, 1435 columns and 88241 nonzeros
+INFO:gurobipy:Model fingerprint: 0xb8d4b9f2
+INFO:gurobipy:Model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [2e-06, 2e+02]
+INFO:gurobipy:  Objective range  [2e-04, 2e-04]
+INFO:gurobipy:  QObjective range [1e-06, 4e+00]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [2e-03, 2e+02]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 0.0672417 (0.04s)
+INFO:gurobipy:Loaded user MIP start with objective 0.0672417
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 281 rows and 13 columns
+INFO:gurobipy:Presolve time: 0.14s
+INFO:gurobipy:Presolved: 1532 rows, 1466 columns, 87873 nonzeros
+INFO:gurobipy:Presolved model has 41230 quadratic objective terms
+INFO:gurobipy:Variable types: 1035 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 6.112884e-02, 769 iterations, 0.10 seconds (0.16 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    0.06113    0  277    0.06724    0.06113  9.09%     -    0s
+INFO:gurobipy:     0     0    0.06113    0  279    0.06724    0.06113  9.09%     -    0s
+INFO:gurobipy:     0     0    0.06113    0  278    0.06724    0.06113  9.09%     -    0s
+INFO:gurobipy:     0     0    0.06113    0  278    0.06724    0.06113  9.09%     -    0s
+INFO:gurobipy:     0     0    0.06113    0  279    0.06724    0.06113  9.09%     -    1s
+INFO:gurobipy:     0     0    0.06113    0  279    0.06724    0.06113  9.09%     -    1s
+INFO:gurobipy:     0     0    0.06113    0  279    0.06724    0.06113  9.09%     -    1s
+INFO:gurobipy:     0     0    0.06113    0  279    0.06724    0.06113  9.09%     -    1s
+INFO:gurobipy:     0     0    0.06113    0  279    0.06724    0.06113  9.09%     -    1s
+INFO:gurobipy:     0     0    0.06113    0  279    0.06724    0.06113  9.09%     -    1s
+INFO:gurobipy:     0     2    0.06113    0  279    0.06724    0.06113  9.09%     -    1s
+INFO:gurobipy:H  127   124                       0.0667457    0.06113  8.42%   120    3s
+INFO:gurobipy:   167   158    0.06154   15  411    0.06675    0.06113  8.42%   104    5s
+INFO:gurobipy:H  168   158                       0.0666946    0.06113  8.35%   103    5s
+INFO:gurobipy:H  173   158                       0.0665990    0.06113  8.21%   101    5s
+INFO:gurobipy:   483   431    0.06196   14  404    0.06660    0.06113  8.21%  80.6   15s
+INFO:gurobipy:  1212   977    0.06657   15  409    0.06660    0.06113  8.21%  66.2   20s
+INFO:gurobipy:
+INFO:gurobipy:Cutting planes:
+INFO:gurobipy:  Implied bound: 2
+INFO:gurobipy:  MIR: 22
+INFO:gurobipy:  Flow cover: 4
+INFO:gurobipy:
+INFO:gurobipy:Explored 1254 nodes (82882 simplex iterations) in 20.20 seconds (14.26 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 3: 0.066599 0.0666946 0.0672417 
+INFO:gurobipy:
+INFO:gurobipy:Time limit reached
+INFO:gurobipy:Best objective 6.659903572401e-02, best bound 6.112883661846e-02, gap 8.2136%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1725 rows, 1435 columns and 88241 nonzeros
+INFO:gurobipy:Model fingerprint: 0x6407ec85
+INFO:gurobipy:Model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [2e-05, 6e+02]
+INFO:gurobipy:  Objective range  [7e-04, 7e-04]
+INFO:gurobipy:  QObjective range [8e-06, 7e+00]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [2e-02, 6e+02]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 0.0784427 (0.06s)
+INFO:gurobipy:Loaded user MIP start with objective 0.0784427
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 299 rows and 26 columns
+INFO:gurobipy:Presolve time: 0.20s
+INFO:gurobipy:Presolved: 1506 rows, 1449 columns, 87815 nonzeros
+INFO:gurobipy:Presolved model has 41226 quadratic objective terms
+INFO:gurobipy:Variable types: 1018 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 7.131154e-02, 760 iterations, 0.09 seconds (0.10 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    0.07131    0  281    0.07844    0.07131  9.09%     -    0s
+INFO:gurobipy:     0     0    0.07131    0  284    0.07844    0.07131  9.09%     -    0s
+INFO:gurobipy:     0     0    0.07131    0  283    0.07844    0.07131  9.09%     -    1s
+INFO:gurobipy:     0     0    0.07131    0  283    0.07844    0.07131  9.09%     -    1s
+INFO:gurobipy:     0     0    0.07131    0  283    0.07844    0.07131  9.09%     -    1s
+INFO:gurobipy:     0     0    0.07132    0  283    0.07844    0.07132  9.09%     -    1s
+INFO:gurobipy:     0     0    0.07132    0  283    0.07844    0.07132  9.09%     -    1s
+INFO:gurobipy:     0     0    0.07132    0  283    0.07844    0.07132  9.09%     -    1s
+INFO:gurobipy:     0     0    0.07132    0  283    0.07844    0.07132  9.09%     -    1s
+INFO:gurobipy:     0     0    0.07132    0  283    0.07844    0.07132  9.09%     -    1s
+INFO:gurobipy:     0     2    0.07132    0  283    0.07844    0.07132  9.09%     -    2s
+INFO:gurobipy:   183   198    0.07138   14  307    0.07844    0.07132  9.09%   140    9s
+INFO:gurobipy:H  184   198                       0.0784427    0.07132  9.09%   139    9s
+INFO:gurobipy:H  189   198                       0.0777249    0.07132  8.25%   137    9s
+INFO:gurobipy:H  194   198                       0.0772198    0.07132  7.65%   137    9s
+INFO:gurobipy:H  195   198                       0.0761213    0.07132  6.31%   136    9s
+INFO:gurobipy:   353   367    0.07140   19  314    0.07612    0.07132  6.31%   120   10s
+INFO:gurobipy:  1836  1566     cutoff   26         0.07612    0.07132  6.31%  88.4   15s
+INFO:gurobipy:H 1948  1521                       0.0758291    0.07132  5.95%  86.4   20s
+INFO:gurobipy:H 1950  1515                       0.0757706    0.07132  5.88%  86.4   20s
+INFO:gurobipy:H 1955  1489                       0.0752777    0.07132  5.26%  86.4   20s
+INFO:gurobipy:H 1957  1477                       0.0750766    0.07132  5.01%  86.4   20s
+INFO:gurobipy:
+INFO:gurobipy:Cutting planes:
+INFO:gurobipy:  Implied bound: 2
+INFO:gurobipy:  MIR: 9
+INFO:gurobipy:  Flow cover: 8
+INFO:gurobipy:
+INFO:gurobipy:Explored 1963 nodes (170261 simplex iterations) in 20.12 seconds (19.20 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 8: 0.0750766 0.0752777 0.0757706 ... 0.0784427
+INFO:gurobipy:
+INFO:gurobipy:Time limit reached
+INFO:gurobipy:Best objective 7.507657273065e-02, best bound 7.131885441688e-02, gap 5.0052%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1725 rows, 1435 columns and 88241 nonzeros
+INFO:gurobipy:Model fingerprint: 0x30c6f578
+INFO:gurobipy:Model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [2e-05, 2e+01]
+INFO:gurobipy:  Objective range  [4e-05, 4e-05]
+INFO:gurobipy:  QObjective range [2e-06, 2e+01]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [2e-02, 3e+01]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 0.0196923 (0.05s)
+INFO:gurobipy:Loaded user MIP start with objective 0.0196923
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 299 rows and 26 columns
+INFO:gurobipy:Presolve time: 0.20s
+INFO:gurobipy:Presolved: 1488 rows, 1440 columns, 87779 nonzeros
+INFO:gurobipy:Presolved model has 41217 quadratic objective terms
+INFO:gurobipy:Variable types: 1009 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 1.804458e-02, 1596 iterations, 0.42 seconds (0.46 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    0.01804    0  369    0.01969    0.01804  8.37%     -    1s
+INFO:gurobipy:     0     0    0.01804    0  378    0.01969    0.01804  8.37%     -    1s
+INFO:gurobipy:     0     0    0.01819    0  347    0.01969    0.01819  7.63%     -    2s
+INFO:gurobipy:     0     0    0.01819    0  344    0.01969    0.01819  7.63%     -    2s
+INFO:gurobipy:     0     0    0.01819    0  351    0.01969    0.01819  7.63%     -    3s
+INFO:gurobipy:     0     0    0.01819    0  351    0.01969    0.01819  7.63%     -    3s
+INFO:gurobipy:     0     0    0.01821    0  351    0.01969    0.01821  7.53%     -    3s
+INFO:gurobipy:H    0     0                       0.0196398    0.01825  7.08%     -    3s
+INFO:gurobipy:     0     2    0.01825    0  351    0.01964    0.01825  7.08%     -    4s
+INFO:gurobipy:    54    52    0.01840    8  349    0.01964    0.01839  6.36%   277    5s
+INFO:gurobipy:H  115   108                       0.0195356    0.01839  5.86%   384    5s
+INFO:gurobipy:H  157   139                       0.0194676    0.01839  5.54%   368    9s
+INFO:gurobipy:H  163   139                       0.0193913    0.01839  5.16%   366    9s
+INFO:gurobipy:   194   152    0.01849   14  366    0.01939    0.01839  5.16%   354   10s
+INFO:gurobipy:H  299   243                       0.0193245    0.01839  4.84%   356   13s
+INFO:gurobipy:H  300   243                       0.0192879    0.01839  4.66%   357   13s
+INFO:gurobipy:H  301   243                       0.0192686    0.01839  4.56%   357   13s
+INFO:gurobipy:
+INFO:gurobipy:Cutting planes:
+INFO:gurobipy:  Implied bound: 3
+INFO:gurobipy:  MIR: 101
+INFO:gurobipy:  Flow cover: 1
+INFO:gurobipy:
+INFO:gurobipy:Explored 315 nodes (114724 simplex iterations) in 14.05 seconds (15.85 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 8: 0.0192686 0.0192879 0.0193245 ... 0.0196923
+INFO:gurobipy:
+INFO:gurobipy:Optimal solution found (tolerance 5.00e-02)
+INFO:gurobipy:Warning: max constraint violation (3.8633e-06) exceeds tolerance
+INFO:gurobipy:Warning: max bound violation (7.6020e-06) exceeds tolerance
+INFO:gurobipy:Best objective 1.926861433575e-02, best bound 1.838985469062e-02, gap 4.5606%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1725 rows, 1435 columns and 88241 nonzeros
+INFO:gurobipy:Model fingerprint: 0x2952d4fb
+INFO:gurobipy:Model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [9e-06, 3e+02]
+INFO:gurobipy:  Objective range  [2e-05, 2e-05]
+INFO:gurobipy:  QObjective range [9e-07, 4e+00]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [1e-02, 3e+02]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 0.00912077 (0.06s)
+INFO:gurobipy:Loaded user MIP start with objective 0.00912077
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 278 rows and 13 columns
+INFO:gurobipy:Presolve time: 0.25s
+INFO:gurobipy:Presolved: 1471 rows, 1434 columns, 87753 nonzeros
+INFO:gurobipy:Presolved model has 41198 quadratic objective terms
+INFO:gurobipy:Variable types: 1003 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 8.029213e-03, 954 iterations, 0.17 seconds (0.19 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    0.00803    0  271    0.00912    0.00803  12.0%     -    0s
+INFO:gurobipy:     0     0    0.00803    0  271    0.00912    0.00803  12.0%     -    1s
+INFO:gurobipy:     0     0    0.00803    0  274    0.00912    0.00803  12.0%     -    1s
+INFO:gurobipy:     0     0    0.00803    0  272    0.00912    0.00803  12.0%     -    1s
+INFO:gurobipy:     0     0    0.00803    0  273    0.00912    0.00803  12.0%     -    1s
+INFO:gurobipy:     0     0    0.00803    0  273    0.00912    0.00803  12.0%     -    2s
+INFO:gurobipy:     0     2    0.00803    0  273    0.00912    0.00803  12.0%     -    2s
+INFO:gurobipy:   111   125    0.00806   12  408    0.00912    0.00803  12.0%   208    5s
+INFO:gurobipy:H  178   185                       0.0090749    0.00803  11.5%   206    6s
+INFO:gurobipy:H  185   185                       0.0090655    0.00803  11.4%   200    6s
+INFO:gurobipy:H  186   185                       0.0090230    0.00803  11.0%   199    6s
+INFO:gurobipy:H  234   238                       0.0090126    0.00803  10.9%   206    8s
+INFO:gurobipy:H  236   238                       0.0090124    0.00803  10.9%   206    8s
+INFO:gurobipy:H  237   238                       0.0090082    0.00803  10.9%   206    8s
+INFO:gurobipy:   431   442    0.00824   31  364    0.00901    0.00803  10.9%   205   10s
+INFO:gurobipy:   536   528    0.00845   39  267    0.00901    0.00803  10.9%   200   17s
+INFO:gurobipy:H  538   528                       0.0090043    0.00803  10.8%   199   17s
+INFO:gurobipy:H  543   528                       0.0090021    0.00803  10.8%   199   17s
+INFO:gurobipy:H  546   528                       0.0090015    0.00803  10.8%   199   17s
+INFO:gurobipy:   624   613    0.00846   42  258    0.00900    0.00803  10.8%   197   20s
+INFO:gurobipy:
+INFO:gurobipy:Cutting planes:
+INFO:gurobipy:  Implied bound: 1
+INFO:gurobipy:  MIR: 8
+INFO:gurobipy:  Flow cover: 5
+INFO:gurobipy:
+INFO:gurobipy:Explored 639 nodes (126047 simplex iterations) in 20.12 seconds (19.50 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 5: 0.00900147 0.00900214 0.00900434 ... 0.00912077
+INFO:gurobipy:
+INFO:gurobipy:Time limit reached
+INFO:gurobipy:Best objective 9.001466659285e-03, best bound 8.029213096952e-03, gap 10.8011%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Discarded solution information
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1724 rows, 1435 columns and 87955 nonzeros
+INFO:gurobipy:Model fingerprint: 0x4a30929e
+INFO:gurobipy:Model has 145 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [3e-05, 2e+01]
+INFO:gurobipy:  Objective range  [5e-03, 1e+00]
+INFO:gurobipy:  QObjective range [2e+03, 2e+03]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [7e-03, 3e+01]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 1.37182 (0.04s)
+INFO:gurobipy:Loaded user MIP start with objective 1.37182
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 526 rows and 263 columns
+INFO:gurobipy:Presolve time: 0.12s
+INFO:gurobipy:Presolved: 1198 rows, 1172 columns, 86926 nonzeros
+INFO:gurobipy:Presolved model has 145 quadratic objective terms
+INFO:gurobipy:Variable types: 741 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 1.290025e+00, 1177 iterations, 0.16 seconds (0.19 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    1.29002    0  428    1.37182    1.29002  5.96%     -    0s
+INFO:gurobipy:
+INFO:gurobipy:Cutting planes:
+INFO:gurobipy:  MIR: 2
+INFO:gurobipy:
+INFO:gurobipy:Explored 1 nodes (1177 simplex iterations) in 0.86 seconds (0.54 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 1: 1.37182 
+INFO:gurobipy:
+INFO:gurobipy:Optimal solution found (tolerance 5.00e-02)
+INFO:gurobipy:Best objective 1.371822101419e+00, best bound 1.304158125172e+00, gap 4.9324%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Discarded solution information
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1724 rows, 1435 columns and 87955 nonzeros
+INFO:gurobipy:Model fingerprint: 0xd64a8ccf
+INFO:gurobipy:Model has 145 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [1e-05, 2e+01]
+INFO:gurobipy:  Objective range  [2e-02, 1e+00]
+INFO:gurobipy:  QObjective range [2e+04, 2e+04]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [6e-03, 3e+01]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 1.16068 (0.04s)
+INFO:gurobipy:Loaded user MIP start with objective 1.16068
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 548 rows and 274 columns
+INFO:gurobipy:Presolve time: 0.13s
+INFO:gurobipy:Presolved: 1176 rows, 1161 columns, 86870 nonzeros
+INFO:gurobipy:Presolved model has 145 quadratic objective terms
+INFO:gurobipy:Variable types: 730 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 1.084881e+00, 963 iterations, 0.20 seconds (0.17 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    1.08488    0  414    1.16068    1.08488  6.53%     -    0s
+INFO:gurobipy:H    0     0                       1.1264834    1.08488  3.69%     -    0s
+INFO:gurobipy:
+INFO:gurobipy:Explored 1 nodes (963 simplex iterations) in 0.78 seconds (0.50 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 2: 1.12648 1.16068 
+INFO:gurobipy:
+INFO:gurobipy:Optimal solution found (tolerance 5.00e-02)
+INFO:gurobipy:Best objective 1.126483380323e+00, best bound 1.084880976800e+00, gap 3.6931%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Discarded solution information
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1724 rows, 1435 columns and 87955 nonzeros
+INFO:gurobipy:Model fingerprint: 0x90d4080c
+INFO:gurobipy:Model has 145 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [6e-06, 2e+01]
+INFO:gurobipy:  Objective range  [1e-02, 1e+00]
+INFO:gurobipy:  QObjective range [2e+04, 2e+04]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [4e-01, 3e+01]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 0.870074 (0.03s)
+INFO:gurobipy:Loaded user MIP start with objective 0.870074
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 568 rows and 284 columns
+INFO:gurobipy:Presolve time: 0.08s
+INFO:gurobipy:Presolved: 1156 rows, 1151 columns, 86817 nonzeros
+INFO:gurobipy:Presolved model has 145 quadratic objective terms
+INFO:gurobipy:Variable types: 720 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 8.190059e-01, 885 iterations, 0.15 seconds (0.17 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    0.81901    0  416    0.87007    0.81901  5.87%     -    0s
+INFO:gurobipy:
+INFO:gurobipy:Explored 1 nodes (885 simplex iterations) in 0.72 seconds (0.53 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 1: 0.870074 
+INFO:gurobipy:
+INFO:gurobipy:Optimal solution found (tolerance 5.00e-02)
+INFO:gurobipy:Best objective 8.700743199080e-01, best bound 8.385820897969e-01, gap 3.6195%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Discarded solution information
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1724 rows, 1435 columns and 87955 nonzeros
+INFO:gurobipy:Model fingerprint: 0xc0acd8d3
+INFO:gurobipy:Model has 145 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [2e-06, 2e+01]
+INFO:gurobipy:  Objective range  [1e-03, 1e+00]
+INFO:gurobipy:  QObjective range [4e+02, 4e+02]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [3e-01, 3e+01]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 0.830811 (0.02s)
+INFO:gurobipy:Loaded user MIP start with objective 0.830811
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 566 rows and 283 columns
+INFO:gurobipy:Presolve time: 0.09s
+INFO:gurobipy:Presolved: 1158 rows, 1152 columns, 86826 nonzeros
+INFO:gurobipy:Presolved model has 145 quadratic objective terms
+INFO:gurobipy:Variable types: 721 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 7.595345e-01, 891 iterations, 0.11 seconds (0.16 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    0.75953    0  395    0.83081    0.75953  8.58%     -    0s
+INFO:gurobipy:H    0     0                       0.8015795    0.75953  5.25%     -    0s
+INFO:gurobipy:
+INFO:gurobipy:Cutting planes:
+INFO:gurobipy:  MIR: 59
+INFO:gurobipy:
+INFO:gurobipy:Explored 1 nodes (891 simplex iterations) in 0.90 seconds (0.76 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 2: 0.80158 0.830811 
+INFO:gurobipy:
+INFO:gurobipy:Optimal solution found (tolerance 5.00e-02)
+INFO:gurobipy:Best objective 8.015795020216e-01, best bound 7.617633512418e-01, gap 4.9672%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1725 rows, 1435 columns and 88241 nonzeros
+INFO:gurobipy:Model fingerprint: 0x54ce34a5
+INFO:gurobipy:Model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [3e-06, 2e+01]
+INFO:gurobipy:  Objective range  [3e-04, 3e-04]
+INFO:gurobipy:  QObjective range [3e-05, 4e+02]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [3e-01, 3e+01]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 0.0765759 (0.10s)
+INFO:gurobipy:Loaded user MIP start with objective 0.0765759
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 566 rows and 283 columns
+INFO:gurobipy:Presolve time: 0.30s
+INFO:gurobipy:Presolved: 1171 rows, 1158 columns, 87134 nonzeros
+INFO:gurobipy:Presolved model has 41192 quadratic objective terms
+INFO:gurobipy:Variable types: 727 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 7.027271e-02, 899 iterations, 0.20 seconds (0.18 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    0.07027    0  407    0.07658    0.07027  8.23%     -    0s
+INFO:gurobipy:     0     0    0.07162    0  421    0.07658    0.07162  6.48%     -    1s
+INFO:gurobipy:     0     0    0.07162    0  421    0.07658    0.07162  6.48%     -    1s
+INFO:gurobipy:     0     2    0.07162    0  421    0.07658    0.07162  6.48%     -    2s
+INFO:gurobipy:H  134   118                       0.0745857    0.07231  3.04%   314    4s
+INFO:gurobipy:
+INFO:gurobipy:Explored 144 nodes (46089 simplex iterations) in 4.45 seconds (4.34 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 2: 0.0745857 0.0765759 
+INFO:gurobipy:
+INFO:gurobipy:Optimal solution found (tolerance 5.00e-02)
+INFO:gurobipy:Best objective 7.458566851219e-02, best bound 7.231481950834e-02, gap 3.0446%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1725 rows, 1435 columns and 88241 nonzeros
+INFO:gurobipy:Model fingerprint: 0x7f46347c
+INFO:gurobipy:Model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [8e-06, 4e+02]
+INFO:gurobipy:  Objective range  [2e-04, 2e-04]
+INFO:gurobipy:  QObjective range [4e-05, 4e+00]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [3e-02, 4e+02]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 0.0443723 (0.03s)
+INFO:gurobipy:Loaded user MIP start with objective 0.0443723
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 289 rows and 9 columns
+INFO:gurobipy:Presolve time: 0.12s
+INFO:gurobipy:Presolved: 1474 rows, 1445 columns, 87745 nonzeros
+INFO:gurobipy:Presolved model has 41205 quadratic objective terms
+INFO:gurobipy:Variable types: 1014 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 4.033846e-02, 1000 iterations, 0.09 seconds (0.19 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    0.04034    0  284    0.04437    0.04034  9.09%     -    0s
+INFO:gurobipy:     0     0    0.04034    0  286    0.04437    0.04034  9.09%     -    0s
+INFO:gurobipy:     0     0    0.04034    0  286    0.04437    0.04034  9.09%     -    0s
+INFO:gurobipy:     0     0    0.04034    0  287    0.04437    0.04034  9.09%     -    0s
+INFO:gurobipy:     0     0    0.04034    0  287    0.04437    0.04034  9.09%     -    0s
+INFO:gurobipy:     0     0    0.04034    0  290    0.04437    0.04034  9.09%     -    0s
+INFO:gurobipy:     0     0    0.04034    0  289    0.04437    0.04034  9.09%     -    1s
+INFO:gurobipy:     0     2    0.04034    0  289    0.04437    0.04034  9.09%     -    1s
+INFO:gurobipy:H   82    84                       0.0440923    0.04034  8.51%   225    2s
+INFO:gurobipy:H  130   146                       0.0438868    0.04034  8.09%   206    3s
+INFO:gurobipy:H  133   146                       0.0435585    0.04034  7.39%   203    3s
+INFO:gurobipy:H  175   191                       0.0433480    0.04034  6.94%   178    3s
+INFO:gurobipy:H  177   191                       0.0432852    0.04034  6.81%   176    3s
+INFO:gurobipy:   275   287    0.04039   25  406    0.04329    0.04034  6.81%   165    5s
+INFO:gurobipy:H  555   556                       0.0432406    0.04034  6.71%   144   20s
+INFO:gurobipy:
+INFO:gurobipy:Cutting planes:
+INFO:gurobipy:  Implied bound: 7
+INFO:gurobipy:  MIR: 21
+INFO:gurobipy:
+INFO:gurobipy:Explored 571 nodes (82629 simplex iterations) in 20.15 seconds (16.63 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 3: 0.0432406 0.0438868 0.0443723 
+INFO:gurobipy:
+INFO:gurobipy:Time limit reached
+INFO:gurobipy:Best objective 4.324058303081e-02, best bound 4.033845935814e-02, gap 6.7116%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1725 rows, 1435 columns and 88241 nonzeros
+INFO:gurobipy:Model fingerprint: 0xc9525286
+INFO:gurobipy:Model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [2e-05, 2e+01]
+INFO:gurobipy:  Objective range  [6e-05, 6e-05]
+INFO:gurobipy:  QObjective range [2e-04, 2e+01]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [7e-03, 3e+01]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 0.0197267 (0.03s)
+INFO:gurobipy:Loaded user MIP start with objective 0.0197267
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 280 rows and 4 columns
+INFO:gurobipy:Presolve time: 0.15s
+INFO:gurobipy:Presolved: 1459 rows, 1438 columns, 87719 nonzeros
+INFO:gurobipy:Presolved model has 41193 quadratic objective terms
+INFO:gurobipy:Variable types: 1007 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 1.843318e-02, 1272 iterations, 0.15 seconds (0.32 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    0.01843    0  409    0.01973    0.01843  6.56%     -    0s
+INFO:gurobipy:     0     0    0.01843    0  409    0.01973    0.01843  6.55%     -    0s
+INFO:gurobipy:     0     0    0.01852    0  405    0.01973    0.01852  6.10%     -    1s
+INFO:gurobipy:     0     0    0.01852    0  403    0.01973    0.01852  6.10%     -    1s
+INFO:gurobipy:     0     0    0.01852    0  407    0.01973    0.01852  6.10%     -    2s
+INFO:gurobipy:     0     0    0.01852    0  407    0.01973    0.01852  6.10%     -    2s
+INFO:gurobipy:     0     0    0.01854    0  408    0.01973    0.01854  6.00%     -    2s
+INFO:gurobipy:     0     0    0.01854    0  407    0.01973    0.01854  6.00%     -    2s
+INFO:gurobipy:     0     0    0.01854    0  407    0.01973    0.01854  6.00%     -    3s
+INFO:gurobipy:     0     2    0.01854    0  407    0.01973    0.01854  6.00%     -    3s
+INFO:gurobipy:    57    72    0.01875    6  396    0.01973    0.01858  5.79%   257    5s
+INFO:gurobipy:H  162   166                       0.0194759    0.01858  4.58%   232    6s
+INFO:gurobipy:H  173   166                       0.0194033    0.01858  4.22%   235    6s
+INFO:gurobipy:
+INFO:gurobipy:Cutting planes:
+INFO:gurobipy:  MIR: 20
+INFO:gurobipy:  Flow cover: 1
+INFO:gurobipy:
+INFO:gurobipy:Explored 177 nodes (44512 simplex iterations) in 6.67 seconds (6.41 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 3: 0.0194033 0.0194759 0.0197267 
+INFO:gurobipy:
+INFO:gurobipy:Optimal solution found (tolerance 5.00e-02)
+INFO:gurobipy:Best objective 1.940327284828e-02, best bound 1.858366635128e-02, gap 4.2241%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Discarded solution information
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1724 rows, 1435 columns and 87955 nonzeros
+INFO:gurobipy:Model fingerprint: 0xa87b9268
+INFO:gurobipy:Model has 145 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [2e-06, 2e+01]
+INFO:gurobipy:  Objective range  [9e-03, 1e+00]
+INFO:gurobipy:  QObjective range [1e+04, 1e+04]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [9e-03, 3e+01]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 1.39891 (0.02s)
+INFO:gurobipy:Loaded user MIP start with objective 1.39891
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 550 rows and 275 columns
+INFO:gurobipy:Presolve time: 0.09s
+INFO:gurobipy:Presolved: 1174 rows, 1160 columns, 86863 nonzeros
+INFO:gurobipy:Presolved model has 145 quadratic objective terms
+INFO:gurobipy:Variable types: 729 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: interrupted, 734 iterations, 0.10 seconds (0.16 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0          -    0         1.39891    1.33727  4.41%     -    0s
+INFO:gurobipy:
+INFO:gurobipy:Explored 1 nodes (734 simplex iterations) in 0.25 seconds (0.22 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 1: 1.39891 
+INFO:gurobipy:
+INFO:gurobipy:Optimal solution found (tolerance 5.00e-02)
+INFO:gurobipy:Best objective 1.398907069453e+00, best bound 1.337269239497e+00, gap 4.4061%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1725 rows, 1435 columns and 88241 nonzeros
+INFO:gurobipy:Model fingerprint: 0xbc2e1acb
+INFO:gurobipy:Model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [9e-06, 2e+03]
+INFO:gurobipy:  Objective range  [1e-04, 1e-04]
+INFO:gurobipy:  QObjective range [2e-05, 5e-01]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [3e-03, 2e+03]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 0.0364585 (0.03s)
+INFO:gurobipy:Loaded user MIP start with objective 0.0364585
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 284 rows and 5 columns
+INFO:gurobipy:Presolve time: 0.14s
+INFO:gurobipy:Presolved: 1453 rows, 1436 columns, 87700 nonzeros
+INFO:gurobipy:Presolved model has 41192 quadratic objective terms
+INFO:gurobipy:Variable types: 1006 continuous, 430 integer (430 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 3.314413e-02, 1935 iterations, 0.13 seconds (0.21 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    0.03314    0  285    0.03646    0.03314  9.09%     -    0s
+INFO:gurobipy:     0     0    0.03314    0  285    0.03646    0.03314  9.09%     -    0s
+INFO:gurobipy:     0     0    0.03314    0  287    0.03646    0.03314  9.09%     -    0s
+INFO:gurobipy:     0     0    0.03314    0  287    0.03646    0.03314  9.09%     -    0s
+INFO:gurobipy:H    0     0                       0.0354988    0.03314  6.63%     -    1s
+INFO:gurobipy:     0     0    0.03314    0  287    0.03550    0.03314  6.63%     -    1s
+INFO:gurobipy:     0     0    0.03314    0  287    0.03550    0.03314  6.63%     -    1s
+INFO:gurobipy:     0     0    0.03314    0  287    0.03550    0.03314  6.63%     -    1s
+INFO:gurobipy:     0     2    0.03314    0  287    0.03550    0.03314  6.63%     -    1s
+INFO:gurobipy:H  129   154                       0.0354174    0.03314  6.42%   289    3s
+INFO:gurobipy:   222   249    0.03320   15  356    0.03542    0.03314  6.42%   266    7s
+INFO:gurobipy:H  235   249                       0.0352799    0.03314  6.05%   265    7s
+INFO:gurobipy:H  239   249                       0.0352387    0.03314  5.94%   264    7s
+INFO:gurobipy:H  246   249                       0.0351051    0.03314  5.59%   267    7s
+INFO:gurobipy:H  420   435                       0.0349579    0.03314  5.19%   284   17s
+INFO:gurobipy:   624   662    0.03321   33  284    0.03496    0.03314  5.19%   271   20s
+INFO:gurobipy:
+INFO:gurobipy:Cutting planes:
+INFO:gurobipy:  Implied bound: 2
+INFO:gurobipy:  MIR: 3
+INFO:gurobipy:  Flow cover: 7
+INFO:gurobipy:
+INFO:gurobipy:Explored 661 nodes (176914 simplex iterations) in 20.13 seconds (21.64 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 7: 0.0349579 0.0351051 0.0352387 ... 0.0364585
+INFO:gurobipy:
+INFO:gurobipy:Time limit reached
+INFO:gurobipy:Best objective 3.495785011120e-02, best bound 3.314412835568e-02, gap 5.1883%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1725 rows, 1435 columns and 88241 nonzeros
+INFO:gurobipy:Model fingerprint: 0x122c4e93
+INFO:gurobipy:Model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [5e-06, 2e+01]
+INFO:gurobipy:  Objective range  [2e-05, 2e-05]
+INFO:gurobipy:  QObjective range [6e-05, 6e+00]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [3e-03, 3e+01]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 0.00792211 (0.04s)
+INFO:gurobipy:Loaded user MIP start with objective 0.00792211
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 281 rows and 4 columns
+INFO:gurobipy:Presolve time: 0.14s
+INFO:gurobipy:Presolved: 1444 rows, 1431 columns, 87687 nonzeros
+INFO:gurobipy:Presolved model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 1000 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 7.357730e-03, 1289 iterations, 0.23 seconds (0.38 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    0.00736    0  309    0.00792    0.00736  7.12%     -    0s
+INFO:gurobipy:     0     0    0.00736    0  306    0.00792    0.00736  7.11%     -    0s
+INFO:gurobipy:     0     0    0.00739    0  302    0.00792    0.00739  6.76%     -    1s
+INFO:gurobipy:     0     0    0.00739    0  305    0.00792    0.00739  6.68%     -    1s
+INFO:gurobipy:     0     0    0.00739    0  305    0.00792    0.00739  6.68%     -    1s
+INFO:gurobipy:     0     0    0.00740    0  301    0.00792    0.00740  6.60%     -    1s
+INFO:gurobipy:     0     0    0.00742    0  300    0.00792    0.00742  6.35%     -    2s
+INFO:gurobipy:     0     0    0.00742    0  297    0.00792    0.00742  6.35%     -    2s
+INFO:gurobipy:     0     2    0.00742    0  297    0.00792    0.00742  6.35%     -    2s
+INFO:gurobipy:    75    86    0.00742    8  348    0.00792    0.00742  6.35%   524    5s
+INFO:gurobipy:H   79    86                       0.0078439    0.00742  5.41%   524    5s
+INFO:gurobipy:H  120   136                       0.0078060    0.00742  4.95%   494    6s
+INFO:gurobipy:H  124   136                       0.0077920    0.00742  4.78%   486    6s
+INFO:gurobipy:H  129   136                       0.0077885    0.00742  4.74%   481    6s
+INFO:gurobipy:
+INFO:gurobipy:Cutting planes:
+INFO:gurobipy:  MIR: 181
+INFO:gurobipy:  Flow cover: 2
+INFO:gurobipy:
+INFO:gurobipy:Explored 139 nodes (68689 simplex iterations) in 6.59 seconds (7.97 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 4: 0.00778845 0.00780601 0.00784392 0.00792211 
+INFO:gurobipy:
+INFO:gurobipy:Optimal solution found (tolerance 5.00e-02)
+INFO:gurobipy:Best objective 7.788450102593e-03, best bound 7.419316695730e-03, gap 4.7395%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1725 rows, 1435 columns and 88241 nonzeros
+INFO:gurobipy:Model fingerprint: 0x01909ec1
+INFO:gurobipy:Model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [9e-07, 1e+03]
+INFO:gurobipy:  Objective range  [7e-06, 7e-06]
+INFO:gurobipy:  QObjective range [8e-06, 9e-01]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [4e-03, 1e+03]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 0.00375623 (0.06s)
+INFO:gurobipy:Loaded user MIP start with objective 0.00375623
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 276 rows and 4 columns
+INFO:gurobipy:Presolve time: 0.20s
+INFO:gurobipy:Presolved: 1449 rows, 1431 columns, 87702 nonzeros
+INFO:gurobipy:Presolved model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 1000 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 3.415893e-03, 2871 iterations, 0.33 seconds (0.49 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    0.00342    0  334    0.00376    0.00342  9.06%     -    0s
+INFO:gurobipy:     0     0    0.00342    0  334    0.00376    0.00342  9.06%     -    1s
+INFO:gurobipy:     0     0    0.00342    0  332    0.00376    0.00342  9.06%     -    1s
+INFO:gurobipy:     0     0    0.00342    0  331    0.00376    0.00342  9.06%     -    1s
+INFO:gurobipy:     0     0    0.00342    0  331    0.00376    0.00342  9.06%     -    1s
+INFO:gurobipy:     0     0    0.00342    0  331    0.00376    0.00342  9.06%     -    2s
+INFO:gurobipy:     0     0    0.00342    0  331    0.00376    0.00342  9.06%     -    2s
+INFO:gurobipy:     0     0    0.00342    0  331    0.00376    0.00342  9.06%     -    3s
+INFO:gurobipy:     0     0    0.00342    0  331    0.00376    0.00342  9.06%     -    3s
+INFO:gurobipy:     0     0    0.00342    0  331    0.00376    0.00342  9.06%     -    3s
+INFO:gurobipy:     0     2    0.00342    0  331    0.00376    0.00342  9.06%     -    4s
+INFO:gurobipy:H   30    36                       0.0037475    0.00342  8.85%   410    4s
+INFO:gurobipy:H   39    36                       0.0037460    0.00342  8.81%   446    4s
+INFO:gurobipy:    43    50    0.00342    6  304    0.00375    0.00342  8.81%   441    5s
+INFO:gurobipy:H  117   124                       0.0037436    0.00342  8.75%   400    6s
+INFO:gurobipy:H  118   124                       0.0036445    0.00342  6.27%   399    6s
+INFO:gurobipy:H  156   157                       0.0036443    0.00342  6.27%   356    6s
+INFO:gurobipy:H  159   157                       0.0036389    0.00342  6.13%   353    6s
+INFO:gurobipy:H  163   157                       0.0036315    0.00342  5.94%   352    6s
+INFO:gurobipy:H  196   189                       0.0036311    0.00342  5.93%   336    7s
+INFO:gurobipy:H  201   189                       0.0036311    0.00342  5.93%   340    7s
+INFO:gurobipy:H  208   189                       0.0036311    0.00342  5.93%   335    7s
+INFO:gurobipy:H  214   189                       0.0036311    0.00342  5.93%   332    7s
+INFO:gurobipy:H  293   281                       0.0036225    0.00342  5.70%   311    8s
+INFO:gurobipy:H  294   281                       0.0036145    0.00342  5.49%   311    8s
+INFO:gurobipy:H  295   281                       0.0036134    0.00342  5.47%   310    8s
+INFO:gurobipy:H  300   281                       0.0036049    0.00342  5.24%   312    8s
+INFO:gurobipy:H  343   319                       0.0035883    0.00342  4.80%   304    9s
+INFO:gurobipy:
+INFO:gurobipy:Cutting planes:
+INFO:gurobipy:  Implied bound: 9
+INFO:gurobipy:  MIR: 15
+INFO:gurobipy:  Flow cover: 5
+INFO:gurobipy:
+INFO:gurobipy:Explored 357 nodes (110816 simplex iterations) in 9.60 seconds (9.77 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 10: 0.00358827 0.00360491 0.0036134 ... 0.00374754
+INFO:gurobipy:
+INFO:gurobipy:Optimal solution found (tolerance 5.00e-02)
+INFO:gurobipy:Best objective 3.588269854035e-03, best bound 3.415905419052e-03, gap 4.8036%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1725 rows, 1435 columns and 88241 nonzeros
+INFO:gurobipy:Model fingerprint: 0x2a33d18f
+INFO:gurobipy:Model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [8e-06, 2e+03]
+INFO:gurobipy:  Objective range  [2e-05, 2e-05]
+INFO:gurobipy:  QObjective range [2e-06, 9e-01]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [3e-03, 2e+03]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 0.0073282 (0.06s)
+INFO:gurobipy:Loaded user MIP start with objective 0.0073282
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 319 rows and 50 columns
+INFO:gurobipy:Presolve time: 0.18s
+INFO:gurobipy:Presolved: 1410 rows, 1387 columns, 87345 nonzeros
+INFO:gurobipy:Presolved model has 41188 quadratic objective terms
+INFO:gurobipy:Variable types: 956 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 6.662172e-03, 1874 iterations, 0.14 seconds (0.26 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    0.00666    0  173    0.00733    0.00666  9.09%     -    0s
+INFO:gurobipy:H    0     0                       0.0072902    0.00666  8.61%     -    0s
+INFO:gurobipy:     0     0    0.00666    0  173    0.00729    0.00666  8.61%     -    1s
+INFO:gurobipy:     0     0    0.00666    0  173    0.00729    0.00666  8.61%     -    1s
+INFO:gurobipy:     0     0    0.00666    0  173    0.00729    0.00666  8.61%     -    1s
+INFO:gurobipy:     0     0    0.00666    0  173    0.00729    0.00666  8.61%     -    2s
+INFO:gurobipy:     0     0    0.00666    0  173    0.00729    0.00666  8.61%     -    2s
+INFO:gurobipy:     0     0    0.00666    0  173    0.00729    0.00666  8.61%     -    2s
+INFO:gurobipy:     0     0    0.00666    0  173    0.00729    0.00666  8.61%     -    2s
+INFO:gurobipy:     0     0    0.00666    0  173    0.00729    0.00666  8.61%     -    3s
+INFO:gurobipy:     0     0    0.00666    0  173    0.00729    0.00666  8.61%     -    3s
+INFO:gurobipy:     0     2    0.00666    0  173    0.00729    0.00666  8.61%     -    3s
+INFO:gurobipy:H   30    44                       0.0072757    0.00666  8.43%   415    4s
+INFO:gurobipy:    71    86    0.00712    8  160    0.00728    0.00666  8.43%   344    5s
+INFO:gurobipy:H  113   129                       0.0072593    0.00666  8.23%   345    5s
+INFO:gurobipy:H  114   129                       0.0071848    0.00666  7.27%   347    5s
+INFO:gurobipy:H  119   129                       0.0071684    0.00666  7.06%   355    5s
+INFO:gurobipy:H  169   177                       0.0071366    0.00666  6.65%   335    6s
+INFO:gurobipy:H  179   177                       0.0071364    0.00666  6.65%   338    6s
+INFO:gurobipy:H  224   234                       0.0071364    0.00666  6.64%   335    9s
+INFO:gurobipy:H  246   248                       0.0070312    0.00666  5.25%   332   13s
+INFO:gurobipy:H  248   248                       0.0069962    0.00666  4.77%   333   13s
+INFO:gurobipy:H  250   248                       0.0069404    0.00666  4.01%   333   13s
+INFO:gurobipy:
+INFO:gurobipy:Cutting planes:
+INFO:gurobipy:  Implied bound: 4
+INFO:gurobipy:  MIR: 6
+INFO:gurobipy:  Flow cover: 6
+INFO:gurobipy:
+INFO:gurobipy:Explored 260 nodes (87665 simplex iterations) in 14.04 seconds (10.08 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 10: 0.00694035 0.00699615 0.00703117 ... 0.0073282
+INFO:gurobipy:
+INFO:gurobipy:Optimal solution found (tolerance 5.00e-02)
+INFO:gurobipy:Best objective 6.940350308643e-03, best bound 6.662174779389e-03, gap 4.0081%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1725 rows, 1435 columns and 88241 nonzeros
+INFO:gurobipy:Model fingerprint: 0xe27ceca2
+INFO:gurobipy:Model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [4e-06, 2e+01]
+INFO:gurobipy:  Objective range  [3e-04, 3e-04]
+INFO:gurobipy:  QObjective range [1e-02, 8e+01]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [2e-03, 3e+01]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 0.105123 (0.03s)
+INFO:gurobipy:Loaded user MIP start with objective 0.105123
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 293 rows and 24 columns
+INFO:gurobipy:Presolve time: 0.12s
+INFO:gurobipy:Presolved: 1438 rows, 1414 columns, 87684 nonzeros
+INFO:gurobipy:Presolved model has 41189 quadratic objective terms
+INFO:gurobipy:Variable types: 983 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: interrupted, 781 iterations, 0.09 seconds (0.22 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0          -    0         0.10512    0.09996  4.92%     -    0s
+INFO:gurobipy:
+INFO:gurobipy:Explored 1 nodes (781 simplex iterations) in 0.29 seconds (0.37 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 1: 0.105123 
+INFO:gurobipy:
+INFO:gurobipy:Optimal solution found (tolerance 5.00e-02)
+INFO:gurobipy:Best objective 1.051229214189e-01, best bound 9.995532018473e-02, gap 4.9158%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Discarded solution information
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1724 rows, 1435 columns and 87955 nonzeros
+INFO:gurobipy:Model fingerprint: 0xf9aeeb2c
+INFO:gurobipy:Model has 145 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [3e-06, 3e+02]
+INFO:gurobipy:  Objective range  [7e-03, 1e+00]
+INFO:gurobipy:  QObjective range [3e-02, 3e-02]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [2e-03, 3e+02]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 0.981039 (0.04s)
+INFO:gurobipy:Loaded user MIP start with objective 0.981039
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 538 rows and 269 columns
+INFO:gurobipy:Presolve time: 0.13s
+INFO:gurobipy:Presolved: 1186 rows, 1166 columns, 86895 nonzeros
+INFO:gurobipy:Presolved model has 145 quadratic objective terms
+INFO:gurobipy:Variable types: 735 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 8.918532e-01, 643 iterations, 0.09 seconds (0.09 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    0.89185    0  280    0.98104    0.89185  9.09%     -    0s
+INFO:gurobipy:     0     0    0.89185    0  279    0.98104    0.89185  9.09%     -    0s
+INFO:gurobipy:     0     2    0.89185    0  279    0.98104    0.89185  9.09%     -    1s
+INFO:gurobipy:   172   185    0.92870   16  347    0.98104    0.89185  9.09%  57.6    5s
+INFO:gurobipy:   241   254    0.92871   21  345    0.98104    0.89185  9.09%  47.0   10s
+INFO:gurobipy:H  242   254                       0.9773444    0.89185  8.75%  46.9   10s
+INFO:gurobipy:H  251   254                       0.9764476    0.89185  8.66%  45.3   10s
+INFO:gurobipy:  2275  1968    0.97617   82  115    0.97645    0.89185  8.66%  56.2   15s
+INFO:gurobipy:  2426  2010    0.96441   19  320    0.97645    0.89185  8.66%  57.7   20s
+INFO:gurobipy:
+INFO:gurobipy:Cutting planes:
+INFO:gurobipy:  MIR: 2
+INFO:gurobipy:  Flow cover: 4
+INFO:gurobipy:
+INFO:gurobipy:Explored 2438 nodes (141540 simplex iterations) in 20.06 seconds (17.35 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 3: 0.976448 0.977344 0.981039 
+INFO:gurobipy:
+INFO:gurobipy:Time limit reached
+INFO:gurobipy:Best objective 9.764476067237e-01, best bound 8.918532316147e-01, gap 8.6635%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1725 rows, 1435 columns and 88241 nonzeros
+INFO:gurobipy:Model fingerprint: 0x55e2c825
+INFO:gurobipy:Model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [6e-06, 3e+02]
+INFO:gurobipy:  Objective range  [5e-04, 5e-04]
+INFO:gurobipy:  QObjective range [4e-03, 9e+00]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [2e-02, 3e+02]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 0.126079 (0.03s)
+INFO:gurobipy:Loaded user MIP start with objective 0.126079
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 302 rows and 24 columns
+INFO:gurobipy:Presolve time: 0.13s
+INFO:gurobipy:Presolved: 1425 rows, 1412 columns, 87649 nonzeros
+INFO:gurobipy:Presolved model has 41187 quadratic objective terms
+INFO:gurobipy:Variable types: 981 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 1.146176e-01, 1317 iterations, 0.10 seconds (0.16 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    0.11462    0  279    0.12608    0.11462  9.09%     -    0s
+INFO:gurobipy:     0     0    0.11462    0  291    0.12608    0.11462  9.09%     -    0s
+INFO:gurobipy:     0     0    0.11462    0  286    0.12608    0.11462  9.09%     -    0s
+INFO:gurobipy:     0     0    0.11462    0  282    0.12608    0.11462  9.09%     -    1s
+INFO:gurobipy:     0     0    0.11462    0  282    0.12608    0.11462  9.09%     -    1s
+INFO:gurobipy:     0     0    0.11462    0  285    0.12608    0.11462  9.09%     -    1s
+INFO:gurobipy:     0     0    0.11462    0  285    0.12608    0.11462  9.09%     -    1s
+INFO:gurobipy:     0     0    0.11462    0  286    0.12608    0.11462  9.09%     -    1s
+INFO:gurobipy:     0     0    0.11462    0  286    0.12608    0.11462  9.09%     -    1s
+INFO:gurobipy:     0     0    0.11462    0  286    0.12608    0.11462  9.09%     -    1s
+INFO:gurobipy:     0     2    0.11462    0  286    0.12608    0.11462  9.09%     -    1s
+INFO:gurobipy:H  115   121                       0.1247906    0.11462  8.15%  29.7    3s
+INFO:gurobipy:   214   217     cutoff   17         0.12479    0.11462  8.15%  48.2    8s
+INFO:gurobipy:H  217   217                       0.1247878    0.11462  8.15%  48.8    8s
+INFO:gurobipy:   324   320    0.12305   25  332    0.12479    0.11462  8.15%  49.4   18s
+INFO:gurobipy:H  326   320                       0.1245630    0.11462  7.98%  49.1   18s
+INFO:gurobipy:H  334   320                       0.1245331    0.11462  7.96%  50.0   18s
+INFO:gurobipy:   596   544    0.11593   19  372    0.12453    0.11462  7.96%  61.7   20s
+INFO:gurobipy:
+INFO:gurobipy:Cutting planes:
+INFO:gurobipy:  Implied bound: 2
+INFO:gurobipy:  MIR: 27
+INFO:gurobipy:  Flow cover: 4
+INFO:gurobipy:
+INFO:gurobipy:Explored 643 nodes (41016 simplex iterations) in 20.22 seconds (14.21 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 4: 0.124533 0.124563 0.124788 0.126079 
+INFO:gurobipy:
+INFO:gurobipy:Time limit reached
+INFO:gurobipy:Best objective 1.245330596754e-01, best bound 1.146175997070e-01, gap 7.9621%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Discarded solution information
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1724 rows, 1435 columns and 87955 nonzeros
+INFO:gurobipy:Model fingerprint: 0x941255eb
+INFO:gurobipy:Model has 145 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [5e-06, 1e+03]
+INFO:gurobipy:  Objective range  [2e-03, 1e+00]
+INFO:gurobipy:  QObjective range [2e-03, 2e-03]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [1e-02, 1e+03]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 1.17199 (0.02s)
+INFO:gurobipy:Loaded user MIP start with objective 1.17199
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 552 rows and 276 columns
+INFO:gurobipy:Presolve time: 0.09s
+INFO:gurobipy:Presolved: 1172 rows, 1159 columns, 86860 nonzeros
+INFO:gurobipy:Presolved model has 145 quadratic objective terms
+INFO:gurobipy:Variable types: 728 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 1.065444e+00, 663 iterations, 0.05 seconds (0.09 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    1.06544    0  275    1.17199    1.06544  9.09%     -    0s
+INFO:gurobipy:H    0     0                       1.1612338    1.06544  8.25%     -    0s
+INFO:gurobipy:     0     0    1.06544    0  278    1.16123    1.06544  8.25%     -    0s
+INFO:gurobipy:H    0     0                       1.1101086    1.06544  4.02%     -    0s
+INFO:gurobipy:
+INFO:gurobipy:Cutting planes:
+INFO:gurobipy:  MIR: 3
+INFO:gurobipy:
+INFO:gurobipy:Explored 1 nodes (676 simplex iterations) in 0.62 seconds (0.60 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 3: 1.11011 1.16123 1.17199 
+INFO:gurobipy:
+INFO:gurobipy:Optimal solution found (tolerance 5.00e-02)
+INFO:gurobipy:Best objective 1.110108631665e+00, best bound 1.065443876976e+00, gap 4.0235%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1725 rows, 1435 columns and 88241 nonzeros
+INFO:gurobipy:Model fingerprint: 0x8fe7eb7b
+INFO:gurobipy:Model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [1e-06, 2e+01]
+INFO:gurobipy:  Objective range  [2e-03, 2e-03]
+INFO:gurobipy:  QObjective range [2e-02, 3e+02]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [7e-02, 3e+01]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 0.430562 (0.03s)
+INFO:gurobipy:Loaded user MIP start with objective 0.430562
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 371 rows and 91 columns
+INFO:gurobipy:Presolve time: 0.12s
+INFO:gurobipy:Presolved: 1358 rows, 1346 columns, 87513 nonzeros
+INFO:gurobipy:Presolved model has 41188 quadratic objective terms
+INFO:gurobipy:Variable types: 915 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 4.077088e-01, 1060 iterations, 0.12 seconds (0.22 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    0.40771    0  424    0.43056    0.40771  5.31%     -    0s
+INFO:gurobipy:
+INFO:gurobipy:Cutting planes:
+INFO:gurobipy:  MIR: 53
+INFO:gurobipy:  Flow cover: 1
+INFO:gurobipy:
+INFO:gurobipy:Explored 1 nodes (1060 simplex iterations) in 0.89 seconds (0.71 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 1: 0.430562 
+INFO:gurobipy:
+INFO:gurobipy:Optimal solution found (tolerance 5.00e-02)
+INFO:gurobipy:Best objective 4.305615224971e-01, best bound 4.098006648875e-01, gap 4.8218%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1725 rows, 1435 columns and 88241 nonzeros
+INFO:gurobipy:Model fingerprint: 0xca03c749
+INFO:gurobipy:Model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [5e-05, 2e+02]
+INFO:gurobipy:  Objective range  [8e-04, 8e-04]
+INFO:gurobipy:  QObjective range [5e-03, 3e+00]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [6e-02, 2e+02]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 0.127336 (0.04s)
+INFO:gurobipy:Loaded user MIP start with objective 0.127336
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 289 rows and 12 columns
+INFO:gurobipy:Presolve time: 0.14s
+INFO:gurobipy:Presolved: 1444 rows, 1427 columns, 87688 nonzeros
+INFO:gurobipy:Presolved model has 41190 quadratic objective terms
+INFO:gurobipy:Variable types: 996 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 1.157603e-01, 773 iterations, 0.07 seconds (0.10 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    0.11576    0  282    0.12734    0.11576  9.09%     -    0s
+INFO:gurobipy:     0     0    0.11576    0  283    0.12734    0.11576  9.09%     -    0s
+INFO:gurobipy:     0     0    0.11576    0  283    0.12734    0.11576  9.09%     -    0s
+INFO:gurobipy:     0     0    0.11576    0  283    0.12734    0.11576  9.09%     -    0s
+INFO:gurobipy:     0     0    0.11576    0  283    0.12734    0.11576  9.09%     -    1s
+INFO:gurobipy:     0     0    0.11576    0  283    0.12734    0.11576  9.09%     -    1s
+INFO:gurobipy:     0     0    0.11576    0  283    0.12734    0.11576  9.09%     -    1s
+INFO:gurobipy:     0     0    0.11576    0  283    0.12734    0.11576  9.09%     -    1s
+INFO:gurobipy:     0     0    0.11576    0  283    0.12734    0.11576  9.09%     -    1s
+INFO:gurobipy:     0     0    0.11576    0  284    0.12734    0.11576  9.09%     -    1s
+INFO:gurobipy:     0     2    0.11576    0  284    0.12734    0.11576  9.09%     -    1s
+INFO:gurobipy:H  121   112                       0.1253949    0.11576  7.68%  95.0    2s
+INFO:gurobipy:H  127   112                       0.1253918    0.11576  7.68%  93.1    2s
+INFO:gurobipy:   173   140    0.11646   16  392    0.12539    0.11576  7.68%  79.5    6s
+INFO:gurobipy:H  174   140                       0.1252626    0.11576  7.59%  79.1    6s
+INFO:gurobipy:   309   273    0.11714   24  373    0.12526    0.11576  7.59%  61.6   12s
+INFO:gurobipy:  1266  1050     cutoff   46         0.12526    0.11576  7.59%  53.5   16s
+INFO:gurobipy:
+INFO:gurobipy:Cutting planes:
+INFO:gurobipy:  Implied bound: 3
+INFO:gurobipy:  MIR: 29
+INFO:gurobipy:  Flow cover: 5
+INFO:gurobipy:
+INFO:gurobipy:Explored 2326 nodes (121489 simplex iterations) in 20.07 seconds (20.35 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 3: 0.125263 0.125392 0.127336 
+INFO:gurobipy:
+INFO:gurobipy:Time limit reached
+INFO:gurobipy:Best objective 1.252626481620e-01, best bound 1.157602849693e-01, gap 7.5860%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1725 rows, 1435 columns and 88241 nonzeros
+INFO:gurobipy:Model fingerprint: 0x2aa82447
+INFO:gurobipy:Model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [3e-06, 2e+01]
+INFO:gurobipy:  Objective range  [2e-04, 2e-04]
+INFO:gurobipy:  QObjective range [2e-03, 5e+01]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [3e-02, 3e+01]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 0.0426802 (0.03s)
+INFO:gurobipy:Loaded user MIP start with objective 0.0426802
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 346 rows and 68 columns
+INFO:gurobipy:Presolve time: 0.12s
+INFO:gurobipy:Presolved: 1379 rows, 1367 columns, 87557 nonzeros
+INFO:gurobipy:Presolved model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 936 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 4.030567e-02, 1050 iterations, 0.10 seconds (0.25 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    0.04031    0  423    0.04268    0.04031  5.56%     -    0s
+INFO:gurobipy:
+INFO:gurobipy:Cutting planes:
+INFO:gurobipy:  Implied bound: 2
+INFO:gurobipy:  MIR: 3
+INFO:gurobipy:  Flow cover: 1
+INFO:gurobipy:
+INFO:gurobipy:Explored 1 nodes (1050 simplex iterations) in 0.70 seconds (0.67 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 1: 0.0426802 
+INFO:gurobipy:
+INFO:gurobipy:Optimal solution found (tolerance 5.00e-02)
+INFO:gurobipy:Best objective 4.268017704929e-02, best bound 4.060312207620e-02, gap 4.8666%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1725 rows, 1435 columns and 88241 nonzeros
+INFO:gurobipy:Model fingerprint: 0x21e93c6b
+INFO:gurobipy:Model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [2e-05, 2e+02]
+INFO:gurobipy:  Objective range  [3e-04, 3e-04]
+INFO:gurobipy:  QObjective range [5e-03, 4e+00]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [3e-03, 2e+02]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 0.0594386 (0.03s)
+INFO:gurobipy:Loaded user MIP start with objective 0.0594386
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 316 rows and 41 columns
+INFO:gurobipy:Presolve time: 0.11s
+INFO:gurobipy:Presolved: 1409 rows, 1394 columns, 87620 nonzeros
+INFO:gurobipy:Presolved model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 963 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 5.403505e-02, 681 iterations, 0.07 seconds (0.16 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    0.05404    0  281    0.05944    0.05404  9.09%     -    0s
+INFO:gurobipy:     0     0    0.05404    0  281    0.05944    0.05404  9.09%     -    0s
+INFO:gurobipy:     0     0    0.05404    0  281    0.05944    0.05404  9.09%     -    0s
+INFO:gurobipy:     0     0    0.05404    0  281    0.05944    0.05404  9.09%     -    0s
+INFO:gurobipy:     0     0    0.05404    0  287    0.05944    0.05404  9.09%     -    0s
+INFO:gurobipy:     0     0    0.05404    0  281    0.05944    0.05404  9.09%     -    0s
+INFO:gurobipy:     0     0    0.05404    0  283    0.05944    0.05404  9.09%     -    0s
+INFO:gurobipy:     0     0    0.05404    0  283    0.05944    0.05404  9.09%     -    1s
+INFO:gurobipy:     0     2    0.05404    0  283    0.05944    0.05404  9.09%     -    1s
+INFO:gurobipy:H  116   121                       0.0587491    0.05404  8.02%   151    4s
+INFO:gurobipy:H  155   161                       0.0587453    0.05404  8.02%   135    7s
+INFO:gurobipy:H  161   161                       0.0584853    0.05404  7.61%   132    7s
+INFO:gurobipy:H  646   606                       0.0582888    0.05404  7.30%  83.5   17s
+INFO:gurobipy:  1677  1358    0.05803   25  323    0.05829    0.05404  7.30%  67.4   20s
+INFO:gurobipy:
+INFO:gurobipy:Cutting planes:
+INFO:gurobipy:  Implied bound: 3
+INFO:gurobipy:  MIR: 34
+INFO:gurobipy:  Flow cover: 3
+INFO:gurobipy:
+INFO:gurobipy:Explored 1726 nodes (115841 simplex iterations) in 20.08 seconds (20.16 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 4: 0.0582888 0.0584853 0.0587453 0.0594386 
+INFO:gurobipy:
+INFO:gurobipy:Time limit reached
+INFO:gurobipy:Best objective 5.828882713770e-02, best bound 5.403505469455e-02, gap 7.2977%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1725 rows, 1435 columns and 88241 nonzeros
+INFO:gurobipy:Model fingerprint: 0xd0f10018
+INFO:gurobipy:Model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [3e-05, 2e+02]
+INFO:gurobipy:  Objective range  [1e-03, 1e-03]
+INFO:gurobipy:  QObjective range [1e-03, 7e+00]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [5e-02, 2e+02]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 0.097942 (0.03s)
+INFO:gurobipy:Loaded user MIP start with objective 0.097942
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 318 rows and 41 columns
+INFO:gurobipy:Presolve time: 0.11s
+INFO:gurobipy:Presolved: 1409 rows, 1395 columns, 87618 nonzeros
+INFO:gurobipy:Presolved model has 41187 quadratic objective terms
+INFO:gurobipy:Variable types: 964 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 8.903814e-02, 691 iterations, 0.05 seconds (0.10 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    0.08904    0  280    0.09794    0.08904  9.09%     -    0s
+INFO:gurobipy:     0     0    0.08904    0  279    0.09794    0.08904  9.09%     -    0s
+INFO:gurobipy:     0     0    0.08904    0  280    0.09794    0.08904  9.09%     -    0s
+INFO:gurobipy:     0     0    0.08904    0  280    0.09794    0.08904  9.09%     -    0s
+INFO:gurobipy:     0     0    0.08904    0  283    0.09794    0.08904  9.09%     -    0s
+INFO:gurobipy:     0     0    0.08904    0  282    0.09794    0.08904  9.09%     -    0s
+INFO:gurobipy:     0     0    0.08904    0  282    0.09794    0.08904  9.09%     -    0s
+INFO:gurobipy:     0     0    0.08904    0  282    0.09794    0.08904  9.09%     -    0s
+INFO:gurobipy:     0     2    0.08904    0  282    0.09794    0.08904  9.09%     -    0s
+INFO:gurobipy:   197   204    0.08913   16  405    0.09794    0.08904  9.09%  51.1    6s
+INFO:gurobipy:  1807  1458    0.09334   19  348    0.09794    0.08904  9.09%  66.2   10s
+INFO:gurobipy:  2298  1761    0.09721   37  281    0.09794    0.08904  9.09%  64.6   15s
+INFO:gurobipy:  2472  1882    0.08940   22  269    0.09794    0.08904  9.09%  66.8   20s
+INFO:gurobipy:
+INFO:gurobipy:Cutting planes:
+INFO:gurobipy:  MIR: 3
+INFO:gurobipy:  Flow cover: 3
+INFO:gurobipy:
+INFO:gurobipy:Explored 2486 nodes (166658 simplex iterations) in 20.14 seconds (20.94 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 1: 0.097942 
+INFO:gurobipy:
+INFO:gurobipy:Time limit reached
+INFO:gurobipy:Best objective 9.794195205839e-02, best bound 8.903942955595e-02, gap 9.0896%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Discarded solution information
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1724 rows, 1435 columns and 87955 nonzeros
+INFO:gurobipy:Model fingerprint: 0x0981e76a
+INFO:gurobipy:Model has 145 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [2e-05, 2e+01]
+INFO:gurobipy:  Objective range  [1e-03, 1e+00]
+INFO:gurobipy:  QObjective range [5e+01, 5e+01]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [5e-03, 3e+01]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 0.902436 (0.02s)
+INFO:gurobipy:Loaded user MIP start with objective 0.902436
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 552 rows and 276 columns
+INFO:gurobipy:Presolve time: 0.06s
+INFO:gurobipy:Presolved: 1172 rows, 1159 columns, 86860 nonzeros
+INFO:gurobipy:Presolved model has 145 quadratic objective terms
+INFO:gurobipy:Variable types: 728 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 8.257340e-01, 1013 iterations, 0.07 seconds (0.17 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    0.82573    0  425    0.90244    0.82573  8.50%     -    0s
+INFO:gurobipy:H    0     0                       0.8782578    0.82573  5.98%     -    0s
+INFO:gurobipy:     0     0    0.82741    0  424    0.87826    0.82741  5.79%     -    0s
+INFO:gurobipy:     0     0    0.82741    0  285    0.87826    0.82741  5.79%     -    1s
+INFO:gurobipy:     0     0    0.82741    0  293    0.87826    0.82741  5.79%     -    1s
+INFO:gurobipy:     0     0    0.82741    0  293    0.87826    0.82741  5.79%     -    1s
+INFO:gurobipy:     0     0    0.82741    0  292    0.87826    0.82741  5.79%     -    2s
+INFO:gurobipy:H    0     0                       0.8438373    0.82741  1.95%     -    2s
+INFO:gurobipy:     0     0    0.82741    0  268    0.84384    0.82741  1.95%     -    2s
+INFO:gurobipy:
+INFO:gurobipy:Cutting planes:
+INFO:gurobipy:  Gomory: 63
+INFO:gurobipy:  MIR: 5
+INFO:gurobipy:  Flow cover: 1
+INFO:gurobipy:
+INFO:gurobipy:Explored 1 nodes (3332 simplex iterations) in 2.45 seconds (1.82 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 3: 0.843837 0.878258 0.902436 
+INFO:gurobipy:
+INFO:gurobipy:Optimal solution found (tolerance 5.00e-02)
+INFO:gurobipy:Best objective 8.438372557129e-01, best bound 8.274063815979e-01, gap 1.9472%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1725 rows, 1435 columns and 88241 nonzeros
+INFO:gurobipy:Model fingerprint: 0x5efe0ae3
+INFO:gurobipy:Model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [3e-06, 2e+02]
+INFO:gurobipy:  Objective range  [1e-03, 1e-03]
+INFO:gurobipy:  QObjective range [6e-03, 3e+00]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [2e-02, 2e+02]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 0.170338 (0.05s)
+INFO:gurobipy:Loaded user MIP start with objective 0.170338
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 384 rows and 103 columns
+INFO:gurobipy:Presolve time: 0.19s
+INFO:gurobipy:Presolved: 1341 rows, 1332 columns, 87477 nonzeros
+INFO:gurobipy:Presolved model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 901 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 1.548523e-01, 719 iterations, 0.07 seconds (0.10 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    0.15485    0  283    0.17034    0.15485  9.09%     -    0s
+INFO:gurobipy:     0     0    0.15485    0  284    0.17034    0.15485  9.09%     -    0s
+INFO:gurobipy:     0     0    0.15485    0  284    0.17034    0.15485  9.09%     -    0s
+INFO:gurobipy:     0     0    0.15485    0  285    0.17034    0.15485  9.09%     -    1s
+INFO:gurobipy:     0     0    0.15485    0  285    0.17034    0.15485  9.09%     -    1s
+INFO:gurobipy:     0     0    0.15485    0  285    0.17034    0.15485  9.09%     -    1s
+INFO:gurobipy:     0     2    0.15485    0  285    0.17034    0.15485  9.09%     -    1s
+INFO:gurobipy:H  119   132                       0.1698993    0.15485  8.86%   112    2s
+INFO:gurobipy:H  257   273                       0.1697457    0.15485  8.77%  79.5    4s
+INFO:gurobipy:H  263   273                       0.1682241    0.15485  7.95%  78.6    4s
+INFO:gurobipy:   437   452    0.16021   22  227    0.16822    0.15485  7.95%  73.4    5s
+INFO:gurobipy:H  468   465                       0.1673771    0.15485  7.48%  72.2    9s
+INFO:gurobipy:   481   474    0.16065   24  234    0.16738    0.15485  7.48%  72.5   14s
+INFO:gurobipy:   574   561    0.16170   28  221    0.16738    0.15485  7.48%  69.1   15s
+INFO:gurobipy:  2043  1558    0.15658   23  397    0.16738    0.15485  7.48%  52.8   20s
+INFO:gurobipy:
+INFO:gurobipy:Cutting planes:
+INFO:gurobipy:  Implied bound: 2
+INFO:gurobipy:  MIR: 11
+INFO:gurobipy:  Flow cover: 2
+INFO:gurobipy:
+INFO:gurobipy:Explored 2100 nodes (111770 simplex iterations) in 20.36 seconds (13.75 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 5: 0.167377 0.168224 0.169746 ... 0.170338
+INFO:gurobipy:
+INFO:gurobipy:Time limit reached
+INFO:gurobipy:Best objective 1.673770554281e-01, best bound 1.548523078686e-01, gap 7.4830%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1725 rows, 1435 columns and 88241 nonzeros
+INFO:gurobipy:Model fingerprint: 0x81cbf65a
+INFO:gurobipy:Model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [1e-06, 8e+01]
+INFO:gurobipy:  Objective range  [8e-04, 8e-04]
+INFO:gurobipy:  QObjective range [2e-05, 1e+00]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [3e-02, 8e+01]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 0.103715 (0.05s)
+INFO:gurobipy:Loaded user MIP start with objective 0.103715
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 454 rows and 174 columns
+INFO:gurobipy:Presolve time: 0.20s
+INFO:gurobipy:Presolved: 1277 rows, 1264 columns, 87350 nonzeros
+INFO:gurobipy:Presolved model has 41189 quadratic objective terms
+INFO:gurobipy:Variable types: 833 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 9.428658e-02, 724 iterations, 0.08 seconds (0.10 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    0.09429    0  283    0.10372    0.09429  9.09%     -    0s
+INFO:gurobipy:     0     0    0.09429    0  283    0.10372    0.09429  9.09%     -    1s
+INFO:gurobipy:     0     0    0.09429    0  283    0.10372    0.09429  9.09%     -    1s
+INFO:gurobipy:     0     0    0.09429    0  283    0.10372    0.09429  9.09%     -    1s
+INFO:gurobipy:     0     0    0.09429    0  282    0.10372    0.09429  9.09%     -    1s
+INFO:gurobipy:     0     0    0.09429    0  282    0.10372    0.09429  9.09%     -    1s
+INFO:gurobipy:     0     0    0.09429    0  282    0.10372    0.09429  9.09%     -    1s
+INFO:gurobipy:     0     0    0.09429    0  284    0.10372    0.09429  9.09%     -    2s
+INFO:gurobipy:     0     0    0.09429    0  284    0.10372    0.09429  9.09%     -    2s
+INFO:gurobipy:     0     0    0.09429    0  284    0.10372    0.09429  9.09%     -    2s
+INFO:gurobipy:     0     2    0.09429    0  284    0.10372    0.09429  9.09%     -    2s
+INFO:gurobipy:    27    28    0.09514    5  422    0.10372    0.09429  9.09%   365    5s
+INFO:gurobipy:H  126   113                       0.1034661    0.09429  8.87%   161    6s
+INFO:gurobipy:H  160   157                       0.1030691    0.09429  8.52%   142   10s
+INFO:gurobipy:   329   290    0.10023   18  404    0.10307    0.09429  8.52%  97.9   17s
+INFO:gurobipy:  1524   999    0.09580    9  414    0.10307    0.09429  8.52%  56.7   20s
+INFO:gurobipy:
+INFO:gurobipy:Cutting planes:
+INFO:gurobipy:  Implied bound: 1
+INFO:gurobipy:  MIR: 13
+INFO:gurobipy:  Flow cover: 2
+INFO:gurobipy:
+INFO:gurobipy:Explored 1601 nodes (90948 simplex iterations) in 20.07 seconds (13.47 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 2: 0.103069 0.103715 
+INFO:gurobipy:
+INFO:gurobipy:Time limit reached
+INFO:gurobipy:Best objective 1.030691163157e-01, best bound 9.428657889858e-02, gap 8.5210%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1725 rows, 1435 columns and 88241 nonzeros
+INFO:gurobipy:Model fingerprint: 0x2bae78a6
+INFO:gurobipy:Model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [2e-06, 2e+01]
+INFO:gurobipy:  Objective range  [8e-05, 8e-05]
+INFO:gurobipy:  QObjective range [3e-05, 9e+01]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [4e-02, 3e+01]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 0.0202595 (0.05s)
+INFO:gurobipy:Loaded user MIP start with objective 0.0202595
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 437 rows and 157 columns
+INFO:gurobipy:Presolve time: 0.30s
+INFO:gurobipy:Presolved: 1288 rows, 1278 columns, 87373 nonzeros
+INFO:gurobipy:Presolved model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 847 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 1.882091e-02, 1211 iterations, 0.33 seconds (0.25 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    0.01882    0  409    0.02026    0.01882  7.10%     -    1s
+INFO:gurobipy:     0     0    0.01905    0  407    0.02026    0.01905  5.98%     -    1s
+INFO:gurobipy:     0     0    0.01905    0  407    0.02026    0.01905  5.98%     -    2s
+INFO:gurobipy:     0     0    0.01905    0  407    0.02026    0.01905  5.98%     -    2s
+INFO:gurobipy:     0     0    0.01905    0  407    0.02026    0.01905  5.98%     -    3s
+INFO:gurobipy:     0     0    0.01905    0  407    0.02026    0.01905  5.98%     -    3s
+INFO:gurobipy:     0     0    0.01925    0  407    0.02026    0.01925  4.96%     -    3s
+INFO:gurobipy:
+INFO:gurobipy:Cutting planes:
+INFO:gurobipy:  MIR: 13
+INFO:gurobipy:
+INFO:gurobipy:Explored 1 nodes (2128 simplex iterations) in 3.34 seconds (1.59 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 1: 0.0202595 
+INFO:gurobipy:
+INFO:gurobipy:Optimal solution found (tolerance 5.00e-02)
+INFO:gurobipy:Best objective 2.025952969943e-02, best bound 1.925463408372e-02, gap 4.9601%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1725 rows, 1435 columns and 88241 nonzeros
+INFO:gurobipy:Model fingerprint: 0x510e42aa
+INFO:gurobipy:Model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [3e-05, 9e+02]
+INFO:gurobipy:  Objective range  [2e-05, 2e-05]
+INFO:gurobipy:  QObjective range [2e-05, 5e-01]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [1e-02, 9e+02]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 0.0080087 (0.04s)
+INFO:gurobipy:Loaded user MIP start with objective 0.0080087
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 319 rows and 45 columns
+INFO:gurobipy:Presolve time: 0.14s
+INFO:gurobipy:Presolved: 1406 rows, 1390 columns, 87614 nonzeros
+INFO:gurobipy:Presolved model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 959 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 7.280719e-03, 1538 iterations, 0.10 seconds (0.21 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    0.00728    0  376    0.00801    0.00728  9.09%     -    0s
+INFO:gurobipy:     0     0    0.00728    0  376    0.00801    0.00728  9.09%     -    1s
+INFO:gurobipy:H    0     0                       0.0079173    0.00728  8.04%     -    1s
+INFO:gurobipy:     0     0    0.00728    0  376    0.00792    0.00728  8.04%     -    1s
+INFO:gurobipy:     0     0    0.00728    0  376    0.00792    0.00728  8.04%     -    1s
+INFO:gurobipy:     0     0    0.00728    0  376    0.00792    0.00728  8.04%     -    1s
+INFO:gurobipy:     0     0    0.00728    0  376    0.00792    0.00728  8.04%     -    2s
+INFO:gurobipy:     0     0    0.00728    0  375    0.00792    0.00728  8.04%     -    3s
+INFO:gurobipy:     0     0    0.00728    0  375    0.00792    0.00728  8.04%     -    3s
+INFO:gurobipy:     0     0    0.00728    0  374    0.00792    0.00728  8.04%     -    4s
+INFO:gurobipy:     0     0    0.00728    0  374    0.00792    0.00728  8.04%     -    4s
+INFO:gurobipy:     0     0    0.00728    0  374    0.00792    0.00728  8.04%     -    5s
+INFO:gurobipy:     0     2    0.00728    0  374    0.00792    0.00728  8.04%     -    5s
+INFO:gurobipy:H   44    50                       0.0078838    0.00728  7.65%   293    6s
+INFO:gurobipy:H   51    50                       0.0078503    0.00728  7.26%   294    6s
+INFO:gurobipy:H  129   140                       0.0078122    0.00728  6.80%   256    9s
+INFO:gurobipy:H  148   140                       0.0078097    0.00728  6.77%   258    9s
+INFO:gurobipy:   149   161    0.00728   10  384    0.00781    0.00728  6.77%   260   10s
+INFO:gurobipy:H  197   203                       0.0078089    0.00728  6.76%   250   10s
+INFO:gurobipy:H  199   203                       0.0078040    0.00728  6.71%   249   10s
+INFO:gurobipy:   319   337    0.00729   20  346    0.00780    0.00728  6.71%   235   16s
+INFO:gurobipy:   346   351    0.00728   20  360    0.00780    0.00728  6.71%   235   20s
+INFO:gurobipy:
+INFO:gurobipy:Cutting planes:
+INFO:gurobipy:  Implied bound: 6
+INFO:gurobipy:  MIR: 8
+INFO:gurobipy:  Flow cover: 6
+INFO:gurobipy:
+INFO:gurobipy:Explored 360 nodes (85066 simplex iterations) in 20.13 seconds (14.85 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 6: 0.00780401 0.00781221 0.00785034 ... 0.0080087
+INFO:gurobipy:
+INFO:gurobipy:Time limit reached
+INFO:gurobipy:Best objective 7.804007326164e-03, best bound 7.280718911988e-03, gap 6.7054%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1725 rows, 1435 columns and 88241 nonzeros
+INFO:gurobipy:Model fingerprint: 0x6df6cca4
+INFO:gurobipy:Model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [9e-06, 2e+02]
+INFO:gurobipy:  Objective range  [4e-05, 4e-05]
+INFO:gurobipy:  QObjective range [2e-05, 4e+00]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [2e-02, 2e+02]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 0.0133177 (0.03s)
+INFO:gurobipy:Loaded user MIP start with objective 0.0133177
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 317 rows and 45 columns
+INFO:gurobipy:Presolve time: 0.12s
+INFO:gurobipy:Presolved: 1408 rows, 1390 columns, 87621 nonzeros
+INFO:gurobipy:Presolved model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 959 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 1.210701e-02, 766 iterations, 0.06 seconds (0.10 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    0.01211    0  280    0.01332    0.01211  9.09%     -    0s
+INFO:gurobipy:     0     0    0.01211    0  280    0.01332    0.01211  9.09%     -    0s
+INFO:gurobipy:     0     0    0.01211    0  283    0.01332    0.01211  9.09%     -    0s
+INFO:gurobipy:     0     0    0.01211    0  283    0.01332    0.01211  9.09%     -    0s
+INFO:gurobipy:     0     0    0.01211    0  283    0.01332    0.01211  9.09%     -    0s
+INFO:gurobipy:     0     0    0.01211    0  283    0.01332    0.01211  9.09%     -    0s
+INFO:gurobipy:     0     0    0.01211    0  283    0.01332    0.01211  9.09%     -    0s
+INFO:gurobipy:     0     0    0.01211    0  283    0.01332    0.01211  9.09%     -    0s
+INFO:gurobipy:     0     0    0.01211    0  282    0.01332    0.01211  9.09%     -    0s
+INFO:gurobipy:     0     0    0.01211    0  282    0.01332    0.01211  9.09%     -    1s
+INFO:gurobipy:     0     0    0.01211    0  284    0.01332    0.01211  9.09%     -    1s
+INFO:gurobipy:     0     2    0.01211    0  284    0.01332    0.01211  9.09%     -    1s
+INFO:gurobipy:H  128   137                       0.0132303    0.01211  8.49%   129    2s
+INFO:gurobipy:H  132   137                       0.0132077    0.01211  8.33%   127    2s
+INFO:gurobipy:H  134   137                       0.0132003    0.01211  8.28%   127    2s
+INFO:gurobipy:H  139   137                       0.0131819    0.01211  8.15%   126    2s
+INFO:gurobipy:H  172   165                       0.0131457    0.01211  7.90%   108    2s
+INFO:gurobipy:H  173   165                       0.0130625    0.01211  7.31%   107    2s
+INFO:gurobipy:H  179   165                       0.0130243    0.01211  7.04%   106    2s
+INFO:gurobipy:H  219   195                       0.0130110    0.01211  6.95%  97.9    4s
+INFO:gurobipy:   321   297    0.01224   25  401    0.01301    0.01211  6.93%  93.2    5s
+INFO:gurobipy:   554   522    0.01250   35  356    0.01301    0.01211  6.93%   106   11s
+INFO:gurobipy:   670   677    0.01263   43  334    0.01301    0.01211  6.93%   104   15s
+INFO:gurobipy:  1360  1098    0.01274   32  367    0.01301    0.01211  6.92%   101   20s
+INFO:gurobipy:
+INFO:gurobipy:Cutting planes:
+INFO:gurobipy:  Implied bound: 7
+INFO:gurobipy:  MIR: 10
+INFO:gurobipy:  Flow cover: 7
+INFO:gurobipy:
+INFO:gurobipy:Explored 1367 nodes (138142 simplex iterations) in 20.08 seconds (18.12 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 8: 0.013011 0.0130625 0.0131457 ... 0.0133177
+INFO:gurobipy:
+INFO:gurobipy:Time limit reached
+INFO:gurobipy:Best objective 1.301100829247e-02, best bound 1.211051353746e-02, gap 6.9210%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1725 rows, 1435 columns and 88241 nonzeros
+INFO:gurobipy:Model fingerprint: 0x028e9592
+INFO:gurobipy:Model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [9e-06, 2e+02]
+INFO:gurobipy:  Objective range  [3e-04, 3e-04]
+INFO:gurobipy:  QObjective range [3e-06, 4e+00]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [1e-02, 1e+02]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 0.0699574 (0.06s)
+INFO:gurobipy:Loaded user MIP start with objective 0.0699574
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 293 rows and 18 columns
+INFO:gurobipy:Presolve time: 0.20s
+INFO:gurobipy:Presolved: 1432 rows, 1417 columns, 87666 nonzeros
+INFO:gurobipy:Presolved model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 986 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 6.359768e-02, 735 iterations, 0.10 seconds (0.11 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    0.06360    0  278    0.06996    0.06360  9.09%     -    0s
+INFO:gurobipy:     0     0    0.06360    0  280    0.06996    0.06360  9.09%     -    1s
+INFO:gurobipy:     0     0    0.06360    0  280    0.06996    0.06360  9.09%     -    1s
+INFO:gurobipy:     0     0    0.06360    0  280    0.06996    0.06360  9.09%     -    1s
+INFO:gurobipy:     0     0    0.06360    0  280    0.06996    0.06360  9.09%     -    1s
+INFO:gurobipy:     0     0    0.06360    0  282    0.06996    0.06360  9.09%     -    1s
+INFO:gurobipy:     0     0    0.06360    0  282    0.06996    0.06360  9.09%     -    1s
+INFO:gurobipy:     0     0    0.06360    0  282    0.06996    0.06360  9.09%     -    1s
+INFO:gurobipy:     0     2    0.06360    0  282    0.06996    0.06360  9.09%     -    2s
+INFO:gurobipy:H  132   128                       0.0694395    0.06360  8.41%   103    3s
+INFO:gurobipy:   173   168    0.06403   15  403    0.06944    0.06360  8.41%  93.1    7s
+INFO:gurobipy:H  174   168                       0.0694295    0.06360  8.40%  92.5    7s
+INFO:gurobipy:H  179   168                       0.0691922    0.06360  8.09%  91.1    7s
+INFO:gurobipy:H  180   168                       0.0691425    0.06360  8.02%  90.8    7s
+INFO:gurobipy:   807   723    0.06778   39  322    0.06914    0.06360  8.02%  60.6   10s
+INFO:gurobipy:  1239  1022    0.06810   48  346    0.06914    0.06360  8.02%  58.1   17s
+INFO:gurobipy:  1258  1035    0.06894   49  328    0.06914    0.06360  8.02%  58.2   20s
+INFO:gurobipy:
+INFO:gurobipy:Cutting planes:
+INFO:gurobipy:  Implied bound: 5
+INFO:gurobipy:  MIR: 30
+INFO:gurobipy:  Flow cover: 5
+INFO:gurobipy:
+INFO:gurobipy:Explored 1272 nodes (75033 simplex iterations) in 20.11 seconds (14.30 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 4: 0.0691425 0.0691922 0.0694295 0.0699574 
+INFO:gurobipy:
+INFO:gurobipy:Time limit reached
+INFO:gurobipy:Best objective 6.914253274407e-02, best bound 6.359767939022e-02, gap 8.0195%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Discarded solution information
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1724 rows, 1435 columns and 87955 nonzeros
+INFO:gurobipy:Model fingerprint: 0xa7ab3a29
+INFO:gurobipy:Model has 145 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [4e-05, 2e+02]
+INFO:gurobipy:  Objective range  [8e-03, 1e+00]
+INFO:gurobipy:  QObjective range [1e-01, 1e-01]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [6e-03, 2e+02]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 1.13869 (0.04s)
+INFO:gurobipy:Loaded user MIP start with objective 1.13869
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 546 rows and 273 columns
+INFO:gurobipy:Presolve time: 0.12s
+INFO:gurobipy:Presolved: 1178 rows, 1162 columns, 86875 nonzeros
+INFO:gurobipy:Presolved model has 145 quadratic objective terms
+INFO:gurobipy:Variable types: 731 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 1.035172e+00, 659 iterations, 0.10 seconds (0.09 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    1.03517    0  274    1.13869    1.03517  9.09%     -    0s
+INFO:gurobipy:     0     0    1.03517    0  276    1.13869    1.03517  9.09%     -    0s
+INFO:gurobipy:     0     0    1.03517    0  276    1.13869    1.03517  9.09%     -    0s
+INFO:gurobipy:     0     0    1.03517    0  276    1.13869    1.03517  9.09%     -    0s
+INFO:gurobipy:     0     2    1.03517    0  276    1.13869    1.03517  9.09%     -    1s
+INFO:gurobipy:H   73    84                       1.1378705    1.03517  9.03%  62.2    2s
+INFO:gurobipy:H  111   127                       1.1335156    1.03517  8.68%  47.1    2s
+INFO:gurobipy:H  154   164                       1.1277866    1.03517  8.21%  40.4    5s
+INFO:gurobipy:H  168   177                       1.1276578    1.03517  8.20%  39.7    8s
+INFO:gurobipy:   813   711    1.09395   37  324    1.12766    1.03517  8.20%  50.0   14s
+INFO:gurobipy:  1020   868    1.05437   12  409    1.12766    1.03517  8.20%  49.5   15s
+INFO:gurobipy:
+INFO:gurobipy:Cutting planes:
+INFO:gurobipy:  MIR: 8
+INFO:gurobipy:  Flow cover: 1
+INFO:gurobipy:
+INFO:gurobipy:Explored 2512 nodes (117374 simplex iterations) in 20.07 seconds (15.28 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 4: 1.12766 1.12779 1.13787 1.13869 
+INFO:gurobipy:
+INFO:gurobipy:Time limit reached
+INFO:gurobipy:Best objective 1.127657827342e+00, best bound 1.035172052909e+00, gap 8.2016%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1725 rows, 1435 columns and 88241 nonzeros
+INFO:gurobipy:Model fingerprint: 0x61b0b19a
+INFO:gurobipy:Model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [2e-06, 2e+01]
+INFO:gurobipy:  Objective range  [3e-04, 3e-04]
+INFO:gurobipy:  QObjective range [4e-06, 4e+02]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [5e-03, 3e+01]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 0.0836517 (0.05s)
+INFO:gurobipy:Loaded user MIP start with objective 0.0836517
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 296 rows and 18 columns
+INFO:gurobipy:Presolve time: 0.22s
+INFO:gurobipy:Presolved: 1429 rows, 1417 columns, 87654 nonzeros
+INFO:gurobipy:Presolved model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 986 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 7.858980e-02, 1029 iterations, 0.18 seconds (0.22 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    0.07859    0  423    0.08365    0.07859  6.05%     -    0s
+INFO:gurobipy:     0     0    0.07859    0  424    0.08365    0.07859  6.05%     -    1s
+INFO:gurobipy:     0     0    0.07860    0  424    0.08365    0.07860  6.04%     -    1s
+INFO:gurobipy:     0     0    0.07952    0  420    0.08365    0.07952  4.94%     -    2s
+INFO:gurobipy:
+INFO:gurobipy:Cutting planes:
+INFO:gurobipy:  MIR: 58
+INFO:gurobipy:
+INFO:gurobipy:Explored 1 nodes (1503 simplex iterations) in 2.13 seconds (1.32 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 1: 0.0836517 
+INFO:gurobipy:
+INFO:gurobipy:Optimal solution found (tolerance 5.00e-02)
+INFO:gurobipy:Best objective 8.365172178072e-02, best bound 7.951617047662e-02, gap 4.9438%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1725 rows, 1435 columns and 88241 nonzeros
+INFO:gurobipy:Model fingerprint: 0x45d6ccd4
+INFO:gurobipy:Model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [5e-05, 4e+02]
+INFO:gurobipy:  Objective range  [4e-05, 4e-05]
+INFO:gurobipy:  QObjective range [1e-06, 1e+00]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [5e-03, 4e+02]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 0.0162459 (0.06s)
+INFO:gurobipy:Loaded user MIP start with objective 0.0162459
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 329 rows and 54 columns
+INFO:gurobipy:Presolve time: 0.18s
+INFO:gurobipy:Presolved: 1396 rows, 1381 columns, 87594 nonzeros
+INFO:gurobipy:Presolved model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 950 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 1.476898e-02, 1322 iterations, 0.20 seconds (0.17 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    0.01477    0  278    0.01625    0.01477  9.09%     -    0s
+INFO:gurobipy:     0     0    0.01477    0  279    0.01625    0.01477  9.09%     -    1s
+INFO:gurobipy:     0     0    0.01477    0  281    0.01625    0.01477  9.09%     -    1s
+INFO:gurobipy:     0     0    0.01477    0  281    0.01625    0.01477  9.09%     -    1s
+INFO:gurobipy:     0     0    0.01477    0  281    0.01625    0.01477  9.09%     -    1s
+INFO:gurobipy:     0     0    0.01477    0  281    0.01625    0.01477  9.09%     -    1s
+INFO:gurobipy:     0     0    0.01477    0  281    0.01625    0.01477  9.09%     -    1s
+INFO:gurobipy:     0     0    0.01477    0  281    0.01625    0.01477  9.09%     -    2s
+INFO:gurobipy:     0     0    0.01477    0  281    0.01625    0.01477  9.09%     -    2s
+INFO:gurobipy:     0     0    0.01477    0  281    0.01625    0.01477  9.09%     -    2s
+INFO:gurobipy:H    0     0                       0.0160627    0.01477  8.05%     -    2s
+INFO:gurobipy:     0     2    0.01477    0  281    0.01606    0.01477  8.05%     -    2s
+INFO:gurobipy:H  115   127                       0.0159608    0.01477  7.47%   137    4s
+INFO:gurobipy:H  166   180                       0.0159410    0.01477  7.35%   141   14s
+INFO:gurobipy:H  167   180                       0.0159111    0.01477  7.18%   142   14s
+INFO:gurobipy:H  168   180                       0.0158977    0.01477  7.10%   141   14s
+INFO:gurobipy:H  173   180                       0.0158769    0.01477  6.98%   138   14s
+INFO:gurobipy:   298   325    0.01559   21  378    0.01588    0.01477  6.98%   126   15s
+INFO:gurobipy:  1230  1120    0.01526   37  301    0.01588    0.01477  6.98%   115   20s
+INFO:gurobipy:
+INFO:gurobipy:Cutting planes:
+INFO:gurobipy:  Implied bound: 6
+INFO:gurobipy:  MIR: 8
+INFO:gurobipy:  Flow cover: 8
+INFO:gurobipy:
+INFO:gurobipy:Explored 1232 nodes (143487 simplex iterations) in 20.06 seconds (19.82 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 7: 0.0158769 0.0158977 0.0159111 ... 0.0162459
+INFO:gurobipy:
+INFO:gurobipy:Time limit reached
+INFO:gurobipy:Best objective 1.587692470116e-02, best bound 1.476898343587e-02, gap 6.9783%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1725 rows, 1435 columns and 88241 nonzeros
+INFO:gurobipy:Model fingerprint: 0xc040315c
+INFO:gurobipy:Model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [6e-06, 3e+02]
+INFO:gurobipy:  Objective range  [9e-06, 9e-06]
+INFO:gurobipy:  QObjective range [1e-08, 5e-01]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [1e-02, 3e+02]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 0.00408084 (0.04s)
+INFO:gurobipy:Loaded user MIP start with objective 0.00408084
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 336 rows and 64 columns
+INFO:gurobipy:Presolve time: 0.14s
+INFO:gurobipy:Presolved: 1389 rows, 1371 columns, 87583 nonzeros
+INFO:gurobipy:Presolved model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 940 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 3.623381e-03, 1270 iterations, 0.15 seconds (0.31 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    0.00362    0  275    0.00408    0.00362  11.2%     -    0s
+INFO:gurobipy:     0     0    0.00362    0  276    0.00408    0.00362  11.2%     -    0s
+INFO:gurobipy:     0     0    0.00362    0  276    0.00408    0.00362  11.2%     -    0s
+INFO:gurobipy:     0     0    0.00362    0  276    0.00408    0.00362  11.2%     -    1s
+INFO:gurobipy:     0     0    0.00362    0  280    0.00408    0.00362  11.2%     -    1s
+INFO:gurobipy:     0     0    0.00362    0  279    0.00408    0.00362  11.2%     -    1s
+INFO:gurobipy:     0     0    0.00362    0  280    0.00408    0.00362  11.2%     -    1s
+INFO:gurobipy:     0     0    0.00362    0  280    0.00408    0.00362  11.2%     -    1s
+INFO:gurobipy:     0     0    0.00362    0  279    0.00408    0.00362  11.2%     -    1s
+INFO:gurobipy:     0     2    0.00362    0  279    0.00408    0.00362  11.2%     -    1s
+INFO:gurobipy:H  115   124                       0.0040637    0.00362  10.8%   281    4s
+INFO:gurobipy:H  116   124                       0.0040321    0.00362  10.1%   281    4s
+INFO:gurobipy:   131   141    0.00364    9  390    0.00403    0.00362  10.1%   278    5s
+INFO:gurobipy:H  166   176                       0.0040005    0.00362  9.43%   280    6s
+INFO:gurobipy:H  167   176                       0.0039991    0.00362  9.39%   278    6s
+INFO:gurobipy:H  171   176                       0.0039923    0.00362  9.24%   274    6s
+INFO:gurobipy:H  181   176                       0.0039890    0.00362  9.16%   274    6s
+INFO:gurobipy:H  212   194                       0.0039812    0.00362  8.99%   253    8s
+INFO:gurobipy:H  213   194                       0.0039809    0.00362  8.98%   252    8s
+INFO:gurobipy:H  216   194                       0.0039798    0.00362  8.96%   251    8s
+INFO:gurobipy:H  219   194                       0.0039796    0.00362  8.95%   251    8s
+INFO:gurobipy:H  269   262                       0.0039793    0.00362  8.94%   253    9s
+INFO:gurobipy:   329   309    0.00369   18  405    0.00398    0.00362  8.94%   240   10s
+INFO:gurobipy:   589   584    0.00372   34  366    0.00398    0.00362  8.94%   233   20s
+INFO:gurobipy:
+INFO:gurobipy:Cutting planes:
+INFO:gurobipy:  Implied bound: 5
+INFO:gurobipy:  MIR: 10
+INFO:gurobipy:  Flow cover: 2
+INFO:gurobipy:
+INFO:gurobipy:Explored 621 nodes (145461 simplex iterations) in 20.10 seconds (21.84 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 9: 0.00397932 0.00398117 0.00398896 ... 0.00408084
+INFO:gurobipy:
+INFO:gurobipy:Time limit reached
+INFO:gurobipy:Best objective 3.979321720718e-03, best bound 3.623380620654e-03, gap 8.9448%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1725 rows, 1435 columns and 88241 nonzeros
+INFO:gurobipy:Model fingerprint: 0x55657721
+INFO:gurobipy:Model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [1e-05, 2e+02]
+INFO:gurobipy:  Objective range  [2e-04, 2e-04]
+INFO:gurobipy:  QObjective range [6e-06, 8e-01]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [7e-03, 2e+02]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 0.0333631 (0.06s)
+INFO:gurobipy:Loaded user MIP start with objective 0.0333631
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 281 rows and 12 columns
+INFO:gurobipy:Presolve time: 0.18s
+INFO:gurobipy:Presolved: 1444 rows, 1423 columns, 87696 nonzeros
+INFO:gurobipy:Presolved model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 992 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 3.033011e-02, 972 iterations, 0.17 seconds (0.18 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    0.03033    0  277    0.03336    0.03033  9.09%     -    0s
+INFO:gurobipy:     0     0    0.03033    0  278    0.03336    0.03033  9.09%     -    0s
+INFO:gurobipy:     0     0    0.03033    0  277    0.03336    0.03033  9.09%     -    1s
+INFO:gurobipy:     0     0    0.03033    0  278    0.03336    0.03033  9.09%     -    1s
+INFO:gurobipy:     0     0    0.03033    0  279    0.03336    0.03033  9.09%     -    1s
+INFO:gurobipy:     0     0    0.03033    0  279    0.03336    0.03033  9.09%     -    1s
+INFO:gurobipy:     0     0    0.03033    0  281    0.03336    0.03033  9.09%     -    1s
+INFO:gurobipy:     0     2    0.03033    0  281    0.03336    0.03033  9.09%     -    2s
+INFO:gurobipy:   188   199    0.03038   18  399    0.03336    0.03033  9.09%  83.3    8s
+INFO:gurobipy:H  193   199                       0.0333631    0.03033  9.09%  82.2    8s
+INFO:gurobipy:   275   295    0.03077   22  384    0.03336    0.03033  9.09%  78.9   10s
+INFO:gurobipy:  1205  1063    0.03250   32  255    0.03336    0.03033  9.09%  82.6   15s
+INFO:gurobipy:  1595  1271    0.03099   13  403    0.03336    0.03033  9.09%  81.0   20s
+INFO:gurobipy:
+INFO:gurobipy:Cutting planes:
+INFO:gurobipy:  MIR: 14
+INFO:gurobipy:
+INFO:gurobipy:Explored 1609 nodes (131565 simplex iterations) in 20.11 seconds (14.56 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 1: 0.0333631 
+INFO:gurobipy:
+INFO:gurobipy:Time limit reached
+INFO:gurobipy:Best objective 3.336311944393e-02, best bound 3.033010920567e-02, gap 9.0909%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1725 rows, 1435 columns and 88241 nonzeros
+INFO:gurobipy:Model fingerprint: 0x0e3308e4
+INFO:gurobipy:Model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [2e-05, 2e+01]
+INFO:gurobipy:  Objective range  [3e-04, 3e-04]
+INFO:gurobipy:  QObjective range [2e-06, 2e+02]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [2e-02, 3e+01]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 0.0756582 (0.04s)
+INFO:gurobipy:Loaded user MIP start with objective 0.0756582
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 288 rows and 12 columns
+INFO:gurobipy:Presolve time: 0.15s
+INFO:gurobipy:Presolved: 1437 rows, 1423 columns, 87675 nonzeros
+INFO:gurobipy:Presolved model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 992 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 7.151567e-02, 1055 iterations, 0.15 seconds (0.28 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    0.07152    0  417    0.07566    0.07152  5.48%     -    0s
+INFO:gurobipy:
+INFO:gurobipy:Cutting planes:
+INFO:gurobipy:  MIR: 2
+INFO:gurobipy:  Flow cover: 2
+INFO:gurobipy:
+INFO:gurobipy:Explored 1 nodes (1055 simplex iterations) in 0.94 seconds (0.69 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 1: 0.0756582 
+INFO:gurobipy:
+INFO:gurobipy:Optimal solution found (tolerance 5.00e-02)
+INFO:gurobipy:Best objective 7.565819690110e-02, best bound 7.189536431128e-02, gap 4.9735%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1725 rows, 1435 columns and 88241 nonzeros
+INFO:gurobipy:Model fingerprint: 0x55d0b264
+INFO:gurobipy:Model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [3e-05, 2e+02]
+INFO:gurobipy:  Objective range  [5e-05, 5e-05]
+INFO:gurobipy:  QObjective range [3e-04, 2e+00]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [3e-03, 2e+02]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 0.0213776 (0.03s)
+INFO:gurobipy:Loaded user MIP start with objective 0.0213776
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 277 rows and 4 columns
+INFO:gurobipy:Presolve time: 0.15s
+INFO:gurobipy:Presolved: 1448 rows, 1431 columns, 87700 nonzeros
+INFO:gurobipy:Presolved model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 1000 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 1.943416e-02, 1042 iterations, 0.13 seconds (0.21 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    0.01943    0  276    0.02138    0.01943  9.09%     -    0s
+INFO:gurobipy:     0     0    0.01943    0  280    0.02138    0.01943  9.09%     -    0s
+INFO:gurobipy:     0     0    0.01943    0  281    0.02138    0.01943  9.09%     -    0s
+INFO:gurobipy:     0     0    0.01943    0  281    0.02138    0.01943  9.09%     -    1s
+INFO:gurobipy:     0     0    0.01943    0  281    0.02138    0.01943  9.09%     -    1s
+INFO:gurobipy:     0     0    0.01943    0  281    0.02138    0.01943  9.09%     -    1s
+INFO:gurobipy:     0     0    0.01943    0  281    0.02138    0.01943  9.09%     -    1s
+INFO:gurobipy:     0     0    0.01943    0  281    0.02138    0.01943  9.09%     -    1s
+INFO:gurobipy:     0     0    0.01943    0  281    0.02138    0.01943  9.09%     -    1s
+INFO:gurobipy:     0     2    0.01943    0  281    0.02138    0.01943  9.09%     -    2s
+INFO:gurobipy:H  132   144                       0.0213133    0.01943  8.82%   139    4s
+INFO:gurobipy:H  135   144                       0.0211890    0.01943  8.28%   139    4s
+INFO:gurobipy:H  142   144                       0.0211698    0.01943  8.20%   135    4s
+INFO:gurobipy:   174   181    0.01955   12  404    0.02117    0.01943  8.20%   136    5s
+INFO:gurobipy:H  177   181                       0.0210221    0.01943  7.55%   136    5s
+INFO:gurobipy:H  179   181                       0.0209781    0.01943  7.36%   135    5s
+INFO:gurobipy:H  228   227                       0.0209688    0.01943  7.32%   145    6s
+INFO:gurobipy:H  236   227                       0.0209579    0.01943  7.27%   149    6s
+INFO:gurobipy:H  237   227                       0.0209342    0.01943  7.17%   148    6s
+INFO:gurobipy:   490   509    0.01979   22  395    0.02093    0.01943  7.17%   140   10s
+INFO:gurobipy:  1052   954    0.02084   67  287    0.02093    0.01943  7.17%  95.7   17s
+INFO:gurobipy:H 1053   951                       0.0209292    0.01943  7.14%  95.6   17s
+INFO:gurobipy:  1066   961    0.02055   69  318    0.02093    0.01943  7.14%  95.2   20s
+INFO:gurobipy:
+INFO:gurobipy:Cutting planes:
+INFO:gurobipy:  Implied bound: 1
+INFO:gurobipy:  MIR: 40
+INFO:gurobipy:
+INFO:gurobipy:Explored 1084 nodes (104176 simplex iterations) in 20.16 seconds (16.27 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 7: 0.0209292 0.0209579 0.0210221 ... 0.0213776
+INFO:gurobipy:
+INFO:gurobipy:Time limit reached
+INFO:gurobipy:Best objective 2.092917069890e-02, best bound 1.943415795785e-02, gap 7.1432%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Discarded solution information
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1724 rows, 1435 columns and 87955 nonzeros
+INFO:gurobipy:Model fingerprint: 0x0025cb8e
+INFO:gurobipy:Model has 145 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [4e-06, 2e+01]
+INFO:gurobipy:  Objective range  [5e-03, 1e+00]
+INFO:gurobipy:  QObjective range [1e+02, 1e+02]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [4e-03, 3e+01]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 1.08456 (0.02s)
+INFO:gurobipy:Loaded user MIP start with objective 1.08456
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 544 rows and 272 columns
+INFO:gurobipy:Presolve time: 0.07s
+INFO:gurobipy:Presolved: 1180 rows, 1163 columns, 86880 nonzeros
+INFO:gurobipy:Presolved model has 145 quadratic objective terms
+INFO:gurobipy:Variable types: 732 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 1.017643e+00, 1067 iterations, 0.09 seconds (0.19 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    1.01764    0  428    1.08456    1.01764  6.17%     -    0s
+INFO:gurobipy:
+INFO:gurobipy:Cutting planes:
+INFO:gurobipy:  MIR: 33
+INFO:gurobipy:
+INFO:gurobipy:Explored 1 nodes (1067 simplex iterations) in 0.84 seconds (0.76 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 1: 1.08456 
+INFO:gurobipy:
+INFO:gurobipy:Optimal solution found (tolerance 5.00e-02)
+INFO:gurobipy:Best objective 1.084558586724e+00, best bound 1.030527379524e+00, gap 4.9819%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1725 rows, 1435 columns and 88241 nonzeros
+INFO:gurobipy:Model fingerprint: 0x903bdc23
+INFO:gurobipy:Model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [2e-05, 2e+01]
+INFO:gurobipy:  Objective range  [2e-03, 2e-03]
+INFO:gurobipy:  QObjective range [1e-05, 1e+03]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [2e-02, 3e+01]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 0.575252 (0.04s)
+INFO:gurobipy:Loaded user MIP start with objective 0.575252
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 281 rows and 4 columns
+INFO:gurobipy:Presolve time: 0.12s
+INFO:gurobipy:Presolved: 1444 rows, 1431 columns, 87687 nonzeros
+INFO:gurobipy:Presolved model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 1000 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: interrupted, 881 iterations, 0.11 seconds (0.24 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0          -    0         0.57525    0.54791  4.75%     -    0s
+INFO:gurobipy:
+INFO:gurobipy:Explored 1 nodes (881 simplex iterations) in 0.30 seconds (0.37 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 1: 0.575252 
+INFO:gurobipy:
+INFO:gurobipy:Optimal solution found (tolerance 5.00e-02)
+INFO:gurobipy:Best objective 5.752522082326e-01, best bound 5.479095388064e-01, gap 4.7532%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1725 rows, 1435 columns and 88241 nonzeros
+INFO:gurobipy:Model fingerprint: 0x456e2228
+INFO:gurobipy:Model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [7e-07, 2e+01]
+INFO:gurobipy:  Objective range  [2e-03, 2e-03]
+INFO:gurobipy:  QObjective range [1e-05, 2e+03]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [5e-03, 3e+01]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 0.319353 (0.05s)
+INFO:gurobipy:Loaded user MIP start with objective 0.319353
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 279 rows and 4 columns
+INFO:gurobipy:Presolve time: 0.22s
+INFO:gurobipy:Presolved: 1450 rows, 1433 columns, 87699 nonzeros
+INFO:gurobipy:Presolved model has 41188 quadratic objective terms
+INFO:gurobipy:Variable types: 1002 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 3.028676e-01, 1000 iterations, 0.31 seconds (0.25 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    0.30287    0  421    0.31935    0.30287  5.16%     -    0s
+INFO:gurobipy:
+INFO:gurobipy:Cutting planes:
+INFO:gurobipy:  Implied bound: 1
+INFO:gurobipy:  MIR: 22
+INFO:gurobipy:  RLT: 1
+INFO:gurobipy:
+INFO:gurobipy:Explored 1 nodes (1000 simplex iterations) in 1.54 seconds (0.87 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 1: 0.319353 
+INFO:gurobipy:
+INFO:gurobipy:Optimal solution found (tolerance 5.00e-02)
+INFO:gurobipy:Best objective 3.193526950127e-01, best bound 3.042059072434e-01, gap 4.7430%
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter TimeLimit to value 20
+INFO:gurobipy:Set parameter MIPGap to value 0.05
+INFO:gurobipy:Set parameter LogToConsole to value 1
+INFO:gurobipy:Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (win64 - Windows 11.0 (22621.2))
+INFO:gurobipy:
+INFO:gurobipy:CPU model: 12th Gen Intel(R) Core(TM) i7-12700H, instruction set [SSE2|AVX|AVX2]
+INFO:gurobipy:Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+INFO:gurobipy:
+INFO:gurobipy:Optimize a model with 1725 rows, 1435 columns and 88241 nonzeros
+INFO:gurobipy:Model fingerprint: 0x02bbaab3
+INFO:gurobipy:Model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 1004 continuous, 431 integer (431 binary)
+INFO:gurobipy:Coefficient statistics:
+INFO:gurobipy:  Matrix range     [2e-05, 2e+01]
+INFO:gurobipy:  Objective range  [9e-05, 9e-05]
+INFO:gurobipy:  QObjective range [1e-05, 1e+02]
+INFO:gurobipy:  Bounds range     [1e+00, 1e+00]
+INFO:gurobipy:  RHS range        [1e-03, 3e+01]
+INFO:gurobipy:
+INFO:gurobipy:User MIP start produced solution with objective 0.031146 (0.04s)
+INFO:gurobipy:Loaded user MIP start with objective 0.031146
+INFO:gurobipy:
+INFO:gurobipy:Presolve removed 281 rows and 4 columns
+INFO:gurobipy:Presolve time: 0.14s
+INFO:gurobipy:Presolved: 1444 rows, 1431 columns, 87687 nonzeros
+INFO:gurobipy:Presolved model has 41186 quadratic objective terms
+INFO:gurobipy:Variable types: 1000 continuous, 431 integer (431 binary)
+INFO:gurobipy:
+INFO:gurobipy:Root relaxation: objective 2.948265e-02, 1450 iterations, 0.18 seconds (0.37 work units)
+INFO:gurobipy:
+INFO:gurobipy:    Nodes    |    Current Node    |     Objective Bounds      |     Work
+INFO:gurobipy: Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+INFO:gurobipy:
+INFO:gurobipy:     0     0    0.02948    0  392    0.03115    0.02948  5.34%     -    0s
+INFO:gurobipy:     0     0    0.02955    0  392    0.03115    0.02955  5.14%     -    0s
+INFO:gurobipy:     0     0    0.02955    0  392    0.03115    0.02955  5.14%     -    1s
+INFO:gurobipy:     0     0    0.02955    0  392    0.03115    0.02955  5.14%     -    1s
+INFO:gurobipy:     0     0    0.02958    0  390    0.03115    0.02958  5.03%     -    1s
+INFO:gurobipy:     0     0    0.02958    0  388    0.03115    0.02958  5.03%     -    1s
+INFO:gurobipy:     0     0    0.02958    0  386    0.03115    0.02958  5.03%     -    1s
+INFO:gurobipy:     0     0    0.02958    0  386    0.03115    0.02958  5.03%     -    2s
+INFO:gurobipy:     0     2    0.02958    0  386    0.03115    0.02958  5.03%     -    2s
+INFO:gurobipy:
+INFO:gurobipy:Cutting planes:
+INFO:gurobipy:  MIR: 12
+INFO:gurobipy:  Flow cover: 3
+INFO:gurobipy:
+INFO:gurobipy:Explored 7 nodes (2771 simplex iterations) in 2.31 seconds (2.07 work units)
+INFO:gurobipy:Thread count was 20 (of 20 available processors)
+INFO:gurobipy:
+INFO:gurobipy:Solution count 1: 0.031146 
+INFO:gurobipy:
+INFO:gurobipy:Optimal solution found (tolerance 5.00e-02)
+INFO:gurobipy:Best objective 3.114600907888e-02, best bound 2.960626380096e-02, gap 4.9436%

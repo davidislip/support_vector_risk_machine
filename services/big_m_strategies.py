@@ -23,10 +23,10 @@ def ConstructFeasibleMVO(bigM_limit_time=10, bigM_MipGap=0.1, bigM_SolutionLimit
         print("Extracting a cardinality constrained portfolio...")
     card_mvo_results = CardMVO(**bigM_kwargs_forCardMVO)
     z_vals = card_mvo_results['z']
-
+    x_vals = card_mvo_results['x']
     ObjMVO = card_mvo_results['obj_value']
 
-    return ObjMVO, card_mvo_results['feasible_solution'], z_vals
+    return ObjMVO, card_mvo_results['feasible_solution'], z_vals, x_vals
 
 
 def ConstructFeasibleSolutionSVM(z_vals, period_Context, C, separable, q, bigM_limit_time, LogToConsole, Verbose):
@@ -88,7 +88,7 @@ def ConstructFeasibleSolution(**kwargs):
     q, epsilon = kwargs['q'], kwargs['epsilon']
 
     # Do Card MVO
-    ObjMVO, feasible_solution, z_vals = ConstructFeasibleMVO(**kwargs)
+    ObjMVO, feasible_solution, z_vals, x_vals = ConstructFeasibleMVO(**kwargs)
 
     # SVM
     bigM_limit_time, LogToConsole, Verbose = unpack_bigM_params(**kwargs)
@@ -107,14 +107,15 @@ def ConstructFeasibleSolutionandHyperParams(**kwargs):
 
     n, p = period_Context.shape
     # do card MVO
-    ObjMVO, feasible_solution, z_vals = ConstructFeasibleMVO(**kwargs)
+    ObjMVO, feasible_solution, z_vals, x_vals = ConstructFeasibleMVO(**kwargs)
+    z_vals = np.rint(z_vals)
     u = 2 * z_vals - 1
     # SVM
     bigM_limit_time, LogToConsole, Verbose = unpack_bigM_params(**kwargs)
 
     # find the best C using k fold
-    Cs = np.geomspace(2 ** (-14), 2 ** 14, 29)
-    bestC = 2 ** (-14)
+    Cs = np.geomspace(2 ** (-12), 2 ** 12, 25)
+    bestC = 2 ** (-12)
     lowest_error = n  # this is an upper bound on the error
     n_splits = 10
     kf = KFold(n_splits=n_splits, shuffle=True, random_state=20)
@@ -133,14 +134,16 @@ def ConstructFeasibleSolutionandHyperParams(**kwargs):
             except ValueError:
                 if Verbose:
                     print("Value Error - sklearn . . . using Gurobi")
-                svm_phase1_results = SVM(period_Context.iloc[train_index], z_vals[train_index], C, separable, bigM_limit_time, LogToConsole)
+                svm_phase1_results = SVM(period_Context.iloc[train_index], z_vals[train_index], C, separable,
+                                         bigM_limit_time, LogToConsole)
             w_vals = svm_phase1_results['w']
             abs_w = np.abs(w_vals)
             q_largest = np.argpartition(abs_w, (-1) * q)[-q:]
             # restrict indices
             period_Context_subset = period_Context.iloc[:, q_largest]
             try:
-                svm_phase2_results = sklearn_SVM(period_Context_subset.iloc[train_index], z_vals[train_index], C, separable)
+                svm_phase2_results = sklearn_SVM(period_Context_subset.iloc[train_index], z_vals[train_index], C,
+                                                 separable)
                 svc = svm_phase2_results['svc']
                 pred_decision = svc.decision_function(period_Context_subset.iloc[test_index])
             except ValueError:
@@ -186,11 +189,13 @@ def ConstructFeasibleSolutionandHyperParams(**kwargs):
                                           LogToConsole)
     ObjSVM = BestSubsetSVM_results['obj_value']
     # set epsilon so that the risk guarantee is satisfied
-    epsilon = (kappa * ObjMVO) / ObjSVM
+    epsilon = (kappa * ObjMVO) / ObjSVM # this is the big line
     if Verbose:
         print("Largest epsilon value guaranteeing ", 1 + kappa, " risk: ", epsilon)
-
-    return ObjMVO + epsilon * ObjSVM, feasible_solution, bestC, epsilon
+    warm_start = {'x_vals': x_vals, 'z_vals': z_vals,
+                  'w_vals': BestSubsetSVM_results['w'], 't_vals':  np.rint(BestSubsetSVM_results['t']),
+                  'b_val': BestSubsetSVM_results['b'], 'xi_vals': BestSubsetSVM_results['xi']}
+    return ObjMVO + epsilon * ObjSVM, feasible_solution, bestC, epsilon, warm_start
 
 
 def size_of_largest_feature(period_Context, q):
@@ -528,7 +533,7 @@ def HyperparameterBigMStrategy(**kwargs):
         print("Calculating Big M")
 
     start = time.time()
-    ObjSVMMVO, feasible_solution, C, epsilon = ConstructFeasibleSolutionandHyperParams(**kwargs)
+    ObjSVMMVO, feasible_solution, C, epsilon, warm_start = ConstructFeasibleSolutionandHyperParams(**kwargs)
     end = time.time()
     if Verbose:
         print("Feasible solution constructed in ", end - start, " seconds")
@@ -549,4 +554,4 @@ def HyperparameterBigMStrategy(**kwargs):
 
     return {'bigM': bigM, 'big_w_inf': big_w_inf, 'big_w_2': big_w_2, 'big_b': big_b,
             'big_xi': big_xi, 'feasible_solution': feasible_solution, 'Theorem': theorem3_bool,
-            'xi lemma': xi_str, 'C': C, 'epsilon': epsilon}
+            'xi lemma': xi_str, 'C': C, 'epsilon': epsilon, 'warm_start':warm_start}
