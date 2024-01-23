@@ -415,8 +415,9 @@ def SVMMVO(limit_time=30, MipGap=0.01, LogToConsole=True, Verbose=True, Solution
         w_vars.Start = warm_start['w_vals']
         b_var.Start = warm_start['b_val']
         t_vars.Start = warm_start['t_vals']
-        xi_vars.Start = warm_start['xi_vals']
-        print("Warm Start")
+        #xi_vars.Start = warm_start['xi_vals']
+        #print("Warm Start")
+        #m.Params.LogToConsole = True
 
     if previous_portfolio is not None and turnover_constraints:  # add turnover constraints
         absolute_delta = addTurnoverConstraints(m, x_vars, previous_portfolio, turnover_limit)
@@ -440,6 +441,7 @@ def SVMMVO(limit_time=30, MipGap=0.01, LogToConsole=True, Verbose=True, Solution
         print("Norm of w ", np.power(w, 2).sum())
         print("Classification errors ", np.sum(xi))
     end = time.time()
+    #m.Params.LogToConsole = False
     return {'obj_value': obj_value, 'time': end - start, 'bigM_time': bigM_finish_time - start, 'optimality gap': gap2,
             'x': x, 'z': z, 'w': w, 't': t, 'b': b, 'xi': xi, 'feasible_solution': feasible_solution,
             'C':C, 'epsilon':epsilon}
