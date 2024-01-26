@@ -1,4 +1,4 @@
-from services.binary_optimization import *
+from services.class_weighted_models import *
 from services.data_utils import *
 import warnings
 import math
@@ -29,7 +29,7 @@ def ConstructFeasibleMVO(bigM_limit_time=10, bigM_MipGap=0.1, bigM_SolutionLimit
     return ObjMVO, card_mvo_results['feasible_solution'], z_vals, x_vals
 
 
-def ConstructFeasibleSolutionSVM(z_vals, period_Context, C, separable, q, bigM_limit_time, LogToConsole, Verbose):
+def ConstructFeasibleSolutionSVM(z_vals, K, period_Context, C, separable, q, bigM_limit_time, LogToConsole, Verbose):
     # take out args into new dict2
     # SVM
 
@@ -40,7 +40,7 @@ def ConstructFeasibleSolutionSVM(z_vals, period_Context, C, separable, q, bigM_l
     # print(np.power(svm_phase1_results['w'], 2).sum())
     # print(svm_phase1_results['xi'].sum())
     # print(svm_phase1_results['time'])
-    svm_phase1_results = sklearn_SVM(period_Context, z_vals, C, separable)
+    svm_phase1_results = sklearn_SVM(period_Context, K, z_vals, C, separable)
     # print("SKLEARN")
     # print(svm_phase1_results['obj_value'])
     # print(np.power(svm_phase1_results['w'], 2).sum())
@@ -55,7 +55,7 @@ def ConstructFeasibleSolutionSVM(z_vals, period_Context, C, separable, q, bigM_l
     # SVM again
     if Verbose:
         print("Phase 2 SVM...")
-    svm_phase2_results = sklearn_SVM(period_Context_subset, z_vals, C, separable)
+    svm_phase2_results = sklearn_SVM(period_Context_subset, K, z_vals, C, separable)
     if Verbose:
         print("Feasible Solution Constructed")
         print("-" * 20)
@@ -80,6 +80,7 @@ def unpack_bigM_params(**kwargs):
         Verbose = kwargs['Verbose']
     else:
         Verbose = True
+
     return bigM_limit_time, LogToConsole, Verbose
 
 
@@ -91,16 +92,16 @@ def ConstructFeasibleSolution(**kwargs):
     ObjMVO, feasible_solution, z_vals, x_vals = ConstructFeasibleMVO(**kwargs)
 
     # SVM
-    bigM_limit_time, LogToConsole, Verbose = unpack_bigM_params(**kwargs)
 
-    ObjSVM, w, b = ConstructFeasibleSolutionSVM(z_vals, period_Context, C, separable, q,
+    bigM_limit_time, LogToConsole, Verbose = unpack_bigM_params(**kwargs)
+    K = kwargs['K']
+    ObjSVM, w, b = ConstructFeasibleSolutionSVM(z_vals, K, period_Context, C, separable, q,
                                                 bigM_limit_time, LogToConsole, Verbose)
 
     return ObjMVO + epsilon * ObjSVM, feasible_solution
 
 
 def ConstructFeasibleSolutionandHyperParams(**kwargs):
-
     period_Context, separable = kwargs['period_Context'], kwargs['separable']
 
     q = kwargs['q']
@@ -108,6 +109,8 @@ def ConstructFeasibleSolutionandHyperParams(**kwargs):
 
     n, p = period_Context.shape
     # do card MVO
+    K = kwargs['K']
+    class_weights = {-1: K / n, 1: (n - K) / n}
     ObjMVO, feasible_solution, z_vals, x_vals = ConstructFeasibleMVO(**kwargs)
     z_vals = np.rint(z_vals)
     u = 2 * z_vals - 1
@@ -123,6 +126,7 @@ def ConstructFeasibleSolutionandHyperParams(**kwargs):
     error_list = []
     w_list = []
     norm_w = 0
+
     for C in Cs:
         errors = np.zeros(n_splits)
         for i, (train_index, test_index) in enumerate(kf.split(period_Context)):
@@ -131,11 +135,11 @@ def ConstructFeasibleSolutionandHyperParams(**kwargs):
             # print(f"  Test:  index={test_index}")
             # solve SVM
             try:
-                svm_phase1_results = sklearn_SVM(period_Context.iloc[train_index], z_vals[train_index], C, separable)
+                svm_phase1_results = sklearn_SVM(period_Context.iloc[train_index], K, z_vals[train_index], C, separable)
             except ValueError:
                 if Verbose:
                     print("Value Error - sklearn . . . using Gurobi")
-                svm_phase1_results = SVM(period_Context.iloc[train_index], z_vals[train_index], C, separable,
+                svm_phase1_results = SVM(period_Context.iloc[train_index], K, z_vals[train_index], C, separable,
                                          bigM_limit_time, LogToConsole)
             w_vals = svm_phase1_results['w']
             abs_w = np.abs(w_vals)
@@ -143,20 +147,21 @@ def ConstructFeasibleSolutionandHyperParams(**kwargs):
             # restrict indices
             period_Context_subset = period_Context.iloc[:, q_largest]
             try:
-                svm_phase2_results = sklearn_SVM(period_Context_subset.iloc[train_index], z_vals[train_index], C,
+                svm_phase2_results = sklearn_SVM(period_Context_subset.iloc[train_index], K, z_vals[train_index], C,
                                                  separable)
                 svc = svm_phase2_results['svc']
                 pred_decision = svc.decision_function(period_Context_subset.iloc[test_index])
             except ValueError:
-                svm_phase2_results = SVM(period_Context_subset.iloc[train_index], z_vals[train_index], C, separable,
+                svm_phase2_results = SVM(period_Context_subset.iloc[train_index], K, z_vals[train_index], C, separable,
                                          bigM_limit_time, LogToConsole)
                 w, b = svm_phase2_results['w'], svm_phase2_results['b']
                 pred_decision = period_Context_subset.iloc[test_index].values @ svm_phase2_results['w'] + b
             margin = u[test_index] * pred_decision
             xi_test = np.maximum(0, 1 - margin)
-            errors[i] = np.sum(xi_test)
+            errors[i] = class_weights[-1]*np.sum(xi_test[u[test_index] < -0.95]) + class_weights[1]*np.sum(xi_test[u[test_index]  > 0.95])
         error_list.append(errors.mean())
         w_list.append(np.power(svm_phase2_results['w'], 2).sum())
+
         if errors.mean() < lowest_error:
             bestC = C
             if Verbose:
@@ -170,18 +175,18 @@ def ConstructFeasibleSolutionandHyperParams(**kwargs):
         print("Non degenerate solution found")
     # calculate ObjSVM and construct bound on ||w||_1
     try:
-        svm_phase1_results = sklearn_SVM(period_Context, z_vals, bestC, separable)
+        svm_phase1_results = sklearn_SVM(period_Context, K, z_vals, bestC, separable)
     except ValueError:
-        svm_phase1_results = SVM(period_Context, z_vals, bestC, separable, bigM_limit_time, LogToConsole)
+        svm_phase1_results = SVM(period_Context, K, z_vals, bestC, separable, bigM_limit_time, LogToConsole)
     w_vals = svm_phase1_results['w']
     abs_w = np.abs(w_vals)
     q_largest = np.argpartition(abs_w, (-1) * q)[-q:]
     # restrict indices
     period_Context_subset = period_Context.iloc[:, q_largest]
     try:
-        svm_phase2_results = sklearn_SVM(period_Context_subset, z_vals, bestC, separable)
+        svm_phase2_results = sklearn_SVM(period_Context_subset, K, z_vals, bestC, separable)
     except ValueError:
-        svm_phase2_results = SVM(period_Context_subset, z_vals, bestC, separable, bigM_limit_time, LogToConsole)
+        svm_phase2_results = SVM(period_Context_subset, K, z_vals, bestC, separable, bigM_limit_time, LogToConsole)
     # sqrt(2 ObjSVM) is the soln is big_w2 and hence big w
     ObjFeasibleSVM = svm_phase2_results['obj_value']
     big_w2 = math.sqrt(2 * ObjFeasibleSVM)
@@ -193,16 +198,17 @@ def ConstructFeasibleSolutionandHyperParams(**kwargs):
     b_val = svm_phase2_results['b']
 
     warm_start = {'w_vals': w_vals, 'b_val': b_val, 't_vals': t_vals}
-    BestSubsetSVM_results = BestSubsetSVM(period_Context, z_vals, bestC, separable, q, big_w2, bigM_limit_time,
+    BestSubsetSVM_results = BestSubsetSVM(period_Context, K, z_vals, bestC, separable, q, big_w2, bigM_limit_time,
                                           LogToConsole, warm_start)
     ObjSVM = BestSubsetSVM_results['obj_value']
     # set epsilon so that the risk guarantee is satisfied
-    epsilon = (kappa * ObjMVO*1000) / (ObjSVM*1000)  # this is the big line
+    epsilon = (kappa * ObjMVO * 1000) / (ObjSVM * 1000)  # this is the big line
     if Verbose:
         print("Largest epsilon value guaranteeing ", 1 + kappa, " risk: ", epsilon)
     warm_start = {'x_vals': x_vals, 'z_vals': z_vals,
                   'w_vals': BestSubsetSVM_results['w'], 't_vals': np.rint(BestSubsetSVM_results['t']),
-                  'b_val': BestSubsetSVM_results['b'], 'xi_vals': BestSubsetSVM_results['xi']}
+                  'b_val': BestSubsetSVM_results['b'], 'xi_plus': BestSubsetSVM_results['xi_plus'],
+                  'xi_neg': BestSubsetSVM_results['xi_neg']}
     return ObjMVO + epsilon * ObjSVM, feasible_solution, bestC, epsilon, warm_start
 
 
@@ -563,6 +569,5 @@ def HyperparameterBigMStrategy(**kwargs):
     return {'bigM': bigM, 'big_w_inf': big_w_inf, 'big_w_2': big_w_2, 'big_b': big_b,
             'big_xi': big_xi, 'feasible_solution': feasible_solution, 'Theorem': theorem3_bool,
             'xi lemma': xi_str, 'C': C, 'epsilon': epsilon, 'warm_start': warm_start}
-
 
 #

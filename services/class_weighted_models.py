@@ -116,7 +116,7 @@ def CardMVO(limit_time=30, MipGap=0.01, SolutionLimit=GRB.MAXINT,
 
 def CreateSVMMVOModel(mu, targetRet, Q, K, q, epsilon,
                       bigM, big_w_inf,
-                      period_Context, C, separable, limit_time, MipGap, LogToConsole):
+                      period_Context, C, separable, limit_time, MipGap, LogToConsole, class_weights):
     n, p = period_Context.shape
 
     m = gp.Model("miqp")
@@ -147,21 +147,25 @@ def CreateSVMMVOModel(mu, targetRet, Q, K, q, epsilon,
     m.addConstr(x_vars <= z_vars)
 
     if separable:
-        xi_vars = None
+        xi_plus_vars = None
+        xi_neg_vars = None
         m.setObjective(x_vars @ Q @ x_vars + (epsilon / 2) * (w_vars @ w_vars), gp.GRB.MINIMIZE)
         for i in range(n):
             y_i = period_Context.iloc[i].values
             m.addConstr(w_vars @ y_i + b_var <= -1 + bigM * z_vars[i], name="svm1")
             m.addConstr(w_vars @ y_i + b_var >= 1 + bigM * (1 - z_vars[i]), name="svm2")
     else:
-        xi_vars = m.addMVar(n, lb=0.0, vtype=gp.GRB.CONTINUOUS, name="xi_vars")
+        xi_plus_vars = m.addMVar(n, lb=0.0, vtype=gp.GRB.CONTINUOUS, name="xi_plus_vars")
+        xi_neg_vars = m.addMVar(n, lb=0.0, vtype=gp.GRB.CONTINUOUS, name="xi_neg_vars")
         C_epsilon_by_n = C * epsilon / n
-        m.setObjective(x_vars @ Q @ x_vars + (epsilon / 2) * (w_vars @ w_vars) + C_epsilon_by_n * xi_vars.sum(),
+        m.setObjective(x_vars @ Q @ x_vars + (epsilon / 2) * (w_vars @ w_vars) + C_epsilon_by_n * class_weights[
+            1] * xi_plus_vars.sum()
+                       + class_weights[0] * C_epsilon_by_n * xi_neg_vars.sum(),
                        gp.GRB.MINIMIZE)
         for i in range(n):
             y_i = period_Context.iloc[i].values
-            m.addConstr(w_vars @ y_i + b_var <= -1 + xi_vars[i] + bigM * z_vars[i], name="svm1")
-            m.addConstr(w_vars @ y_i + b_var >= 1 - xi_vars[i] - bigM * (1 - z_vars[i]), name="svm2")
+            m.addConstr(w_vars @ y_i + b_var <= -1 + xi_neg_vars[i] + bigM * z_vars[i], name="svm1")
+            m.addConstr(w_vars @ y_i + b_var >= 1 - xi_plus_vars[i] - bigM * (1 - z_vars[i]), name="svm2")
 
     m.addConstr(w_vars <= big_w_inf * t_vars)
 
@@ -169,10 +173,10 @@ def CreateSVMMVOModel(mu, targetRet, Q, K, q, epsilon,
 
     m.addConstr(t_vars.sum() <= q)
 
-    return m, x_vars, z_vars, w_vars, b_var, t_vars, xi_vars
+    return m, x_vars, z_vars, w_vars, b_var, t_vars, xi_plus_vars, xi_neg_vars
 
 
-def CreateSVMModel(period_Context, z_vals, C, separable, limit_time, LogToConsole):
+def CreateSVMModel(period_Context, z_vals, C, separable, limit_time, LogToConsole, class_weights):
     n, p = period_Context.shape
 
     m = gp.Model("miqp")
@@ -186,57 +190,66 @@ def CreateSVMModel(period_Context, z_vals, C, separable, limit_time, LogToConsol
     b_var = m.addMVar(shape=1, lb=-1 * GRB.INFINITY, name="b_var", vtype=gp.GRB.CONTINUOUS)
 
     if separable:
-        xi_vars = None
+        xi_plus_vars = None
+        xi_neg_vars = None
         m.setObjective((1 / 2) * (w_vars @ w_vars), gp.GRB.MINIMIZE)
         for i in range(n):
             y_i = period_Context.iloc[i].values
             m.addConstr((2 * z_vals[i] - 1) * (y_i @ w_vars + b_var) >= 1)
     else:
-        xi_vars = m.addMVar(n, lb=0.0, vtype=gp.GRB.CONTINUOUS, name="xi_vars")
+        xi_plus_vars = m.addMVar(n, lb=0.0, vtype=gp.GRB.CONTINUOUS, name="xi_plus_vars")
+        xi_neg_vars = m.addMVar(n, lb=0.0, vtype=gp.GRB.CONTINUOUS, name="xi_neg_vars")
         C_by_n = C / n
-        m.setObjective((1 / 2) * (w_vars @ w_vars) + C_by_n * xi_vars.sum(), gp.GRB.MINIMIZE)
+        m.setObjective((1 / 2) * (w_vars @ w_vars) + C_by_n * class_weights[1] * xi_plus_vars.sum()
+                       + class_weights[0] * C_by_n * xi_neg_vars.sum(), gp.GRB.MINIMIZE)
         for i in range(n):
             y_i = period_Context.iloc[i].values
-            m.addConstr((2 * z_vals[i] - 1) * (y_i @ w_vars + b_var) + xi_vars[i] >= 1)
-    return m, w_vars, b_var, xi_vars
+            if z_vals[i] > 0.9:
+                m.addConstr((2 * z_vals[i] - 1) * (y_i @ w_vars + b_var) + xi_plus_vars[i] >= 1)
+            else:
+                m.addConstr((2 * z_vals[i] - 1) * (y_i @ w_vars + b_var) + xi_neg_vars[i] >= 1)
+    return m, w_vars, b_var, xi_plus_vars, xi_neg_vars
 
 
-def extractSVMSolution(n, p, m, w_vars, b_var, xi_vars):
+def extractSVMSolution(n, p, m, w_vars, b_var, xi_plus_vars, xi_neg_vars):
     w = np.zeros(p)
     b = np.zeros(1)
-    xi = np.zeros(n)
+    xi_plus = np.zeros(n)
+    xi_neg = np.zeros(n)
     for i in range(p):
         w[i] = w_vars[i].X
     b[0] = b_var[0].X
 
     for i in range(n):
-        if xi_vars is not None:
-            xi[i] = xi_vars[i].X
-
+        if xi_plus_vars is not None:
+            xi_plus[i] = xi_plus_vars[i].X
+        if xi_neg_vars is not None:
+            xi_neg[i] = xi_neg_vars[i].X
     obj_value = m.objVal
 
-    return obj_value, w, b, xi
+    return obj_value, w, b, xi_plus, xi_neg
 
 
-def SVM(period_Context, z_vals, C, separable, limit_time, LogToConsole):
+def SVM(period_Context, K, z_vals, C, separable, limit_time, LogToConsole):
     n, p = period_Context.shape
-
-    m, w_vars, b_var, xi_vars = CreateSVMModel(period_Context, z_vals, C, separable, limit_time, LogToConsole)
+    class_weights = {0: K / n, 1: (n - K) / n}
+    m, w_vars, b_var, xi_plus_vars, xi_neg_vars = CreateSVMModel(period_Context, z_vals, C, separable, limit_time,
+                                                                 LogToConsole, class_weights)
     start = time.time()
     m.optimize()
     end = time.time()
-    obj_value, w, b, xi = extractSVMSolution(n, p, m, w_vars, b_var, xi_vars)
+    obj_value, w, b, xi_plus, xi_neg = extractSVMSolution(n, p, m, w_vars, b_var, xi_plus_vars, xi_neg_vars)
 
-    return {'obj_value': obj_value, 'time': end - start, 'w': w, 'b': b, 'xi': xi}
+    return {'obj_value': obj_value, 'time': end - start, 'w': w, 'b': b, 'xi_plus': xi_plus, 'xi_neg': xi_neg}
 
 
-def sklearn_SVM(period_Context, z_vals, C, separable):
+def sklearn_SVM(period_Context, K, z_vals, C, separable):
     if separable is True:
         warnings.warn("SVM is no longer separable")
 
     n, p = period_Context.shape
-
-    svc = SVC(C=C / n, kernel='linear')
+    class_weights = {-1: K / n, 1: (n - K) / n}
+    svc = SVC(C=C / n, kernel='linear', class_weight=class_weights)
     u = 2 * z_vals - 1
     start = time.time()
     svc.fit(period_Context, u)
@@ -246,12 +259,15 @@ def sklearn_SVM(period_Context, z_vals, C, separable):
     pred_decision = svc.decision_function(period_Context)
     margin = u * pred_decision
     xi = np.maximum(0, 1 - margin)
-    obj_value = (1 / 2) * np.power(w, 2).sum() + C/n * np.mean(xi)
+    pos_indices = z_vals > 0.9
+    neg_indices = z_vals <= 0.9
+    obj_value = (1 / 2) * np.power(w, 2).sum() + C / n * class_weights[1] * np.mean(xi[pos_indices]) \
+                + C / n * class_weights[-1] * np.mean(xi[neg_indices])
 
     return {'obj_value': obj_value, 'time': end - start, 'w': w, 'b': b, 'xi': xi, 'svc': svc}
 
 
-def CreateBestSubsetSVMModel(period_Context, z_vals, C, separable, q, big_w2, limit_time, LogToConsole):
+def CreateBestSubsetSVMModel(period_Context, z_vals, C, separable, q, big_w2, limit_time, LogToConsole, class_weights):
     n, p = period_Context.shape
 
     m = gp.Model("miqp")
@@ -266,32 +282,40 @@ def CreateBestSubsetSVMModel(period_Context, z_vals, C, separable, q, big_w2, li
     b_var = m.addMVar(shape=1, lb=-1 * GRB.INFINITY, name="b_var", vtype=gp.GRB.CONTINUOUS)
 
     if separable:
-        xi_vars = None
+        xi_plus_vars = None
+        xi_neg_vars = None
         m.setObjective((1 / 2) * (w_vars @ w_vars), gp.GRB.MINIMIZE)
         for i in range(n):
             y_i = period_Context.iloc[i].values
             m.addConstr((2 * z_vals[i] - 1) * (y_i @ w_vars + b_var) >= 1)
     else:
-        xi_vars = m.addMVar(n, lb=0.0, vtype=gp.GRB.CONTINUOUS, name="xi_vars")
+        xi_plus_vars = m.addMVar(n, lb=0.0, vtype=gp.GRB.CONTINUOUS, name="xi_plus_vars")
+        xi_neg_vars = m.addMVar(n, lb=0.0, vtype=gp.GRB.CONTINUOUS, name="xi_neg_vars")
         C_by_n = C / n
-        m.setObjective((1 / 2) * (w_vars @ w_vars) + C_by_n * xi_vars.sum(), gp.GRB.MINIMIZE)
+        m.setObjective((1 / 2) * (w_vars @ w_vars) + C_by_n * class_weights[1] * xi_plus_vars.sum()
+                       + class_weights[0] * C_by_n * xi_neg_vars.sum(), gp.GRB.MINIMIZE)
         for i in range(n):
             y_i = period_Context.iloc[i].values
-            m.addConstr((2 * z_vals[i] - 1) * (y_i @ w_vars + b_var) + xi_vars[i] >= 1)
+            if z_vals[i] > 0.9:
+                m.addConstr((2 * z_vals[i] - 1) * (y_i @ w_vars + b_var) + xi_plus_vars[i] >= 1)
+            else:
+                m.addConstr((2 * z_vals[i] - 1) * (y_i @ w_vars + b_var) + xi_neg_vars[i] >= 1)
 
     m.addConstr(t_vars.sum() <= q)
 
     m.addConstr(w_vars <= big_w2 * t_vars)
     m.addConstr((-1) * w_vars <= big_w2 * t_vars)
 
-    return m, w_vars, b_var, xi_vars, t_vars
+    return m, w_vars, b_var, xi_plus_vars, xi_neg_vars, t_vars
 
 
-def BestSubsetSVM(period_Context, z_vals, C, separable, q, big_w2, limit_time, LogToConsole, warm_start):
+def BestSubsetSVM(period_Context, K, z_vals, C, separable, q, big_w2, limit_time, LogToConsole, warm_start):
     n, p = period_Context.shape
-
-    m, w_vars, b_var, xi_vars, t_vars = CreateBestSubsetSVMModel(period_Context, z_vals, C, separable, q, big_w2,
-                                                                 limit_time, LogToConsole)
+    class_weights = {0: K / n, 1: (n - K) / n}
+    m, w_vars, b_var, xi_plus_vars, xi_neg_vars, t_vars = CreateBestSubsetSVMModel(period_Context, z_vals, C, separable,
+                                                                                   q, big_w2,
+                                                                                   limit_time, LogToConsole,
+                                                                                   class_weights)
 
     w_vars.Start = warm_start['w_vals']
     b_var.Start = warm_start['b_val']
@@ -300,27 +324,29 @@ def BestSubsetSVM(period_Context, z_vals, C, separable, q, big_w2, limit_time, L
     start = time.time()
     m.optimize()
     end = time.time()
-    obj_value, w, b, xi = extractSVMSolution(n, p, m, w_vars, b_var, xi_vars)
+    obj_value, w, b, xi_plus, xi_neg = extractSVMSolution(n, p, m, w_vars, b_var, xi_plus_vars, xi_neg_vars)
     t = np.zeros(p)
     for i in range(p):
         t[i] = t_vars[i].X
 
-    return {'obj_value': obj_value, 'time': end - start, 'w': w, 'b': b, 'xi': xi, 't': t}
+    return {'obj_value': obj_value, 'time': end - start, 'w': w, 'b': b, 'xi_plus': xi_plus, 'xi_neg': xi_neg, 't': t}
 
 
-def extractSVMMVOSolution(n, p, m, x_vars, z_vars, w_vars, t_vars, b_var, xi_vars):
+def extractSVMMVOSolution(n, p, m, x_vars, z_vars, w_vars, t_vars, b_var, xi_plus_vars, xi_neg_vars):
     x = np.zeros(n)
     z = np.zeros(n)
     w = np.zeros(p)
     t = np.zeros(p)
     b = np.zeros(1)
-    xi = np.zeros(n)
-
+    xi_plus = np.zeros(n)
+    xi_neg = np.zeros(n)
     for i in range(n):
         x[i] = x_vars[i].X
         z[i] = z_vars[i].X
-        if xi_vars is not None:
-            xi[i] = xi_vars[i].X
+        if xi_plus_vars is not None:
+            xi_plus[i] = xi_plus_vars[i].X
+        if xi_neg_vars is not None:
+            xi_neg[i] = xi_neg_vars[i].X
 
     for i in range(p):
         w[i] = w_vars[i].X
@@ -330,10 +356,11 @@ def extractSVMMVOSolution(n, p, m, x_vars, z_vars, w_vars, t_vars, b_var, xi_var
     obj_value = m.objVal
     gap1 = m.MIPGap
     gap2 = gap1 * 100
-    return obj_value, gap2, x, z, w, t, b, xi
+    return obj_value, gap2, x, z, w, t, b, xi_plus, xi_neg
 
 
-def smallestTurnoverModelSVMMVO(m, n, absolute_delta, separable, w_vars, xi_vars, epsilon, C):
+def smallestTurnoverModelSVMMVO(m, n, absolute_delta, separable, w_vars, xi_plus_vars, xi_neg_vars, epsilon, C,
+                                class_weights):
     # compute the smallest turnover portfolio instead of smallest risk with turnover constraints
 
     m.remove(m.getConstrByName('turnover'))
@@ -343,7 +370,9 @@ def smallestTurnoverModelSVMMVO(m, n, absolute_delta, separable, w_vars, xi_vars
         m.setObjective(absolute_delta.sum() + (epsilon / 2) * (w_vars @ w_vars), gp.GRB.MINIMIZE)
     else:
         C_epsilon_by_n = C * epsilon / n
-        m.setObjective(absolute_delta.sum() + (epsilon / 2) * (w_vars @ w_vars) + C_epsilon_by_n * xi_vars.sum(),
+        m.setObjective(absolute_delta.sum() + (epsilon / 2) * (w_vars @ w_vars) + C_epsilon_by_n * class_weights[
+            1] * xi_plus_vars.sum()
+                       + class_weights[0] * C_epsilon_by_n * xi_neg_vars.sum(),
                        gp.GRB.MINIMIZE)
     m.optimize()
 
@@ -383,7 +412,12 @@ def SVMMVO(limit_time=30, MipGap=0.01, LogToConsole=True, Verbose=True, Solution
     n, p = period_Context.shape
     mu = mu.squeeze()
 
+    class_weights = {0: K / n, 1: (n - K) / n}
+    if Verbose:
+        print("Class weighted SVM")
+
     start = time.time()
+
     # compute big M here
     big_M_results, bigM, big_w_inf, big_b, big_xi = SVMMVO_check_bigM(user_big_m, LogToConsole,
                                                                       bigMStrategy, Verbose, kwargs)
@@ -406,11 +440,15 @@ def SVMMVO(limit_time=30, MipGap=0.01, LogToConsole=True, Verbose=True, Solution
 
     bigM_finish_time = time.time()
 
-    m, x_vars, z_vars, w_vars, b_var, t_vars, xi_vars = CreateSVMMVOModel(mu, targetRet, Q, K, q, epsilon,
-                                                                          bigM, big_w_inf,
-                                                                          period_Context, C=C,
-                                                                          separable=separable, limit_time=limit_time,
-                                                                          MipGap=MipGap, LogToConsole=LogToConsole)
+    m, x_vars, z_vars, w_vars, b_var, t_vars, xi_plus_vars, xi_neg_vars = CreateSVMMVOModel(mu, targetRet, Q, K, q,
+                                                                                            epsilon,
+                                                                                            bigM, big_w_inf,
+                                                                                            period_Context, C=C,
+                                                                                            separable=separable,
+                                                                                            limit_time=limit_time,
+                                                                                            MipGap=MipGap,
+                                                                                            LogToConsole=LogToConsole,
+                                                                                            class_weights=class_weights)
 
     m.Params.SolutionLimit = SolutionLimit
     if 'warm_start' in big_M_results.keys():
@@ -438,15 +476,19 @@ def SVMMVO(limit_time=30, MipGap=0.01, LogToConsole=True, Verbose=True, Solution
         if previous_portfolio is not None and turnover_constraints:
             if Verbose:
                 print("Calculating the closest turnover portfolio...")
-            smallestTurnoverModelSVMMVO(m, n, absolute_delta, separable, w_vars, xi_vars, epsilon, C)
+            smallestTurnoverModelSVMMVO(m, n, absolute_delta, separable, w_vars,
+                                        xi_plus_vars, xi_neg_vars, epsilon, C, class_weights)
 
-    obj_value, gap2, x, z, w, t, b, xi = extractSVMMVOSolution(n, p, m, x_vars, z_vars, w_vars, t_vars, b_var, xi_vars)
+    obj_value, gap2, x, z, w, t, b, xi_plus, xi_neg = extractSVMMVOSolution(n, p, m, x_vars, z_vars, w_vars,
+                                                                            t_vars, b_var, xi_plus_vars, xi_neg_vars)
     if Verbose:
         print("SVM MVO Objective Value ", obj_value)
         print("Norm of w ", np.power(w, 2).sum())
-        print("Classification errors ", np.sum(xi))
+        print("Positive Classification errors ", np.sum(xi_plus))
+        print("Negative Classification errors ", np.sum(xi_neg))
     end = time.time()
     # m.Params.LogToConsole = False
     return {'obj_value': obj_value, 'time': end - start, 'bigM_time': bigM_finish_time - start, 'optimality gap': gap2,
-            'x': x, 'z': z, 'w': w, 't': t, 'b': b, 'xi': xi, 'feasible_solution': feasible_solution,
+            'x': x, 'z': z, 'w': w, 't': t, 'b': b, 'xi_plus': xi_plus, 'xi_neg': xi_neg,
+            'feasible_solution': feasible_solution,
             'C': C, 'epsilon': epsilon}
