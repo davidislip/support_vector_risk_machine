@@ -100,6 +100,7 @@ def ConstructFeasibleSolution(**kwargs):
 
 
 def ConstructFeasibleSolutionandHyperParams(**kwargs):
+
     period_Context, separable = kwargs['period_Context'], kwargs['separable']
 
     q = kwargs['q']
@@ -191,16 +192,16 @@ def ConstructFeasibleSolutionandHyperParams(**kwargs):
     t_vals[q_largest] = np.ones(len(q_largest))
     b_val = svm_phase2_results['b']
 
-    warm_start = {'w_vals' : w_vals, 'b_val':b_val, 't_vals':t_vals}
+    warm_start = {'w_vals': w_vals, 'b_val': b_val, 't_vals': t_vals}
     BestSubsetSVM_results = BestSubsetSVM(period_Context, z_vals, bestC, separable, q, big_w2, bigM_limit_time,
                                           LogToConsole, warm_start)
     ObjSVM = BestSubsetSVM_results['obj_value']
     # set epsilon so that the risk guarantee is satisfied
-    epsilon = (kappa * ObjMVO) / ObjSVM # this is the big line
+    epsilon = (kappa * ObjMVO*1000) / (ObjSVM*1000)  # this is the big line
     if Verbose:
         print("Largest epsilon value guaranteeing ", 1 + kappa, " risk: ", epsilon)
     warm_start = {'x_vals': x_vals, 'z_vals': z_vals,
-                  'w_vals': BestSubsetSVM_results['w'], 't_vals':  np.rint(BestSubsetSVM_results['t']),
+                  'w_vals': BestSubsetSVM_results['w'], 't_vals': np.rint(BestSubsetSVM_results['t']),
                   'b_val': BestSubsetSVM_results['b'], 'xi_vals': BestSubsetSVM_results['xi']}
     return ObjMVO + epsilon * ObjSVM, feasible_solution, bestC, epsilon, warm_start
 
@@ -561,4 +562,7 @@ def HyperparameterBigMStrategy(**kwargs):
 
     return {'bigM': bigM, 'big_w_inf': big_w_inf, 'big_w_2': big_w_2, 'big_b': big_b,
             'big_xi': big_xi, 'feasible_solution': feasible_solution, 'Theorem': theorem3_bool,
-            'xi lemma': xi_str, 'C': C, 'epsilon': epsilon, 'warm_start':warm_start}
+            'xi lemma': xi_str, 'C': C, 'epsilon': epsilon, 'warm_start': warm_start}
+
+
+#

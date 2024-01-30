@@ -230,3 +230,9 @@ def efficient_frontier_premium(Strategy, max_return, min_return, NumPts, periodR
     Strategy.investor_preferences['Verbose'] = oldVerbose
     Strategy.investor_preferences['LogToConsole'] = oldLogToConsole
     return vols, rets,  premiums, cardinalities, mip_gaps, results
+
+
+def create_linear_function(w, b):
+    def formula(x):
+        return (-1/(w[1]))*(w[0]*x + b)
+    return formula

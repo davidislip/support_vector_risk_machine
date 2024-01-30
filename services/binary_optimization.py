@@ -246,7 +246,7 @@ def sklearn_SVM(period_Context, z_vals, C, separable):
     pred_decision = svc.decision_function(period_Context)
     margin = u * pred_decision
     xi = np.maximum(0, 1 - margin)
-    obj_value = (1 / 2) * np.power(w, 2).sum() + C * np.mean(xi)
+    obj_value = (1 / 2) * np.power(w, 2).sum() + C/n * np.mean(xi)
 
     return {'obj_value': obj_value, 'time': end - start, 'w': w, 'b': b, 'xi': xi, 'svc': svc}
 
