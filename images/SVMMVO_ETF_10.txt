@@ -1,0 +1,5 @@
+Number of instances where SVMMVO won  57
+Number of instances where SVMMVO lost  37
+Number of instances  126
+% of instances where SVMMVO won  0.4523809523809524
+% of instances where SVMMVO lost  0.29365079365079366

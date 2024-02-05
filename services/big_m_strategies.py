@@ -236,8 +236,8 @@ def largest_pairwise_distance(period_Context, q):
 
 
 def theorem1(ObjSVMMVO, n, epsilon, C, largest_abs):
-    big_w_inf = math.sqrt(ObjSVMMVO / epsilon)
-    big_w_2 = math.sqrt(ObjSVMMVO / epsilon)
+    big_w_inf = min(math.sqrt(ObjSVMMVO / epsilon), math.sqrt(2*C))
+    big_w_2 = min(math.sqrt(ObjSVMMVO / epsilon), math.sqrt(2*C))
     big_b = 1 + largest_abs * math.sqrt(ObjSVMMVO / epsilon)
 
     big_xi = n * ObjSVMMVO / (epsilon * C)
