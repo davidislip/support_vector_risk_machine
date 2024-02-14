@@ -7,116 +7,9 @@ import warnings
 from sklearn.metrics import hinge_loss
 
 
-# Cardinality Constrained Optimization
-def CreateCardMVOModel(mu, targetRet, Q, K, limit_time=30, MipGap=0.01, LogToConsole=True):
-    n = len(mu)
-
-    m = gp.Model("miqp")
-
-    m.Params.timeLimit = limit_time
-
-    m.Params.MIPGap = MipGap
-
-    m.Params.LogToConsole = int(LogToConsole)
-
-    z_vars = m.addMVar(n, vtype=gp.GRB.BINARY, name="z_vars")
-
-    x_vars = m.addMVar(n, lb=0.0, vtype=gp.GRB.CONTINUOUS, name="x_vars")
-
-    m.setObjective(x_vars @ Q @ x_vars, gp.GRB.MINIMIZE)
-
-    m.addConstr(x_vars.sum() == 1)
-
-    m.addConstr(mu @ x_vars >= targetRet)
-
-    m.addConstr(z_vars.sum() <= K)
-
-    m.addConstr(x_vars <= z_vars)
-
-    return m, x_vars, z_vars
-
-
-def extractSolution(n, m, x_vars, z_vars):
-    x = np.zeros(n)
-    z = np.zeros(n)
-    for i in range(n):
-        x[i] = x_vars[i].X
-        z[i] = z_vars[i].X
-    obj_value = m.objVal
-    gap1 = m.MIPGap
-    gap2 = gap1 * 100
-    return obj_value, gap2, x, z
-
-
-def addTurnoverConstraints(m, x_vars, previous_portfolio, turnover_limit):
-    n = len(previous_portfolio)
-    absolute_delta = m.addMVar(n, lb=0, ub=GRB.INFINITY,
-                               vtype=gp.GRB.CONTINUOUS, name="magnitude of portfolio changes")
-    m.addConstr(absolute_delta >= x_vars - previous_portfolio)
-    m.addConstr(absolute_delta >= previous_portfolio - x_vars)
-    m.addConstr(absolute_delta.sum() <= turnover_limit, name='turnover')
-    m.update()
-    return absolute_delta
-
-
-def smallestTurnoverModel(m, absolute_delta):
-    # compute the smallest turnover portfolio instead of the smallest risk with turnover constraints
-    m.remove(m.getConstrByName('turnover'))
-    m.reset()
-    m.setObjective(absolute_delta.sum())
-    m.update()
-    m.optimize()
-
-
-def CardMVO(limit_time=30, MipGap=0.01, SolutionLimit=GRB.MAXINT,
-            LogToConsole=True, Verbose=True, **kwargs):
-    mu, Q, K, targetRet = kwargs['mu'], kwargs['Q'], kwargs['K'], kwargs['targetRet']
-    turnover_constraints = kwargs['turnover_constraints']
-    previous_portfolio = kwargs['previous_portfolio']
-    if turnover_constraints:
-        turnover_limit = kwargs['turnover_limit']
-
-    feasible_solution = True
-
-    n = len(mu)
-    mu = mu.squeeze()
-
-    start = time.time()
-
-    m, x_vars, z_vars = CreateCardMVOModel(mu, targetRet, Q, K, limit_time, MipGap, LogToConsole)
-    m.Params.FeasibilityTol = 1e-8
-    m.Params.SolutionLimit = SolutionLimit
-
-    if previous_portfolio is not None and turnover_constraints:
-        absolute_delta = addTurnoverConstraints(m, x_vars, previous_portfolio, turnover_limit)
-
-    if Verbose:
-        print("-" * 20)
-        print("Solving Card MVO...")
-    m.optimize()
-
-    # model did not solve
-    if m.status in (4, 3):
-        feasible_solution = False
-        if previous_portfolio is not None and turnover_constraints:
-            if Verbose:
-                print("Computing lowest turnover feasible solution...")
-            smallestTurnoverModel(m, absolute_delta)
-
-    obj_value, gap2, x, z = extractSolution(n, m, x_vars, z_vars)
-
-    end = time.time()
-    if Verbose:
-        print("Card MVO Finished...")
-        print("-" * 20)
-
-    return {'obj_value': obj_value, 'time': end - start,
-            'optimality gap': gap2, 'x': x, 'z': z, 'feasible_solution': feasible_solution}
-
-
-def CreateSVMMVOModel(mu, targetRet, Q, K, q, epsilon,
-                      bigM, big_w_inf,
-                      period_Context, C, separable, limit_time, MipGap, LogToConsole, class_weights):
+def CreateClassWgtSVMMVOModel(mu, targetRet, Q, K, q, epsilon,
+                              bigM, big_w_inf,
+                              period_Context, C, separable, limit_time, MipGap, LogToConsole, class_weights):
     n, p = period_Context.shape
 
     m = gp.Model("miqp")
@@ -176,7 +69,7 @@ def CreateSVMMVOModel(mu, targetRet, Q, K, q, epsilon,
     return m, x_vars, z_vars, w_vars, b_var, t_vars, xi_plus_vars, xi_neg_vars
 
 
-def CreateSVMModel(period_Context, z_vals, C, separable, limit_time, LogToConsole, class_weights):
+def CreateClassWgtSVMModel(period_Context, z_vals, C, separable, limit_time, LogToConsole, class_weights):
     n, p = period_Context.shape
 
     m = gp.Model("miqp")
@@ -230,11 +123,12 @@ def extractSVMSolution(n, p, m, w_vars, b_var, xi_plus_vars, xi_neg_vars):
     return obj_value, w, b, xi_plus, xi_neg
 
 
-def SVM(period_Context, K, z_vals, C, separable, limit_time, LogToConsole):
+def ClassWgtSVM(period_Context, K, z_vals, C, separable, limit_time, LogToConsole):
     n, p = period_Context.shape
     class_weights = {0: K / n, 1: (n - K) / n}
-    m, w_vars, b_var, xi_plus_vars, xi_neg_vars = CreateSVMModel(period_Context, z_vals, C, separable, limit_time,
-                                                                 LogToConsole, class_weights)
+    m, w_vars, b_var, xi_plus_vars, xi_neg_vars = CreateClassWgtSVMModel(period_Context, z_vals, C, separable,
+                                                                         limit_time,
+                                                                         LogToConsole, class_weights)
     start = time.time()
     m.optimize()
     end = time.time()
@@ -243,7 +137,7 @@ def SVM(period_Context, K, z_vals, C, separable, limit_time, LogToConsole):
     return {'obj_value': obj_value, 'time': end - start, 'w': w, 'b': b, 'xi_plus': xi_plus, 'xi_neg': xi_neg}
 
 
-def sklearn_SVM(period_Context, K, z_vals, C, separable):
+def sklearn_ClassWgtSVM(period_Context, K, z_vals, C, separable):
     if separable is True:
         warnings.warn("SVM is no longer separable")
 
@@ -267,7 +161,8 @@ def sklearn_SVM(period_Context, K, z_vals, C, separable):
     return {'obj_value': obj_value, 'time': end - start, 'w': w, 'b': b, 'xi': xi, 'svc': svc}
 
 
-def CreateBestSubsetSVMModel(period_Context, z_vals, C, separable, q, big_w2, limit_time, LogToConsole, class_weights):
+def CreateBestSubsetClassWgtSVMModel(period_Context, z_vals, C, separable, q, big_w2, limit_time, LogToConsole,
+                                     class_weights):
     n, p = period_Context.shape
 
     m = gp.Model("miqp")
@@ -309,13 +204,14 @@ def CreateBestSubsetSVMModel(period_Context, z_vals, C, separable, q, big_w2, li
     return m, w_vars, b_var, xi_plus_vars, xi_neg_vars, t_vars
 
 
-def BestSubsetSVM(period_Context, K, z_vals, C, separable, q, big_w2, limit_time, LogToConsole, warm_start):
+def BestSubsetClassWgtSVM(period_Context, K, z_vals, C, separable, q, big_w2, limit_time, LogToConsole, warm_start):
     n, p = period_Context.shape
     class_weights = {0: K / n, 1: (n - K) / n}
-    m, w_vars, b_var, xi_plus_vars, xi_neg_vars, t_vars = CreateBestSubsetSVMModel(period_Context, z_vals, C, separable,
-                                                                                   q, big_w2,
-                                                                                   limit_time, LogToConsole,
-                                                                                   class_weights)
+    m, w_vars, b_var, xi_plus_vars, xi_neg_vars, t_vars = CreateBestSubsetClassWgtSVMModel(period_Context, z_vals, C,
+                                                                                           separable,
+                                                                                           q, big_w2,
+                                                                                           limit_time, LogToConsole,
+                                                                                           class_weights)
 
     w_vars.Start = warm_start['w_vals']
     b_var.Start = warm_start['b_val']
@@ -332,7 +228,7 @@ def BestSubsetSVM(period_Context, K, z_vals, C, separable, q, big_w2, limit_time
     return {'obj_value': obj_value, 'time': end - start, 'w': w, 'b': b, 'xi_plus': xi_plus, 'xi_neg': xi_neg, 't': t}
 
 
-def extractSVMMVOSolution(n, p, m, x_vars, z_vars, w_vars, t_vars, b_var, xi_plus_vars, xi_neg_vars):
+def extractClassWgtSVMMVOSolution(n, p, m, x_vars, z_vars, w_vars, t_vars, b_var, xi_plus_vars, xi_neg_vars):
     x = np.zeros(n)
     z = np.zeros(n)
     w = np.zeros(p)
@@ -359,8 +255,8 @@ def extractSVMMVOSolution(n, p, m, x_vars, z_vars, w_vars, t_vars, b_var, xi_plu
     return obj_value, gap2, x, z, w, t, b, xi_plus, xi_neg
 
 
-def smallestTurnoverModelSVMMVO(m, n, absolute_delta, separable, w_vars, xi_plus_vars, xi_neg_vars, epsilon, C,
-                                class_weights):
+def smallestTurnoverModelClassWgtSVMMVO(m, n, absolute_delta, separable, w_vars, xi_plus_vars, xi_neg_vars, epsilon, C,
+                                        class_weights):
     # compute the smallest turnover portfolio instead of smallest risk with turnover constraints
 
     m.remove(m.getConstrByName('turnover'))
@@ -377,26 +273,12 @@ def smallestTurnoverModelSVMMVO(m, n, absolute_delta, separable, w_vars, xi_plus
     m.optimize()
 
 
-def SVMMVO_check_bigM(user_big_m, LogToConsole, bigMStrategy, Verbose, kwargs):
-    if user_big_m is None:
-        bigM_kwargs = kwargs.copy()
-        bigM_kwargs['LogToConsole'] = LogToConsole
-        bigM_kwargs['Verbose'] = Verbose
-
-        big_M_results = bigMStrategy(**bigM_kwargs)
-        bigM, big_w_inf, big_b, big_xi = (big_M_results['bigM'], big_M_results['big_w_inf'],
-                                          big_M_results['big_b'], big_M_results['big_xi'])
-    else:
-        assert type(user_big_m) == dict
-        big_M_results = user_big_m
-        bigM, big_w_inf, big_b, big_xi = user_big_m['bigM'], user_big_m['big_w_inf'], user_big_m['big_b'], user_big_m[
-            'big_xi']
-
-    return big_M_results, bigM, big_w_inf, big_b, big_xi
+from services.binary_optimization import SVMMVO_check_bigM, addTurnoverConstraints
 
 
-def SVMMVO(limit_time=30, MipGap=0.01, LogToConsole=True, Verbose=True, SolutionLimit=GRB.MAXINT, user_big_m=None,
-           **kwargs):  # if kwargs does not have limit time and mipgap then
+def ClassWgtSVMMVO(limit_time=30, MipGap=0.01, LogToConsole=True, Verbose=True, SolutionLimit=GRB.MAXINT,
+                   user_big_m=None,
+                   **kwargs):  # if kwargs does not have limit time and mipgap then
 
     mu, targetRet, Q, K, q, epsilon, period_Context, C, separable = unpack_kwargs(kwargs)
 
@@ -440,15 +322,16 @@ def SVMMVO(limit_time=30, MipGap=0.01, LogToConsole=True, Verbose=True, Solution
 
     bigM_finish_time = time.time()
 
-    m, x_vars, z_vars, w_vars, b_var, t_vars, xi_plus_vars, xi_neg_vars = CreateSVMMVOModel(mu, targetRet, Q, K, q,
-                                                                                            epsilon,
-                                                                                            bigM, big_w_inf,
-                                                                                            period_Context, C=C,
-                                                                                            separable=separable,
-                                                                                            limit_time=limit_time,
-                                                                                            MipGap=MipGap,
-                                                                                            LogToConsole=LogToConsole,
-                                                                                            class_weights=class_weights)
+    m, x_vars, z_vars, w_vars, b_var, t_vars, xi_plus_vars, xi_neg_vars = CreateClassWgtSVMMVOModel(mu, targetRet, Q, K,
+                                                                                                    q,
+                                                                                                    epsilon,
+                                                                                                    bigM, big_w_inf,
+                                                                                                    period_Context, C=C,
+                                                                                                    separable=separable,
+                                                                                                    limit_time=limit_time,
+                                                                                                    MipGap=MipGap,
+                                                                                                    LogToConsole=LogToConsole,
+                                                                                                    class_weights=class_weights)
 
     m.Params.SolutionLimit = SolutionLimit
     if 'warm_start' in big_M_results.keys():
@@ -476,11 +359,12 @@ def SVMMVO(limit_time=30, MipGap=0.01, LogToConsole=True, Verbose=True, Solution
         if previous_portfolio is not None and turnover_constraints:
             if Verbose:
                 print("Calculating the closest turnover portfolio...")
-            smallestTurnoverModelSVMMVO(m, n, absolute_delta, separable, w_vars,
-                                        xi_plus_vars, xi_neg_vars, epsilon, C, class_weights)
+            smallestTurnoverModelClassWgtSVMMVO(m, n, absolute_delta, separable, w_vars,
+                                                xi_plus_vars, xi_neg_vars, epsilon, C, class_weights)
 
-    obj_value, gap2, x, z, w, t, b, xi_plus, xi_neg = extractSVMMVOSolution(n, p, m, x_vars, z_vars, w_vars,
-                                                                            t_vars, b_var, xi_plus_vars, xi_neg_vars)
+    obj_value, gap2, x, z, w, t, b, xi_plus, xi_neg = extractClassWgtSVMMVOSolution(n, p, m, x_vars, z_vars, w_vars,
+                                                                                    t_vars, b_var, xi_plus_vars,
+                                                                                    xi_neg_vars)
     if Verbose:
         print("SVM MVO Objective Value ", obj_value)
         print("Norm of w ", np.power(w, 2).sum())

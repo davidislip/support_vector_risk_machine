@@ -99,9 +99,38 @@ def populate_kwargs(Strategy, env):
     # get the rest
     for key, value in Strategy.investor_preferences.items():
         optimization_info[key] = value
+
     return optimization_info
 
 
+def populate_kwargs_rank(Strategy, env):
+    # custom calculation here
+    optimization_info = populateMVO(Strategy, env)
+    addTurnoverConstraint(optimization_info, Strategy, env)
+    addCardinalityConstraint(optimization_info, Strategy, env)
+    # optimization_info['period_Context'] = env.period_Context.rank() / (len(env.period_Context) + 1)
+    period_Context = env.period_Context
+    mu, cov = Strategy.current_estimates
+    corr = cov2cor(cov)
+    corr = corr.astype('float64')
+    # Fill diagonal elements with np.nan
+    np.fill_diagonal(corr, np.nan)
+
+    period_Context['mean'] = mu
+    period_Context['variance'] = np.diag(cov)
+    period_Context['average_correlation'] = np.nanmean(corr, axis=1)
+    period_Context['average_abs_correlation'] = np.nanmean(np.abs(corr), axis=1)
+    period_Context['standard_deviation_of_corr'] = np.nanstd(corr, axis=1)
+    period_Context = period_Context.rank() / (len(period_Context) + 1)
+    scaler = StandardScaler()
+    scaler.fit(period_Context)
+    optimization_info['period_Context'] = pd.DataFrame(scaler.transform(period_Context), index=period_Context.index,
+                                                       columns=period_Context.columns)
+    # get the rest
+    for key, value in Strategy.investor_preferences.items():
+        optimization_info[key] = value
+
+    return optimization_info
 #
 # def populateMVOTurnover(Strategy, env):
 #     optimization_info = populateMVO(Strategy, env)

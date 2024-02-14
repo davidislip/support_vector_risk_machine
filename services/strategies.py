@@ -47,7 +47,7 @@ def evaluate_portfolio(x, t, currentVal, currentPrices, periodPrices):
 
 def execute_backtest(env, Strategy, tickers, returns, factorRet, ContextualInfo,
                      adjClose, daily_adjClose, NoPeriods, testStart, testEnd, calEnd, initialVal,
-                     investPeriod, hyperparam_search=False):
+                     investPeriod, hyperparam_search=False, store_data=False):
     """
     Executes the backtest
     """
@@ -129,7 +129,8 @@ def execute_backtest(env, Strategy, tickers, returns, factorRet, ContextualInfo,
 
         # Calculate hyperparameter tables
         if hyperparam_search:
-            Q, hyperparam_hist_t = Strategy.optimize_hyperparameters(t, currentVal, currentPrices, periodPrices, Q, environment=env)
+            Q, hyperparam_hist_t = Strategy.optimize_hyperparameters(t, currentVal, currentPrices, periodPrices, Q,
+                                                                     environment=env)
             hyperparam_hist[t] = hyperparam_hist_t
             # Strategies hyperparameters are updated
             # Dictionary of results for hyperparameter history is populated
@@ -155,14 +156,15 @@ def execute_backtest(env, Strategy, tickers, returns, factorRet, ContextualInfo,
 
         backtest_results[t] = Strategy.current_results
         backtest_results[t]['calEnd'] = calEnd
-        backtest_results[t]['mu'] = Strategy.current_estimates[0]
-        backtest_results[t]['cov'] = Strategy.current_estimates[1]
+        # backtest_results[t]['mu'] = Strategy.current_estimates[0]
+        # backtest_results[t]['cov'] = Strategy.current_estimates[1]
         # end loop
 
     portfValue = pd.concat(portfValue, axis=0)
     end_time = time.time()
 
-    return portfValue, end_time - start_time, turnover, x, backtest_results, hyperparam_hist # dict of Strategy results
+    return portfValue, end_time - start_time, turnover, x, backtest_results, hyperparam_hist  # dict of Strategy results
+
 
 class HistoricalMeanVarianceOptimization:
     """
@@ -265,14 +267,26 @@ class OLS_RP:
         return x
 
 
+def delete_keys(optimization_params):
+    try:
+        del optimization_params['mu']
+    except KeyError:
+        pass
+    try:
+        del optimization_params['Q']
+    except KeyError:
+        pass
+    try:
+        del optimization_params['period_Context']
+    except KeyError:
+        pass
 
 class general_strategy:
     """
     a general strategy where the estimator and optimizer are specified,
     makes all the other strategies obsolete
     """
-
-    def __init__(self, estimator, optimizer, NumObs=36, investor_preferences=None):
+    def __init__(self, estimator, optimizer, NumObs=36, investor_preferences=None, store_data=False):
 
         self.NumObs = NumObs  # number of observations to use
         self.estimator = estimator  # estimator is a function
@@ -282,13 +296,11 @@ class general_strategy:
         self.extract_optimization_info = None  # helper function
         self.current_results = None
         self.current_estimates = None
-
-
+        self.store_data = store_data
 
     def execute_strategy(self, periodReturns, factorReturns, environment=None):
         """
         executes the portfolio allocation strategy based on the parameters in the __init__
-
         :param additional_optimization_info:
         :param additional_estimation_info:
         :param additional_info:
@@ -298,6 +310,7 @@ class general_strategy:
         """
 
         # Estimation Step
+
         if self.extract_estimation_info is not None:
             estimation_params = self.extract_estimation_info(self, environment)
         else:
@@ -334,10 +347,13 @@ class general_strategy:
         else:
             results = self.optimizer(**optimization_params)  # solution, optimality gap, time to solve
             if type(results) == dict:
+                if not self.store_data:
+                    delete_keys(optimization_params)
+
                 results['optimization_params'] = optimization_params
             if type(results) != dict:
                 warnings.warn("Optimizer interaction with environment does not return a dict")
-                results = {'x': results, 'optimization_params':optimization_params}
+                results = {'x': results, 'optimization_params': optimization_params}
         return results
 
     def optimize_hyperparameters(self, t, currentVal, currentPrices, periodPrices, Q,
@@ -365,7 +381,7 @@ class general_strategy:
         optimization_results = {initial_param_vals: self.current_results}
         if Q is None:
             Q = {initial_param_vals:
-                          evaluate_portfolio(self.current_results['x'], t, currentVal, currentPrices, periodPrices)}
+                     evaluate_portfolio(self.current_results['x'], t, currentVal, currentPrices, periodPrices)}
 
         for param_dict in product_dict(**hyperparams):
             # evaluate the product of hyperparams excluding the initial params
@@ -401,8 +417,8 @@ class general_strategy:
         # add information to dict
         # store hyperparameters in history
         hyperparam_hist = {'previous_hyperparams': initial_param_vals,
-                                   'optimization_results': optimization_results, # dictionary of optimization results
-                                   'updated_hyperparams': best_params}
+                           'optimization_results': optimization_results,  # dictionary of optimization results
+                           'updated_hyperparams': best_params}
         return Q, hyperparam_hist
 
 

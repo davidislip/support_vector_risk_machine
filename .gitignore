@@ -26,7 +26,7 @@ flat_files/Project 2/MIE377_FactorReturns_2.csv
 flat_files/Project 2/MIE377_FactorReturns_3.csv
 /Experiments/ETF/
 Experiments/EF/SP/_CardMVO.pkl
-Experiments/EF/SP/_SVMMVO.pkl
+Experiments/EF/SP/_ClassWgtSVMMVO.pkl
 *.log
 Experiments/EF/SP/_MVO.pkl
 Experiments/SP/
