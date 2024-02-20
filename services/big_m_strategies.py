@@ -100,7 +100,6 @@ def ConstructFeasibleSolution(**kwargs):
 
 
 def ConstructFeasibleSolutionandHyperParams(**kwargs):
-
     period_Context, separable = kwargs['period_Context'], kwargs['separable']
 
     q = kwargs['q']
@@ -190,6 +189,7 @@ def ConstructFeasibleSolutionandHyperParams(**kwargs):
     t_vals = np.zeros(p)
     w_vals[q_largest] = svm_phase2_results['w']
     t_vals[q_largest] = np.ones(len(q_largest))
+    #xi_vals = svm_phase2_results['xi'] + 10 ** (-8)
     b_val = svm_phase2_results['b']
 
     warm_start = {'w_vals': w_vals, 'b_val': b_val, 't_vals': t_vals}
@@ -197,7 +197,7 @@ def ConstructFeasibleSolutionandHyperParams(**kwargs):
                                           LogToConsole, warm_start)
     ObjSVM = BestSubsetSVM_results['obj_value']
     # set epsilon so that the risk guarantee is satisfied
-    epsilon = (kappa * ObjMVO*1000) / (ObjSVM*1000)  # this is the big line
+    epsilon = (kappa * ObjMVO * 1000) / (ObjSVM * 1000)  # this is the big line
     if Verbose:
         print("Largest epsilon value guaranteeing ", 1 + kappa, " risk: ", epsilon)
     warm_start = {'x_vals': x_vals, 'z_vals': z_vals,
@@ -236,8 +236,8 @@ def largest_pairwise_distance(period_Context, q):
 
 
 def theorem1(ObjSVMMVO, n, epsilon, C, largest_abs):
-    big_w_inf = min(math.sqrt(ObjSVMMVO / epsilon), math.sqrt(2*C))
-    big_w_2 = min(math.sqrt(ObjSVMMVO / epsilon), math.sqrt(2*C))
+    big_w_inf = min(math.sqrt(ObjSVMMVO / epsilon), math.sqrt(2 * C))
+    big_w_2 = min(math.sqrt(ObjSVMMVO / epsilon), math.sqrt(2 * C))
     big_b = 1 + largest_abs * math.sqrt(ObjSVMMVO / epsilon)
 
     big_xi = n * ObjSVMMVO / (epsilon * C)
@@ -563,6 +563,3 @@ def HyperparameterBigMStrategy(**kwargs):
     return {'bigM': bigM, 'big_w_inf': big_w_inf, 'big_w_2': big_w_2, 'big_b': big_b,
             'big_xi': big_xi, 'feasible_solution': feasible_solution, 'Theorem': theorem3_bool,
             'xi lemma': xi_str, 'C': C, 'epsilon': epsilon, 'warm_start': warm_start}
-
-
-#

@@ -392,7 +392,7 @@ def SVMMVO(limit_time=30, MipGap=0.01, LogToConsole=True, Verbose=True, Solution
     if 'epsilon' in big_M_results.keys() and 'C' in big_M_results.keys():
         C, epsilon = big_M_results['C'], big_M_results['epsilon']
         if Verbose:
-            print("C and epsilon updated from big M")
+            print("C and epsilon updated from big M", (C, epsilon))
     # if the big M strategy yields feasibility information then
     # update the feasible solution flag
     if 'feasible_solution' in big_M_results.keys():
@@ -420,7 +420,7 @@ def SVMMVO(limit_time=30, MipGap=0.01, LogToConsole=True, Verbose=True, Solution
         w_vars.Start = warm_start['w_vals']
         b_var.Start = warm_start['b_val']
         t_vars.Start = warm_start['t_vals']
-        # xi_vars.Start = warm_start['xi_vals']
+        #xi_vars.Start = warm_start['xi_vals']
         # print("Warm Start")
         # m.Params.LogToConsole = True
 

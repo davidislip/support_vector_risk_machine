@@ -30,3 +30,5 @@ Experiments/EF/SP/_ClassWgtSVMMVO.pkl
 *.log
 Experiments/EF/SP/_MVO.pkl
 Experiments/SP/
+/Experiments/Ranked_EF/
+/Experiments/EF/SP/_SVMMVO.pkl
