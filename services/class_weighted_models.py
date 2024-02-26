@@ -309,6 +309,12 @@ def ClassWgtSVMMVO(limit_time=30, MipGap=0.01, LogToConsole=True, Verbose=True, 
         C, epsilon = big_M_results['C'], big_M_results['epsilon']
         if Verbose:
             print("C and epsilon updated from big M")
+
+    if 'q' in big_M_results.keys():
+        q = big_M_results['q']
+        if Verbose:
+            print("q updated from big M", q)
+
     # if the big M strategy yields feasibility information then
     # update the feasible solution flag
     if 'feasible_solution' in big_M_results.keys():
@@ -375,4 +381,4 @@ def ClassWgtSVMMVO(limit_time=30, MipGap=0.01, LogToConsole=True, Verbose=True, 
     return {'obj_value': obj_value, 'time': end - start, 'bigM_time': bigM_finish_time - start, 'optimality gap': gap2,
             'x': x, 'z': z, 'w': w, 't': t, 'b': b, 'xi_plus': xi_plus, 'xi_neg': xi_neg,
             'feasible_solution': feasible_solution,
-            'C': C, 'epsilon': epsilon}
+            'C': C, 'epsilon': epsilon, 'q':q}
