@@ -105,10 +105,10 @@ def calculate_return_stats(portfValue, riskFree):
     Ret = 12 * ((portfExRets + 1).apply(gmean, axis=0) - 1)
     Vol = (12 ** 0.5) * (portfExRets.std())
     SR = (12 ** 0.5) * (((portfExRets + 1).apply(gmean, axis=0) - 1) / portfExRets.std())
-    # Sortino = (12**0.5)*(((portfExRets + 1).apply(gmean, axis=0) - 1)/portfExRets.loc[portfExRets.values < 0].std())
+    Sortino = (12**0.5)*(((portfExRets + 1).apply(gmean, axis=0) - 1)/portfExRets.loc[portfExRets.values < 0].std())
     # Calculate the average turnover rate
 
-    return Ret.iloc[0], Vol.iloc[0], SR.iloc[0]  # , Sortino.iloc[0]
+    return Ret.iloc[0], Vol.iloc[0], SR.iloc[0]  , Sortino.iloc[0]
 
 
 def make_stats_table(CardMVO_results, MVO_results, turnovers, cardinalities, card_strings,
