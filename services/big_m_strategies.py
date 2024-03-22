@@ -183,7 +183,7 @@ def ConstructFeasibleSolutionandHyperParams(**kwargs):
         svm_phase2_results = SVM(period_Context_subset, z_vals, bestC, separable, bigM_limit_time, LogToConsole)
     # sqrt(2 ObjSVM) is the soln is big_w2 and hence big w
     ObjFeasibleSVM = svm_phase2_results['obj_value']
-    big_w2 = math.sqrt(2 * ObjFeasibleSVM)
+    big_w2 = min(math.sqrt(2 * ObjFeasibleSVM), math.sqrt(2 * bestC))
     # solve BSS SVM
     w_vals = np.zeros(p)
     t_vals = np.zeros(p)
@@ -236,18 +236,19 @@ def largest_pairwise_distance(period_Context, q):
 
 
 def theorem1(ObjSVMMVO, n, epsilon, C, largest_abs):
-    big_w_inf = min(math.sqrt(ObjSVMMVO / epsilon), math.sqrt(2 * C))
-    big_w_2 = min(math.sqrt(ObjSVMMVO / epsilon), math.sqrt(2 * C))
-    big_b = 1 + largest_abs * math.sqrt(ObjSVMMVO / epsilon)
+    big_w_inf = min(math.sqrt(2*ObjSVMMVO / epsilon), math.sqrt(2 * C))
+    big_w_2 = min(math.sqrt(2*ObjSVMMVO / epsilon), math.sqrt(2 * C))
+    big_b = 1 + largest_abs * min(math.sqrt(2*ObjSVMMVO / epsilon), math.sqrt(2 * C))
 
     big_xi = n * ObjSVMMVO / (epsilon * C)
     xi_str = 'Lemma 2'
     if n <= big_xi:
         big_xi = n
         xi_str = 'Lemma 3'
-    if 2 + 2 * largest_abs * math.sqrt(ObjSVMMVO / epsilon) <= big_xi:
-        big_xi = 2 + 2 * largest_abs * math.sqrt(ObjSVMMVO / epsilon)
+    if 2 + 2 * largest_abs * math.sqrt(2*ObjSVMMVO / epsilon) <= big_xi:
+        big_xi = 2 + 2 * largest_abs * math.sqrt(2*ObjSVMMVO / epsilon)
         xi_str = 'Lemma 5'
+
     return big_w_inf, big_w_2, big_b, big_xi, xi_str
 
 

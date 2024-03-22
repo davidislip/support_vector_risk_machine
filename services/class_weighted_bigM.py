@@ -156,7 +156,7 @@ def ClassWgtConstructFeasibleSolutionandHyperParams(**kwargs):
                                          LogToConsole)
     # sqrt(2 ObjSVM) is the soln is big_w2 and hence big w
     ObjFeasibleSVM = svm_phase2_results['obj_value']
-    big_w2 = math.sqrt(2 * ObjFeasibleSVM)
+    big_w2 = min(math.sqrt(2 * ObjFeasibleSVM), math.sqrt(2 * bestC))
     # solve BSS SVM
     w_vals = np.zeros(p)
     t_vals = np.zeros(p)
@@ -280,7 +280,7 @@ def ClassWgtConstructFeasibleSolutionandHyperParamsV2(**kwargs):
                                          LogToConsole)
     # sqrt(2 ObjSVM) is the soln is big_w2 and hence big w
     ObjFeasibleSVM = svm_phase2_results['obj_value']
-    big_w2 = math.sqrt(2 * ObjFeasibleSVM)
+    big_w2 = min(math.sqrt(2 * ObjFeasibleSVM), math.sqrt(2 * bestC))
     # solve BSS SVM
     w_vals = np.zeros(p)
     t_vals = np.zeros(p)
