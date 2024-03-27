@@ -88,7 +88,7 @@ def ClassWgtConstructFeasibleSolutionandHyperParams(**kwargs):
     error_list = []
     w_list = []
     norm_w = 0
-
+    start = time.time()
     for C in Cs:
         errors = np.zeros(n_splits)
         for i, (train_index, test_index) in enumerate(kf.split(period_Context)):
@@ -136,7 +136,7 @@ def ClassWgtConstructFeasibleSolutionandHyperParams(**kwargs):
                 print("Selected Features ", period_Context_subset.columns)
             lowest_error = errors.mean()
             norm_w = np.power(svm_phase2_results['w'], 2).sum()
-
+    end = time.time()
     if norm_w > 10 ** (-7) and Verbose:
         print("Non degenerate solution found")
     # calculate ObjSVM and construct bound on ||w||_1
@@ -172,6 +172,7 @@ def ClassWgtConstructFeasibleSolutionandHyperParams(**kwargs):
     # set epsilon so that the risk guarantee is satisfied
     epsilon = (kappa * ObjMVO * 1000) / (ObjSVM * 1000)  # this is the big line
     if Verbose:
+        print("Grid Search time (s)", end - start)
         print("Largest epsilon value guaranteeing ", 1 + kappa, " risk: ", epsilon)
     warm_start = {'x_vals': x_vals, 'z_vals': z_vals,
                   'w_vals': BestSubsetSVM_results['w'], 't_vals': np.rint(BestSubsetSVM_results['t']),
@@ -210,7 +211,7 @@ def ClassWgtConstructFeasibleSolutionandHyperParamsV2(**kwargs):
     error_list = []
     w_list = []
     norm_w = 0
-
+    start = time.time()
     for (q, C) in product(qs, Cs):
         errors = np.zeros(n_splits)
         for i, (train_index, test_index) in enumerate(kf.split(period_Context)):
@@ -260,6 +261,7 @@ def ClassWgtConstructFeasibleSolutionandHyperParamsV2(**kwargs):
                 print("Selected Features ", period_Context_subset.columns)
             lowest_error = errors.mean()
             norm_w = np.power(svm_phase2_results['w'], 2).sum()
+    end = time.time()
 
     if norm_w > 10 ** (-7) and Verbose:
         print("Non degenerate solution found")
@@ -296,6 +298,7 @@ def ClassWgtConstructFeasibleSolutionandHyperParamsV2(**kwargs):
     # set epsilon so that the risk guarantee is satisfied
     epsilon = (kappa * ObjMVO * 1000) / (ObjSVM * 1000)  # this is the big line
     if Verbose:
+        print("Grid Search time (s)", end - start)
         print("Largest epsilon value guaranteeing ", 1 + kappa, " risk: ", epsilon)
     warm_start = {'x_vals': x_vals, 'z_vals': z_vals,
                   'w_vals': BestSubsetSVM_results['w'], 't_vals': np.rint(BestSubsetSVM_results['t']),
