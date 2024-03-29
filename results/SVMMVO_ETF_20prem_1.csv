@@ -3,479 +3,479 @@ $C_0 = 0.75$,$K = \lfloor 0.01N \rfloor$,Card MVO,,$\mu$,0.09038161961300961
 $C_0 = 0.75$,$K = \lfloor 0.01N \rfloor$,Card MVO,,$\sigma$,0.20880141106477276
 $C_0 = 0.75$,$K = \lfloor 0.01N \rfloor$,Card MVO,,S.R,0.4328592376464932
 $C_0 = 0.75$,$K = \lfloor 0.01N \rfloor$,Card MVO,,Sortino.R,0.6073613215592475
-$C_0 = 0.75$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\mu$,0.12324465278521046
-$C_0 = 0.75$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\sigma$,0.18948188947160258
-$C_0 = 0.75$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.1,S.R,0.6504297224863855
-$C_0 = 0.75$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.1,Sortino.R,0.9601258228082483
-$C_0 = 0.75$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\mu$,0.12901068597933385
-$C_0 = 0.75$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\sigma$,0.18486898529014556
-$C_0 = 0.75$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.2,S.R,0.6978492675602453
-$C_0 = 0.75$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.2,Sortino.R,1.0772560159456712
 $C_0 = 0.75$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\mu$,0.11412931710252039
 $C_0 = 0.75$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\sigma$,0.19915394506962295
 $C_0 = 0.75$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.4,S.R,0.5730708325291849
 $C_0 = 0.75$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.4,Sortino.R,0.8562027760915144
+$C_0 = 0.75$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\mu$,0.11259421337190556
+$C_0 = 0.75$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\sigma$,0.2105656535134074
+$C_0 = 0.75$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.8,S.R,0.5347225983592633
+$C_0 = 0.75$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.8,Sortino.R,0.8494407573616938
+$C_0 = 0.75$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\mu$,0.09267826641733024
+$C_0 = 0.75$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\sigma$,0.1922904754945991
+$C_0 = 0.75$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$1.6,S.R,0.4819701349167099
+$C_0 = 0.75$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$1.6,Sortino.R,0.7278625350192349
 $C_0 = 0.75$,$K = \lfloor 0.03N \rfloor$,Card MVO,,$\mu$,0.0910381004782943
 $C_0 = 0.75$,$K = \lfloor 0.03N \rfloor$,Card MVO,,$\sigma$,0.12990114477865303
 $C_0 = 0.75$,$K = \lfloor 0.03N \rfloor$,Card MVO,,S.R,0.700826006063457
 $C_0 = 0.75$,$K = \lfloor 0.03N \rfloor$,Card MVO,,Sortino.R,0.9711535375173264
-$C_0 = 0.75$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\mu$,0.0937412846448904
-$C_0 = 0.75$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\sigma$,0.12886843471115372
-$C_0 = 0.75$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.1,S.R,0.727418509078678
-$C_0 = 0.75$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.1,Sortino.R,1.0022722354318356
-$C_0 = 0.75$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\mu$,0.0974197731613895
-$C_0 = 0.75$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\sigma$,0.1289895558233425
-$C_0 = 0.75$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.2,S.R,0.7552531872798339
-$C_0 = 0.75$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.2,Sortino.R,1.0938464328763264
 $C_0 = 0.75$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\mu$,0.09202081693728914
 $C_0 = 0.75$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\sigma$,0.13185457577828705
 $C_0 = 0.75$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.4,S.R,0.697896272420775
 $C_0 = 0.75$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.4,Sortino.R,1.006072051129449
+$C_0 = 0.75$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\mu$,0.0909683172153315
+$C_0 = 0.75$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\sigma$,0.12740483187322066
+$C_0 = 0.75$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.8,S.R,0.7140099467016542
+$C_0 = 0.75$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.8,Sortino.R,1.0393942265168532
+$C_0 = 0.75$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\mu$,0.07034797895682043
+$C_0 = 0.75$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\sigma$,0.1624213075330647
+$C_0 = 0.75$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$1.6,S.R,0.43312038318925267
+$C_0 = 0.75$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$1.6,Sortino.R,0.5458576427349705
 $C_0 = 0.75$,$K = \lfloor 0.05N \rfloor$,Card MVO,,$\mu$,0.09379414711546197
 $C_0 = 0.75$,$K = \lfloor 0.05N \rfloor$,Card MVO,,$\sigma$,0.12858471041939695
 $C_0 = 0.75$,$K = \lfloor 0.05N \rfloor$,Card MVO,,S.R,0.7294346801384027
 $C_0 = 0.75$,$K = \lfloor 0.05N \rfloor$,Card MVO,,Sortino.R,0.9942870274516308
-$C_0 = 0.75$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\mu$,0.09539940669495373
-$C_0 = 0.75$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\sigma$,0.12866301395486404
-$C_0 = 0.75$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.1,S.R,0.7414672155000235
-$C_0 = 0.75$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.1,Sortino.R,1.014347078878059
-$C_0 = 0.75$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\mu$,0.09156163566694886
-$C_0 = 0.75$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\sigma$,0.1315420585969133
-$C_0 = 0.75$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.2,S.R,0.6960635757383333
-$C_0 = 0.75$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.2,Sortino.R,0.9344767579378965
 $C_0 = 0.75$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\mu$,0.0958986426868389
 $C_0 = 0.75$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\sigma$,0.13026667767943148
 $C_0 = 0.75$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.4,S.R,0.7361717086454939
 $C_0 = 0.75$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.4,Sortino.R,1.0173131834629026
+$C_0 = 0.75$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\mu$,0.09449398375131235
+$C_0 = 0.75$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\sigma$,0.12938547374900583
+$C_0 = 0.75$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.8,S.R,0.7303291553008546
+$C_0 = 0.75$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.8,Sortino.R,1.0422138155757628
+$C_0 = 0.75$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\mu$,0.08028765854852704
+$C_0 = 0.75$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\sigma$,0.15851653641641705
+$C_0 = 0.75$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$1.6,S.R,0.5064938987665888
+$C_0 = 0.75$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$1.6,Sortino.R,0.6957679617145991
 $C_0 = 0.75$,$K = \lfloor 0.07N \rfloor$,Card MVO,,$\mu$,0.09361499244769167
 $C_0 = 0.75$,$K = \lfloor 0.07N \rfloor$,Card MVO,,$\sigma$,0.12875633247499185
 $C_0 = 0.75$,$K = \lfloor 0.07N \rfloor$,Card MVO,,S.R,0.7270709770012621
 $C_0 = 0.75$,$K = \lfloor 0.07N \rfloor$,Card MVO,,Sortino.R,0.9836944255909523
-$C_0 = 0.75$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\mu$,0.09455533998869381
-$C_0 = 0.75$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\sigma$,0.1289353481329312
-$C_0 = 0.75$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.1,S.R,0.7333546723836203
-$C_0 = 0.75$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.1,Sortino.R,0.995127171731997
-$C_0 = 0.75$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\mu$,0.09482828222339013
-$C_0 = 0.75$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\sigma$,0.1270549078110434
-$C_0 = 0.75$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.2,S.R,0.7463567040198018
-$C_0 = 0.75$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.2,Sortino.R,1.068429850657739
 $C_0 = 0.75$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\mu$,0.0996756891387296
 $C_0 = 0.75$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\sigma$,0.1301886965480509
 $C_0 = 0.75$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.4,S.R,0.7656247568462337
 $C_0 = 0.75$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.4,Sortino.R,1.0853119418691601
+$C_0 = 0.75$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\mu$,0.095003513290572
+$C_0 = 0.75$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\sigma$,0.12896848052589954
+$C_0 = 0.75$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.8,S.R,0.7366413320772071
+$C_0 = 0.75$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.8,Sortino.R,1.1080381214639334
+$C_0 = 0.75$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\mu$,0.0895861093239354
+$C_0 = 0.75$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\sigma$,0.1295755609822057
+$C_0 = 0.75$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$1.6,S.R,0.691381219150099
+$C_0 = 0.75$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$1.6,Sortino.R,1.002335505953149
 $C_0 = 0.75$,$K = \lfloor 0.09N \rfloor$,Card MVO,,$\mu$,0.09412513456062577
 $C_0 = 0.75$,$K = \lfloor 0.09N \rfloor$,Card MVO,,$\sigma$,0.12906425900751664
 $C_0 = 0.75$,$K = \lfloor 0.09N \rfloor$,Card MVO,,S.R,0.7292889238619031
 $C_0 = 0.75$,$K = \lfloor 0.09N \rfloor$,Card MVO,,Sortino.R,0.982882712642544
-$C_0 = 0.75$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\mu$,0.09414471199227759
-$C_0 = 0.75$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\sigma$,0.12780346415980987
-$C_0 = 0.75$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.1,S.R,0.7366366210117417
-$C_0 = 0.75$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.1,Sortino.R,1.0017566234116173
-$C_0 = 0.75$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\mu$,0.09477287711066307
-$C_0 = 0.75$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\sigma$,0.12606154649508527
-$C_0 = 0.75$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.2,S.R,0.7517984646837403
-$C_0 = 0.75$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.2,Sortino.R,1.0794089068703998
 $C_0 = 0.75$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\mu$,0.09660860418424111
 $C_0 = 0.75$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\sigma$,0.12618727032785917
 $C_0 = 0.75$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.4,S.R,0.765597068018296
 $C_0 = 0.75$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.4,Sortino.R,1.1120456164001709
+$C_0 = 0.75$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\mu$,0.09769157175277243
+$C_0 = 0.75$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\sigma$,0.12858378341667678
+$C_0 = 0.75$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.8,S.R,0.759750328983571
+$C_0 = 0.75$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.8,Sortino.R,1.0622510027915533
+$C_0 = 0.75$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\mu$,0.09818343174269373
+$C_0 = 0.75$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\sigma$,0.13632402671048488
+$C_0 = 0.75$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$1.6,S.R,0.7202210359528816
+$C_0 = 0.75$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$1.6,Sortino.R,1.0704906731910133
 $C_0 = 0.75$,$K = \lfloor 0.1N \rfloor$,Card MVO,,$\mu$,0.09413633835786239
 $C_0 = 0.75$,$K = \lfloor 0.1N \rfloor$,Card MVO,,$\sigma$,0.12845170646934542
 $C_0 = 0.75$,$K = \lfloor 0.1N \rfloor$,Card MVO,,S.R,0.7328539335546135
 $C_0 = 0.75$,$K = \lfloor 0.1N \rfloor$,Card MVO,,Sortino.R,0.9896295653953523
-$C_0 = 0.75$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\mu$,0.09639183123184747
-$C_0 = 0.75$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\sigma$,0.128746628696019
-$C_0 = 0.75$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.1,S.R,0.7486940218018153
-$C_0 = 0.75$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.1,Sortino.R,1.0147599274812762
-$C_0 = 0.75$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\mu$,0.0950731171486705
-$C_0 = 0.75$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\sigma$,0.1285259876583673
-$C_0 = 0.75$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.2,S.R,0.7397190162147028
-$C_0 = 0.75$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.2,Sortino.R,1.0163696056968539
 $C_0 = 0.75$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\mu$,0.08780032265802529
 $C_0 = 0.75$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\sigma$,0.1300452863474325
 $C_0 = 0.75$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.4,S.R,0.6751519038026149
 $C_0 = 0.75$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.4,Sortino.R,0.9022502423640623
+$C_0 = 0.75$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\mu$,0.09423983691632731
+$C_0 = 0.75$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\sigma$,0.1279411522344281
+$C_0 = 0.75$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.8,S.R,0.7365873706034047
+$C_0 = 0.75$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.8,Sortino.R,1.0629514363634234
+$C_0 = 0.75$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\mu$,0.10326993890196512
+$C_0 = 0.75$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\sigma$,0.12671062690107307
+$C_0 = 0.75$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$1.6,S.R,0.8150061397975021
+$C_0 = 0.75$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$1.6,Sortino.R,1.1597902534973918
 $C_0 = 0.75$,$K = \lfloor 0.2N \rfloor$,Card MVO,,$\mu$,0.09396126403721095
 $C_0 = 0.75$,$K = \lfloor 0.2N \rfloor$,Card MVO,,$\sigma$,0.12844199543494506
 $C_0 = 0.75$,$K = \lfloor 0.2N \rfloor$,Card MVO,,S.R,0.731546280630634
 $C_0 = 0.75$,$K = \lfloor 0.2N \rfloor$,Card MVO,,Sortino.R,0.9885387431771762
-$C_0 = 0.75$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\mu$,0.09367604916250105
-$C_0 = 0.75$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\sigma$,0.1284477391934343
-$C_0 = 0.75$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.1,S.R,0.7292930942243424
-$C_0 = 0.75$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.1,Sortino.R,1.0157818486262669
-$C_0 = 0.75$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\mu$,0.09202591606772703
-$C_0 = 0.75$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\sigma$,0.12688934911291466
-$C_0 = 0.75$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.2,S.R,0.7252453945983771
-$C_0 = 0.75$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.2,Sortino.R,1.0036585996722305
 $C_0 = 0.75$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\mu$,0.09391854495389484
 $C_0 = 0.75$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\sigma$,0.12645514102993674
 $C_0 = 0.75$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.4,S.R,0.742702464992394
 $C_0 = 0.75$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.4,Sortino.R,1.0589294051274687
+$C_0 = 0.75$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\mu$,0.0865579895287194
+$C_0 = 0.75$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\sigma$,0.13036769450616964
+$C_0 = 0.75$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.8,S.R,0.6639527519190963
+$C_0 = 0.75$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.8,Sortino.R,0.9272022097270288
+$C_0 = 0.75$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\mu$,0.09945213772792272
+$C_0 = 0.75$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\sigma$,0.13780848809752905
+$C_0 = 0.75$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$1.6,S.R,0.7216691736545212
+$C_0 = 0.75$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$1.6,Sortino.R,1.0835357860485935
 $C_0 = 0.75$,$K = \lfloor 0.4N \rfloor$,Card MVO,,$\mu$,0.09396640186411886
 $C_0 = 0.75$,$K = \lfloor 0.4N \rfloor$,Card MVO,,$\sigma$,0.12844413744586602
 $C_0 = 0.75$,$K = \lfloor 0.4N \rfloor$,Card MVO,,S.R,0.7315740814073501
 $C_0 = 0.75$,$K = \lfloor 0.4N \rfloor$,Card MVO,,Sortino.R,0.9885869993373092
-$C_0 = 0.75$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\mu$,0.09251575694151803
-$C_0 = 0.75$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\sigma$,0.12970363216030492
-$C_0 = 0.75$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.1,S.R,0.7132857839106218
-$C_0 = 0.75$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.1,Sortino.R,0.9584999280599552
-$C_0 = 0.75$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\mu$,0.09461748259673985
-$C_0 = 0.75$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\sigma$,0.12954954357667595
-$C_0 = 0.75$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.2,S.R,0.730357514079075
-$C_0 = 0.75$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.2,Sortino.R,0.9997437940108912
 $C_0 = 0.75$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\mu$,0.09250166557789541
 $C_0 = 0.75$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\sigma$,0.1308315056411562
 $C_0 = 0.75$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.4,S.R,0.7070289768857998
 $C_0 = 0.75$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.4,Sortino.R,0.9809724746094987
+$C_0 = 0.75$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\mu$,0.0920178648005221
+$C_0 = 0.75$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\sigma$,0.13001140635611208
+$C_0 = 0.75$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.8,S.R,0.7077676288530983
+$C_0 = 0.75$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.8,Sortino.R,0.9977888789727096
+$C_0 = 0.75$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\mu$,0.09456650428970814
+$C_0 = 0.75$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\sigma$,0.13185557576456128
+$C_0 = 0.75$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$1.6,S.R,0.7171976136872985
+$C_0 = 0.75$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$1.6,Sortino.R,1.027422354134475
 $C_0 = 0.75$,$K = \lfloor 0.6N \rfloor$,Card MVO,,$\mu$,0.096608183156623
 $C_0 = 0.75$,$K = \lfloor 0.6N \rfloor$,Card MVO,,$\sigma$,0.12909503508210213
 $C_0 = 0.75$,$K = \lfloor 0.6N \rfloor$,Card MVO,,S.R,0.7483493311356391
 $C_0 = 0.75$,$K = \lfloor 0.6N \rfloor$,Card MVO,,Sortino.R,1.0147690186843277
-$C_0 = 0.75$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\mu$,0.0950493907357215
-$C_0 = 0.75$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\sigma$,0.12870858230091983
-$C_0 = 0.75$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.1,S.R,0.7384852589976993
-$C_0 = 0.75$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.1,Sortino.R,0.9980423690734523
-$C_0 = 0.75$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\mu$,0.0935136140272359
-$C_0 = 0.75$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\sigma$,0.12982368953121096
-$C_0 = 0.75$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.2,S.R,0.7203124049617635
-$C_0 = 0.75$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.2,Sortino.R,0.9809015849585715
 $C_0 = 0.75$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\mu$,0.09372503594776393
 $C_0 = 0.75$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\sigma$,0.130230211518146
 $C_0 = 0.75$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.4,S.R,0.7196873510007659
 $C_0 = 0.75$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.4,Sortino.R,1.009872226930962
+$C_0 = 0.75$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\mu$,0.0968312179288553
+$C_0 = 0.75$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\sigma$,0.13069605277475607
+$C_0 = 0.75$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.8,S.R,0.7408886180804247
+$C_0 = 0.75$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.8,Sortino.R,1.0254217549310056
+$C_0 = 0.75$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\mu$,0.09591347047407961
+$C_0 = 0.75$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\sigma$,0.12960806049499787
+$C_0 = 0.75$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$1.6,S.R,0.7400270485320727
+$C_0 = 0.75$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$1.6,Sortino.R,1.0594399531560206
 $C_0 = 0.75$,$K = \lfloor 0.8N \rfloor$,Card MVO,,$\mu$,0.09463409013643798
 $C_0 = 0.75$,$K = \lfloor 0.8N \rfloor$,Card MVO,,$\sigma$,0.1280550803325219
 $C_0 = 0.75$,$K = \lfloor 0.8N \rfloor$,Card MVO,,S.R,0.7390108216768964
 $C_0 = 0.75$,$K = \lfloor 0.8N \rfloor$,Card MVO,,Sortino.R,1.0038928629806718
-$C_0 = 0.75$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\mu$,0.09320300801810966
-$C_0 = 0.75$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\sigma$,0.12660904200809472
-$C_0 = 0.75$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.1,S.R,0.7361481181742986
-$C_0 = 0.75$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.1,Sortino.R,0.9912173566981963
-$C_0 = 0.75$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\mu$,0.09892566569320049
-$C_0 = 0.75$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\sigma$,0.12925185600877423
-$C_0 = 0.75$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.2,S.R,0.765371335839734
-$C_0 = 0.75$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.2,Sortino.R,1.0251649151782316
 $C_0 = 0.75$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\mu$,0.0975037804228247
 $C_0 = 0.75$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\sigma$,0.1267967133501011
 $C_0 = 0.75$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.4,S.R,0.7689771907068674
 $C_0 = 0.75$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.4,Sortino.R,1.0655345801039664
+$C_0 = 0.75$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\mu$,0.09665120127060067
+$C_0 = 0.75$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\sigma$,0.12957976616722264
+$C_0 = 0.75$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.8,S.R,0.7458818929019545
+$C_0 = 0.75$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.8,Sortino.R,1.0487364997667246
+$C_0 = 0.75$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\mu$,0.09672775400700129
+$C_0 = 0.75$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\sigma$,0.1298404204767913
+$C_0 = 0.75$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$1.6,S.R,0.7449741278702279
+$C_0 = 0.75$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$1.6,Sortino.R,1.0802198632311342
 $C_0 = 1$,$K = \lfloor 0.01N \rfloor$,Card MVO,,$\mu$,0.07613778220678213
 $C_0 = 1$,$K = \lfloor 0.01N \rfloor$,Card MVO,,$\sigma$,0.16404242517074732
 $C_0 = 1$,$K = \lfloor 0.01N \rfloor$,Card MVO,,S.R,0.46413470251693956
 $C_0 = 1$,$K = \lfloor 0.01N \rfloor$,Card MVO,,Sortino.R,0.6434754434309893
-$C_0 = 1$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\mu$,0.09450150014456948
-$C_0 = 1$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\sigma$,0.15643729533962106
-$C_0 = 1$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.1,S.R,0.6040854895848801
-$C_0 = 1$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.1,Sortino.R,0.8365589563143232
-$C_0 = 1$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\mu$,0.11163227417075561
-$C_0 = 1$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\sigma$,0.15638798819945696
-$C_0 = 1$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.2,S.R,0.7138161661647568
-$C_0 = 1$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.2,Sortino.R,0.980553110858506
 $C_0 = 1$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\mu$,0.13086924252629561
 $C_0 = 1$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\sigma$,0.16302989742541132
 $C_0 = 1$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.4,S.R,0.8027315516540166
 $C_0 = 1$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.4,Sortino.R,1.0321300019081603
+$C_0 = 1$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\mu$,0.10004257005764128
+$C_0 = 1$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\sigma$,0.19604680799402321
+$C_0 = 1$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.8,S.R,0.5102994079898063
+$C_0 = 1$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.8,Sortino.R,0.7554853411910549
+$C_0 = 1$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\mu$,0.06249760148297945
+$C_0 = 1$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\sigma$,0.1620340516333789
+$C_0 = 1$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$1.6,S.R,0.38570658977526284
+$C_0 = 1$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$1.6,Sortino.R,0.5175420121762554
 $C_0 = 1$,$K = \lfloor 0.03N \rfloor$,Card MVO,,$\mu$,0.08587517543845546
 $C_0 = 1$,$K = \lfloor 0.03N \rfloor$,Card MVO,,$\sigma$,0.12159210861237456
 $C_0 = 1$,$K = \lfloor 0.03N \rfloor$,Card MVO,,S.R,0.7062561577266359
 $C_0 = 1$,$K = \lfloor 0.03N \rfloor$,Card MVO,,Sortino.R,0.918554928087262
-$C_0 = 1$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\mu$,0.08474374496900516
-$C_0 = 1$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\sigma$,0.12073842207477747
-$C_0 = 1$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.1,S.R,0.701878851096136
-$C_0 = 1$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.1,Sortino.R,0.9667647750052851
-$C_0 = 1$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\mu$,0.08553958577193832
-$C_0 = 1$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\sigma$,0.1188691482756754
-$C_0 = 1$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.2,S.R,0.7196113290351772
-$C_0 = 1$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.2,Sortino.R,1.0279493630553391
 $C_0 = 1$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\mu$,0.08889626023616692
 $C_0 = 1$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\sigma$,0.11873088754387422
 $C_0 = 1$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.4,S.R,0.7487205905314014
 $C_0 = 1$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.4,Sortino.R,1.1012955100796813
+$C_0 = 1$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\mu$,0.0837673383990909
+$C_0 = 1$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\sigma$,0.1199979433528448
+$C_0 = 1$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.8,S.R,0.6980731174098495
+$C_0 = 1$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.8,Sortino.R,1.0010405280193404
+$C_0 = 1$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\mu$,0.08043270858652374
+$C_0 = 1$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\sigma$,0.1511892457772293
+$C_0 = 1$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$1.6,S.R,0.5320001973224854
+$C_0 = 1$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$1.6,Sortino.R,0.6726867935557236
 $C_0 = 1$,$K = \lfloor 0.05N \rfloor$,Card MVO,,$\mu$,0.08470612061349936
 $C_0 = 1$,$K = \lfloor 0.05N \rfloor$,Card MVO,,$\sigma$,0.11970221172145716
 $C_0 = 1$,$K = \lfloor 0.05N \rfloor$,Card MVO,,S.R,0.707640396909353
 $C_0 = 1$,$K = \lfloor 0.05N \rfloor$,Card MVO,,Sortino.R,0.9463706156545442
-$C_0 = 1$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\mu$,0.08564970029443053
-$C_0 = 1$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\sigma$,0.12084194209638455
-$C_0 = 1$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.1,S.R,0.7087746092835516
-$C_0 = 1$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.1,Sortino.R,0.9379335551479318
-$C_0 = 1$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\mu$,0.08688326247964273
-$C_0 = 1$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\sigma$,0.11819052691989544
-$C_0 = 1$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.2,S.R,0.7351118972379955
-$C_0 = 1$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.2,Sortino.R,1.0649481596171007
 $C_0 = 1$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\mu$,0.08324876272622106
 $C_0 = 1$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\sigma$,0.11905176905944388
 $C_0 = 1$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.4,S.R,0.6992652304448664
 $C_0 = 1$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.4,Sortino.R,0.9917458048954372
+$C_0 = 1$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\mu$,0.08138436724864029
+$C_0 = 1$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\sigma$,0.11913992898872916
+$C_0 = 1$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.8,S.R,0.6830990075236606
+$C_0 = 1$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.8,Sortino.R,0.9278925609844139
+$C_0 = 1$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\mu$,0.09667986607001211
+$C_0 = 1$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\sigma$,0.11975881520725486
+$C_0 = 1$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$1.6,S.R,0.8072880973538168
+$C_0 = 1$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$1.6,Sortino.R,1.1433540308539742
 $C_0 = 1$,$K = \lfloor 0.07N \rfloor$,Card MVO,,$\mu$,0.08495881828466079
 $C_0 = 1$,$K = \lfloor 0.07N \rfloor$,Card MVO,,$\sigma$,0.11962259400881622
 $C_0 = 1$,$K = \lfloor 0.07N \rfloor$,Card MVO,,S.R,0.7102238418136902
 $C_0 = 1$,$K = \lfloor 0.07N \rfloor$,Card MVO,,Sortino.R,0.93683774742375
-$C_0 = 1$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\mu$,0.08462455176891659
-$C_0 = 1$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\sigma$,0.12029403335149276
-$C_0 = 1$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.1,S.R,0.7034808744141793
-$C_0 = 1$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.1,Sortino.R,0.9214898194924119
-$C_0 = 1$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\mu$,0.08504951446076614
-$C_0 = 1$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\sigma$,0.119224955673766
-$C_0 = 1$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.2,S.R,0.7133532906775509
-$C_0 = 1$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.2,Sortino.R,0.9458437182133351
 $C_0 = 1$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\mu$,0.08059471931030426
 $C_0 = 1$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\sigma$,0.11964656122677629
 $C_0 = 1$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.4,S.R,0.6736066501530807
 $C_0 = 1$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.4,Sortino.R,0.8914216394289032
+$C_0 = 1$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\mu$,0.08673693631475121
+$C_0 = 1$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\sigma$,0.11703990772485863
+$C_0 = 1$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.8,S.R,0.7410885568933916
+$C_0 = 1$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.8,Sortino.R,1.0977203753092253
+$C_0 = 1$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\mu$,0.08398503680391922
+$C_0 = 1$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\sigma$,0.1226150297621359
+$C_0 = 1$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$1.6,S.R,0.6849489574552482
+$C_0 = 1$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$1.6,Sortino.R,0.9534096152456163
 $C_0 = 1$,$K = \lfloor 0.09N \rfloor$,Card MVO,,$\mu$,0.08549046360898238
 $C_0 = 1$,$K = \lfloor 0.09N \rfloor$,Card MVO,,$\sigma$,0.11964633418537729
 $C_0 = 1$,$K = \lfloor 0.09N \rfloor$,Card MVO,,S.R,0.7145263930654607
 $C_0 = 1$,$K = \lfloor 0.09N \rfloor$,Card MVO,,Sortino.R,0.946308330752781
-$C_0 = 1$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\mu$,0.08552445346820026
-$C_0 = 1$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\sigma$,0.11944777994470603
-$C_0 = 1$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.1,S.R,0.7159986858507598
-$C_0 = 1$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.1,Sortino.R,0.9595673951333216
-$C_0 = 1$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\mu$,0.08284014600149803
-$C_0 = 1$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\sigma$,0.12045977441160723
-$C_0 = 1$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.2,S.R,0.6876996607883049
-$C_0 = 1$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.2,Sortino.R,0.9157207204607467
 $C_0 = 1$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\mu$,0.08715624737631167
 $C_0 = 1$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\sigma$,0.11898046798031639
 $C_0 = 1$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.4,S.R,0.7325256729594509
 $C_0 = 1$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.4,Sortino.R,0.978544818520099
+$C_0 = 1$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\mu$,0.08350000395485058
+$C_0 = 1$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\sigma$,0.11813811351933719
+$C_0 = 1$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.8,S.R,0.7067998757334402
+$C_0 = 1$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.8,Sortino.R,0.9678578408738389
+$C_0 = 1$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\mu$,0.08224129909858124
+$C_0 = 1$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\sigma$,0.12301381139900794
+$C_0 = 1$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$1.6,S.R,0.668553377570126
+$C_0 = 1$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$1.6,Sortino.R,0.9073099285009854
 $C_0 = 1$,$K = \lfloor 0.1N \rfloor$,Card MVO,,$\mu$,0.08540020353797573
 $C_0 = 1$,$K = \lfloor 0.1N \rfloor$,Card MVO,,$\sigma$,0.1197979004623825
 $C_0 = 1$,$K = \lfloor 0.1N \rfloor$,Card MVO,,S.R,0.7128689501932637
 $C_0 = 1$,$K = \lfloor 0.1N \rfloor$,Card MVO,,Sortino.R,0.9331386689191115
-$C_0 = 1$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\mu$,0.08437439078815157
-$C_0 = 1$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\sigma$,0.11990811471269011
-$C_0 = 1$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.1,S.R,0.7036587222667929
-$C_0 = 1$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.1,Sortino.R,0.9370935937249666
-$C_0 = 1$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\mu$,0.08662658267033141
-$C_0 = 1$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\sigma$,0.11882560534869563
-$C_0 = 1$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.2,S.R,0.729022860149749
-$C_0 = 1$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.2,Sortino.R,0.9782172390734084
 $C_0 = 1$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\mu$,0.08511262754816773
 $C_0 = 1$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\sigma$,0.12152315018866947
 $C_0 = 1$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.4,S.R,0.7003820047129047
 $C_0 = 1$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.4,Sortino.R,0.916168492571929
+$C_0 = 1$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\mu$,0.085994452256827
+$C_0 = 1$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\sigma$,0.12331999848215733
+$C_0 = 1$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.8,S.R,0.6973277109573528
+$C_0 = 1$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.8,Sortino.R,0.8918800056680583
+$C_0 = 1$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\mu$,0.08135505001344079
+$C_0 = 1$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\sigma$,0.12215418956861014
+$C_0 = 1$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$1.6,S.R,0.6660029451363698
+$C_0 = 1$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$1.6,Sortino.R,0.8895826300371996
 $C_0 = 1$,$K = \lfloor 0.2N \rfloor$,Card MVO,,$\mu$,0.0852635352347626
 $C_0 = 1$,$K = \lfloor 0.2N \rfloor$,Card MVO,,$\sigma$,0.11983471379207178
 $C_0 = 1$,$K = \lfloor 0.2N \rfloor$,Card MVO,,S.R,0.7115094828256984
 $C_0 = 1$,$K = \lfloor 0.2N \rfloor$,Card MVO,,Sortino.R,0.9316215442764049
-$C_0 = 1$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\mu$,0.08345485594049151
-$C_0 = 1$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\sigma$,0.12085875778525511
-$C_0 = 1$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.1,S.R,0.690515585877328
-$C_0 = 1$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.1,Sortino.R,0.9166121985162671
-$C_0 = 1$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\mu$,0.08651324236762026
-$C_0 = 1$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\sigma$,0.11889623628421357
-$C_0 = 1$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.2,S.R,0.7276365095427922
-$C_0 = 1$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.2,Sortino.R,0.986134052596192
 $C_0 = 1$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\mu$,0.08670214678996757
 $C_0 = 1$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\sigma$,0.12222905804452243
 $C_0 = 1$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.4,S.R,0.7093415279236297
 $C_0 = 1$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.4,Sortino.R,0.9485599555568212
+$C_0 = 1$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\mu$,0.08227302537821402
+$C_0 = 1$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\sigma$,0.12170260338699702
+$C_0 = 1$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.8,S.R,0.6760169716057548
+$C_0 = 1$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.8,Sortino.R,0.9201861315004569
+$C_0 = 1$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\mu$,0.07444251137841462
+$C_0 = 1$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\sigma$,0.126808575483849
+$C_0 = 1$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$1.6,S.R,0.5870463499362945
+$C_0 = 1$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$1.6,Sortino.R,0.8028431213736957
 $C_0 = 1$,$K = \lfloor 0.4N \rfloor$,Card MVO,,$\mu$,0.08801152179333638
 $C_0 = 1$,$K = \lfloor 0.4N \rfloor$,Card MVO,,$\sigma$,0.11908775305733647
 $C_0 = 1$,$K = \lfloor 0.4N \rfloor$,Card MVO,,S.R,0.7390476311276273
 $C_0 = 1$,$K = \lfloor 0.4N \rfloor$,Card MVO,,Sortino.R,0.9784396510125921
-$C_0 = 1$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\mu$,0.0834964366103188
-$C_0 = 1$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\sigma$,0.11986358458460815
-$C_0 = 1$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.1,S.R,0.6965955248183083
-$C_0 = 1$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.1,Sortino.R,0.922180133939742
-$C_0 = 1$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\mu$,0.08649304565908267
-$C_0 = 1$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\sigma$,0.12021245515424411
-$C_0 = 1$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.2,S.R,0.719501532084207
-$C_0 = 1$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.2,Sortino.R,0.9524966970937963
 $C_0 = 1$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\mu$,0.0852908452171528
 $C_0 = 1$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\sigma$,0.11851849163079561
 $C_0 = 1$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.4,S.R,0.7196416697813507
 $C_0 = 1$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.4,Sortino.R,0.9474310361226017
+$C_0 = 1$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\mu$,0.08870214477801941
+$C_0 = 1$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\sigma$,0.12016780225410695
+$C_0 = 1$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.8,S.R,0.7381523429250189
+$C_0 = 1$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.8,Sortino.R,1.0178319194853196
+$C_0 = 1$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\mu$,0.09042385757314708
+$C_0 = 1$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\sigma$,0.12003714930588043
+$C_0 = 1$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$1.6,S.R,0.75329894200276
+$C_0 = 1$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$1.6,Sortino.R,1.1366995065414043
 $C_0 = 1$,$K = \lfloor 0.6N \rfloor$,Card MVO,,$\mu$,0.08696523663909783
 $C_0 = 1$,$K = \lfloor 0.6N \rfloor$,Card MVO,,$\sigma$,0.11951644740316307
 $C_0 = 1$,$K = \lfloor 0.6N \rfloor$,Card MVO,,S.R,0.7276424168276964
 $C_0 = 1$,$K = \lfloor 0.6N \rfloor$,Card MVO,,Sortino.R,0.9687305134180214
-$C_0 = 1$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\mu$,0.08611110226360363
-$C_0 = 1$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\sigma$,0.12017128352962948
-$C_0 = 1$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.1,S.R,0.7165697139481084
-$C_0 = 1$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.1,Sortino.R,0.9552338955771228
-$C_0 = 1$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\mu$,0.08503635076319416
-$C_0 = 1$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\sigma$,0.12161700014860422
-$C_0 = 1$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.2,S.R,0.6992143422324836
-$C_0 = 1$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.2,Sortino.R,0.9319214387688413
 $C_0 = 1$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\mu$,0.08857571458361502
 $C_0 = 1$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\sigma$,0.12246410206140161
 $C_0 = 1$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.4,S.R,0.7232790106867767
 $C_0 = 1$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.4,Sortino.R,0.9660322898211909
+$C_0 = 1$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\mu$,0.08809047263568281
+$C_0 = 1$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\sigma$,0.11988184348831192
+$C_0 = 1$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.8,S.R,0.734810794299066
+$C_0 = 1$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.8,Sortino.R,1.008205336694837
+$C_0 = 1$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\mu$,0.09038451888643362
+$C_0 = 1$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\sigma$,0.12016270563055946
+$C_0 = 1$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$1.6,S.R,0.7521844520072728
+$C_0 = 1$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$1.6,Sortino.R,1.0765275109201036
 $C_0 = 1$,$K = \lfloor 0.8N \rfloor$,Card MVO,,$\mu$,0.08594119356732843
 $C_0 = 1$,$K = \lfloor 0.8N \rfloor$,Card MVO,,$\sigma$,0.11709525516465415
 $C_0 = 1$,$K = \lfloor 0.8N \rfloor$,Card MVO,,S.R,0.7339425790266373
 $C_0 = 1$,$K = \lfloor 0.8N \rfloor$,Card MVO,,Sortino.R,0.9734032445895388
-$C_0 = 1$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\mu$,0.08629727015828781
-$C_0 = 1$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\sigma$,0.12013008093934098
-$C_0 = 1$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.1,S.R,0.7183652044808254
-$C_0 = 1$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.1,Sortino.R,0.9493515005895118
-$C_0 = 1$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\mu$,0.08695895403016873
-$C_0 = 1$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\sigma$,0.12064380040710992
-$C_0 = 1$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.2,S.R,0.7207909046028689
-$C_0 = 1$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.2,Sortino.R,0.9558778615605503
 $C_0 = 1$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\mu$,0.08660078018227324
 $C_0 = 1$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\sigma$,0.11959046103509648
 $C_0 = 1$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.4,S.R,0.7241445465860218
 $C_0 = 1$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.4,Sortino.R,0.9639300902695294
+$C_0 = 1$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\mu$,0.08278061947923732
+$C_0 = 1$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\sigma$,0.1204238684955968
+$C_0 = 1$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.8,S.R,0.6874103988966616
+$C_0 = 1$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.8,Sortino.R,0.9307480412167681
+$C_0 = 1$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\mu$,0.08851481343600476
+$C_0 = 1$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\sigma$,0.11942426712575391
+$C_0 = 1$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$1.6,S.R,0.7411794567916296
+$C_0 = 1$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$1.6,Sortino.R,1.0454535103924607
 $C_0 = 1.25$,$K = \lfloor 0.01N \rfloor$,Card MVO,,$\mu$,0.09859085202521811
 $C_0 = 1.25$,$K = \lfloor 0.01N \rfloor$,Card MVO,,$\sigma$,0.1384806500407181
 $C_0 = 1.25$,$K = \lfloor 0.01N \rfloor$,Card MVO,,S.R,0.7119467737639085
 $C_0 = 1.25$,$K = \lfloor 0.01N \rfloor$,Card MVO,,Sortino.R,0.9285664356052038
-$C_0 = 1.25$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\mu$,0.09784970061013265
-$C_0 = 1.25$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\sigma$,0.13858914356278737
-$C_0 = 1.25$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.1,S.R,0.7060415996134801
-$C_0 = 1.25$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.1,Sortino.R,0.9252398813197694
-$C_0 = 1.25$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\mu$,0.09666598990177366
-$C_0 = 1.25$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\sigma$,0.138725406790265
-$C_0 = 1.25$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.2,S.R,0.6968153284849993
-$C_0 = 1.25$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.2,Sortino.R,0.912336490631274
 $C_0 = 1.25$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\mu$,0.07256205749157552
 $C_0 = 1.25$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\sigma$,0.1509461604721434
 $C_0 = 1.25$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.4,S.R,0.48071482748954447
 $C_0 = 1.25$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.4,Sortino.R,0.6178255788092935
+$C_0 = 1.25$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\mu$,0.07565381413781758
+$C_0 = 1.25$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\sigma$,0.15241343697488136
+$C_0 = 1.25$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.8,S.R,0.4963723385510017
+$C_0 = 1.25$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$0.8,Sortino.R,0.6400980049780589
+$C_0 = 1.25$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\mu$,0.07253382823646604
+$C_0 = 1.25$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\sigma$,0.17439254929653913
+$C_0 = 1.25$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$1.6,S.R,0.4159227474399073
+$C_0 = 1.25$,$K = \lfloor 0.01N \rfloor$,SVMMVO 20,$\kappa =$1.6,Sortino.R,0.5445820285178685
 $C_0 = 1.25$,$K = \lfloor 0.03N \rfloor$,Card MVO,,$\mu$,0.0788587319673475
 $C_0 = 1.25$,$K = \lfloor 0.03N \rfloor$,Card MVO,,$\sigma$,0.11335887714753146
 $C_0 = 1.25$,$K = \lfloor 0.03N \rfloor$,Card MVO,,S.R,0.695655549452174
 $C_0 = 1.25$,$K = \lfloor 0.03N \rfloor$,Card MVO,,Sortino.R,0.9106311473751996
-$C_0 = 1.25$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\mu$,0.07699799684547326
-$C_0 = 1.25$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\sigma$,0.11227466066169423
-$C_0 = 1.25$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.1,S.R,0.6858003078493682
-$C_0 = 1.25$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.1,Sortino.R,0.8945250701471269
-$C_0 = 1.25$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\mu$,0.07800656202190925
-$C_0 = 1.25$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\sigma$,0.11689295684011555
-$C_0 = 1.25$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.2,S.R,0.6673332947562055
-$C_0 = 1.25$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.2,Sortino.R,0.8329042259973397
 $C_0 = 1.25$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\mu$,0.07836547289459261
 $C_0 = 1.25$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\sigma$,0.11665623513700267
 $C_0 = 1.25$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.4,S.R,0.6717641179021346
 $C_0 = 1.25$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.4,Sortino.R,0.8569999304161701
+$C_0 = 1.25$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\mu$,0.07305530623162504
+$C_0 = 1.25$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\sigma$,0.12308713378382623
+$C_0 = 1.25$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.8,S.R,0.5935251231044959
+$C_0 = 1.25$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$0.8,Sortino.R,0.72300977045778
+$C_0 = 1.25$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\mu$,0.08107602585787621
+$C_0 = 1.25$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\sigma$,0.12761939414828663
+$C_0 = 1.25$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$1.6,S.R,0.6352954924991289
+$C_0 = 1.25$,$K = \lfloor 0.03N \rfloor$,SVMMVO 20,$\kappa =$1.6,Sortino.R,0.7495000779594934
 $C_0 = 1.25$,$K = \lfloor 0.05N \rfloor$,Card MVO,,$\mu$,0.07801012568776766
 $C_0 = 1.25$,$K = \lfloor 0.05N \rfloor$,Card MVO,,$\sigma$,0.1139015779520989
 $C_0 = 1.25$,$K = \lfloor 0.05N \rfloor$,Card MVO,,S.R,0.6848906493690076
 $C_0 = 1.25$,$K = \lfloor 0.05N \rfloor$,Card MVO,,Sortino.R,0.8822974526186672
-$C_0 = 1.25$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\mu$,0.07500943387094416
-$C_0 = 1.25$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\sigma$,0.11609183594699665
-$C_0 = 1.25$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.1,S.R,0.6461215231809303
-$C_0 = 1.25$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.1,Sortino.R,0.822035747889075
-$C_0 = 1.25$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\mu$,0.07673893071072335
-$C_0 = 1.25$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\sigma$,0.11604398801908573
-$C_0 = 1.25$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.2,S.R,0.6612917396298214
-$C_0 = 1.25$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.2,Sortino.R,0.8363518148156585
 $C_0 = 1.25$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\mu$,0.07359442937365035
 $C_0 = 1.25$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\sigma$,0.11800941281292489
 $C_0 = 1.25$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.4,S.R,0.6236318579969239
 $C_0 = 1.25$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.4,Sortino.R,0.7610308696987599
+$C_0 = 1.25$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\mu$,0.08179693248255493
+$C_0 = 1.25$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\sigma$,0.10970065270267036
+$C_0 = 1.25$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.8,S.R,0.7456376098714297
+$C_0 = 1.25$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$0.8,Sortino.R,1.0027680779270698
+$C_0 = 1.25$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\mu$,0.07630159277135373
+$C_0 = 1.25$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\sigma$,0.12074653662119562
+$C_0 = 1.25$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$1.6,S.R,0.631915373363677
+$C_0 = 1.25$,$K = \lfloor 0.05N \rfloor$,SVMMVO 20,$\kappa =$1.6,Sortino.R,0.7862035974020715
 $C_0 = 1.25$,$K = \lfloor 0.07N \rfloor$,Card MVO,,$\mu$,0.07652814852543077
 $C_0 = 1.25$,$K = \lfloor 0.07N \rfloor$,Card MVO,,$\sigma$,0.11478153570444694
 $C_0 = 1.25$,$K = \lfloor 0.07N \rfloor$,Card MVO,,S.R,0.6667287386926456
 $C_0 = 1.25$,$K = \lfloor 0.07N \rfloor$,Card MVO,,Sortino.R,0.8431382601820254
-$C_0 = 1.25$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\mu$,0.07514707281935351
-$C_0 = 1.25$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\sigma$,0.11611913708546079
-$C_0 = 1.25$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.1,S.R,0.6471549367788285
-$C_0 = 1.25$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.1,Sortino.R,0.8142566407349847
-$C_0 = 1.25$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\mu$,0.07579221641674039
-$C_0 = 1.25$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\sigma$,0.11661537437271453
-$C_0 = 1.25$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.2,S.R,0.6499333113188042
-$C_0 = 1.25$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.2,Sortino.R,0.8120207880315162
 $C_0 = 1.25$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\mu$,0.07877013463815974
 $C_0 = 1.25$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\sigma$,0.11704704653166642
 $C_0 = 1.25$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.4,S.R,0.6729784046011696
 $C_0 = 1.25$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.4,Sortino.R,0.8536631379778147
+$C_0 = 1.25$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\mu$,0.07612931746167462
+$C_0 = 1.25$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\sigma$,0.11751546671806164
+$C_0 = 1.25$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.8,S.R,0.6478238106675863
+$C_0 = 1.25$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$0.8,Sortino.R,0.8056277061416763
+$C_0 = 1.25$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\mu$,0.07290628580319058
+$C_0 = 1.25$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\sigma$,0.11913581362207296
+$C_0 = 1.25$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$1.6,S.R,0.6119594401265988
+$C_0 = 1.25$,$K = \lfloor 0.07N \rfloor$,SVMMVO 20,$\kappa =$1.6,Sortino.R,0.7358442607900914
 $C_0 = 1.25$,$K = \lfloor 0.09N \rfloor$,Card MVO,,$\mu$,0.07684173862708477
 $C_0 = 1.25$,$K = \lfloor 0.09N \rfloor$,Card MVO,,$\sigma$,0.114723404803923
 $C_0 = 1.25$,$K = \lfloor 0.09N \rfloor$,Card MVO,,S.R,0.6698000182126493
 $C_0 = 1.25$,$K = \lfloor 0.09N \rfloor$,Card MVO,,Sortino.R,0.8458673659887248
-$C_0 = 1.25$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\mu$,0.07449631699339943
-$C_0 = 1.25$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\sigma$,0.11625166191856444
-$C_0 = 1.25$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.1,S.R,0.6408193720756001
-$C_0 = 1.25$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.1,Sortino.R,0.8115183480286665
-$C_0 = 1.25$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\mu$,0.07377491599262864
-$C_0 = 1.25$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\sigma$,0.11613284754458926
-$C_0 = 1.25$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.2,S.R,0.6352631279819667
-$C_0 = 1.25$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.2,Sortino.R,0.8138508592094738
 $C_0 = 1.25$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\mu$,0.07465998645283545
 $C_0 = 1.25$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\sigma$,0.11637128841578172
 $C_0 = 1.25$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.4,S.R,0.641567069242059
 $C_0 = 1.25$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.4,Sortino.R,0.8171932400197973
+$C_0 = 1.25$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\mu$,0.07334011953425534
+$C_0 = 1.25$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\sigma$,0.11956930231557017
+$C_0 = 1.25$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.8,S.R,0.61336913500335
+$C_0 = 1.25$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$0.8,Sortino.R,0.7414765942606906
+$C_0 = 1.25$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\mu$,0.07774333646125164
+$C_0 = 1.25$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\sigma$,0.1283295891505451
+$C_0 = 1.25$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$1.6,S.R,0.6058099069424271
+$C_0 = 1.25$,$K = \lfloor 0.09N \rfloor$,SVMMVO 20,$\kappa =$1.6,Sortino.R,0.7196049617604184
 $C_0 = 1.25$,$K = \lfloor 0.1N \rfloor$,Card MVO,,$\mu$,0.07680740352461424
 $C_0 = 1.25$,$K = \lfloor 0.1N \rfloor$,Card MVO,,$\sigma$,0.11451262296568426
 $C_0 = 1.25$,$K = \lfloor 0.1N \rfloor$,Card MVO,,S.R,0.6707330732231235
 $C_0 = 1.25$,$K = \lfloor 0.1N \rfloor$,Card MVO,,Sortino.R,0.8470703333015097
-$C_0 = 1.25$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\mu$,0.07553791305146262
-$C_0 = 1.25$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\sigma$,0.11507721298071875
-$C_0 = 1.25$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.1,S.R,0.6564106923941495
-$C_0 = 1.25$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.1,Sortino.R,0.8352357131206655
-$C_0 = 1.25$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\mu$,0.07589207914619145
-$C_0 = 1.25$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\sigma$,0.11645725581193092
-$C_0 = 1.25$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.2,S.R,0.6516732565702135
-$C_0 = 1.25$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.2,Sortino.R,0.8151515870568806
 $C_0 = 1.25$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\mu$,0.0754844646920656
 $C_0 = 1.25$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\sigma$,0.11774936101937634
 $C_0 = 1.25$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.4,S.R,0.641060503756315
 $C_0 = 1.25$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.4,Sortino.R,0.8106276378289127
+$C_0 = 1.25$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\mu$,0.07796095889933241
+$C_0 = 1.25$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\sigma$,0.11846417942626306
+$C_0 = 1.25$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.8,S.R,0.6580973191804236
+$C_0 = 1.25$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$0.8,Sortino.R,0.8075514756356851
+$C_0 = 1.25$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\mu$,0.07938917353018926
+$C_0 = 1.25$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\sigma$,0.12096156351667715
+$C_0 = 1.25$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$1.6,S.R,0.6563173558784543
+$C_0 = 1.25$,$K = \lfloor 0.1N \rfloor$,SVMMVO 20,$\kappa =$1.6,Sortino.R,0.811932074050935
 $C_0 = 1.25$,$K = \lfloor 0.2N \rfloor$,Card MVO,,$\mu$,0.07659233901056339
 $C_0 = 1.25$,$K = \lfloor 0.2N \rfloor$,Card MVO,,$\sigma$,0.11454066433673993
 $C_0 = 1.25$,$K = \lfloor 0.2N \rfloor$,Card MVO,,S.R,0.6686912412642234
 $C_0 = 1.25$,$K = \lfloor 0.2N \rfloor$,Card MVO,,Sortino.R,0.8445713660336464
-$C_0 = 1.25$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\mu$,0.07516714010642556
-$C_0 = 1.25$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\sigma$,0.11541918393059553
-$C_0 = 1.25$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.1,S.R,0.6512534359247025
-$C_0 = 1.25$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.1,Sortino.R,0.8252652260118514
-$C_0 = 1.25$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\mu$,0.07657989147678101
-$C_0 = 1.25$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\sigma$,0.11583407249745573
-$C_0 = 1.25$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.2,S.R,0.661117146498178
-$C_0 = 1.25$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.2,Sortino.R,0.837357605722636
 $C_0 = 1.25$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\mu$,0.07291263971632489
 $C_0 = 1.25$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\sigma$,0.11730320941647146
 $C_0 = 1.25$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.4,S.R,0.6215741246896067
 $C_0 = 1.25$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.4,Sortino.R,0.758364703013591
+$C_0 = 1.25$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\mu$,0.06985985356915858
+$C_0 = 1.25$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\sigma$,0.11437014310572875
+$C_0 = 1.25$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.8,S.R,0.6108224723001096
+$C_0 = 1.25$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$0.8,Sortino.R,0.7739032897975852
+$C_0 = 1.25$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\mu$,0.07626008471021084
+$C_0 = 1.25$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\sigma$,0.12741118750420158
+$C_0 = 1.25$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$1.6,S.R,0.5985352322981531
+$C_0 = 1.25$,$K = \lfloor 0.2N \rfloor$,SVMMVO 20,$\kappa =$1.6,Sortino.R,0.7156617718408614
 $C_0 = 1.25$,$K = \lfloor 0.4N \rfloor$,Card MVO,,$\mu$,0.07637161294392314
 $C_0 = 1.25$,$K = \lfloor 0.4N \rfloor$,Card MVO,,$\sigma$,0.11456510145797341
 $C_0 = 1.25$,$K = \lfloor 0.4N \rfloor$,Card MVO,,S.R,0.6666219640362208
 $C_0 = 1.25$,$K = \lfloor 0.4N \rfloor$,Card MVO,,Sortino.R,0.8386065909454595
-$C_0 = 1.25$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\mu$,0.07693164089436877
-$C_0 = 1.25$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\sigma$,0.11580687231929375
-$C_0 = 1.25$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.1,S.R,0.6643098060904261
-$C_0 = 1.25$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.1,Sortino.R,0.8389595287587186
-$C_0 = 1.25$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\mu$,0.07705021062578865
-$C_0 = 1.25$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\sigma$,0.11716104090398305
-$C_0 = 1.25$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.2,S.R,0.6576436162677454
-$C_0 = 1.25$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.2,Sortino.R,0.8336673572743917
 $C_0 = 1.25$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\mu$,0.07765870500449701
 $C_0 = 1.25$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\sigma$,0.11759368125870609
 $C_0 = 1.25$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.4,S.R,0.6603986215351814
 $C_0 = 1.25$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.4,Sortino.R,0.8210514421321432
+$C_0 = 1.25$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\mu$,0.07861421981216576
+$C_0 = 1.25$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\sigma$,0.12148290048309834
+$C_0 = 1.25$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.8,S.R,0.6471216895508943
+$C_0 = 1.25$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$0.8,Sortino.R,0.7793485847890091
+$C_0 = 1.25$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\mu$,0.08157185661937039
+$C_0 = 1.25$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\sigma$,0.12072826794882904
+$C_0 = 1.25$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$1.6,S.R,0.6756649292272195
+$C_0 = 1.25$,$K = \lfloor 0.4N \rfloor$,SVMMVO 20,$\kappa =$1.6,Sortino.R,0.9049313333186745
 $C_0 = 1.25$,$K = \lfloor 0.6N \rfloor$,Card MVO,,$\mu$,0.07635255928215212
 $C_0 = 1.25$,$K = \lfloor 0.6N \rfloor$,Card MVO,,$\sigma$,0.11367044960682758
 $C_0 = 1.25$,$K = \lfloor 0.6N \rfloor$,Card MVO,,S.R,0.6717010405628414
 $C_0 = 1.25$,$K = \lfloor 0.6N \rfloor$,Card MVO,,Sortino.R,0.8457386143114491
-$C_0 = 1.25$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\mu$,0.07578336244053219
-$C_0 = 1.25$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\sigma$,0.11569458425665809
-$C_0 = 1.25$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.1,S.R,0.6550294720141228
-$C_0 = 1.25$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.1,Sortino.R,0.8271987467515706
-$C_0 = 1.25$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\mu$,0.07759509474538628
-$C_0 = 1.25$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\sigma$,0.11489326118398159
-$C_0 = 1.25$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.2,S.R,0.6753668052047997
-$C_0 = 1.25$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.2,Sortino.R,0.8651302450171854
 $C_0 = 1.25$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\mu$,0.07766473868175616
 $C_0 = 1.25$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\sigma$,0.11701634552117529
 $C_0 = 1.25$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.4,S.R,0.6637084617182984
 $C_0 = 1.25$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.4,Sortino.R,0.8171534707180084
+$C_0 = 1.25$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\mu$,0.072726522264416
+$C_0 = 1.25$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\sigma$,0.1192822248465208
+$C_0 = 1.25$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.8,S.R,0.60970125563966
+$C_0 = 1.25$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$0.8,Sortino.R,0.7430028373851825
+$C_0 = 1.25$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\mu$,0.07909606196919317
+$C_0 = 1.25$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\sigma$,0.11700837074192857
+$C_0 = 1.25$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$1.6,S.R,0.6759863543749868
+$C_0 = 1.25$,$K = \lfloor 0.6N \rfloor$,SVMMVO 20,$\kappa =$1.6,Sortino.R,0.8735497892248427
 $C_0 = 1.25$,$K = \lfloor 0.8N \rfloor$,Card MVO,,$\mu$,0.07551633470332231
 $C_0 = 1.25$,$K = \lfloor 0.8N \rfloor$,Card MVO,,$\sigma$,0.11321876741910362
 $C_0 = 1.25$,$K = \lfloor 0.8N \rfloor$,Card MVO,,S.R,0.6669948492177303
 $C_0 = 1.25$,$K = \lfloor 0.8N \rfloor$,Card MVO,,Sortino.R,0.8531577689834494
-$C_0 = 1.25$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\mu$,0.07722549960479785
-$C_0 = 1.25$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.1,$\sigma$,0.11725409535375636
-$C_0 = 1.25$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.1,S.R,0.6586166510586092
-$C_0 = 1.25$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.1,Sortino.R,0.8152191916067444
-$C_0 = 1.25$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\mu$,0.07760076196791221
-$C_0 = 1.25$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.2,$\sigma$,0.11405149558341791
-$C_0 = 1.25$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.2,S.R,0.6804010904982352
-$C_0 = 1.25$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.2,Sortino.R,0.8565681565567691
 $C_0 = 1.25$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\mu$,0.07643669253759988
 $C_0 = 1.25$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.4,$\sigma$,0.11450368072167398
 $C_0 = 1.25$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.4,S.R,0.667547908118306
 $C_0 = 1.25$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.4,Sortino.R,0.8491678811836942
+$C_0 = 1.25$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\mu$,0.07159328212503979
+$C_0 = 1.25$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.8,$\sigma$,0.12007293283596379
+$C_0 = 1.25$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.8,S.R,0.596248300379621
+$C_0 = 1.25$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$0.8,Sortino.R,0.7165189534293825
+$C_0 = 1.25$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\mu$,0.07991615142723951
+$C_0 = 1.25$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$1.6,$\sigma$,0.11766445140940747
+$C_0 = 1.25$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$1.6,S.R,0.6791868781946326
+$C_0 = 1.25$,$K = \lfloor 0.8N \rfloor$,SVMMVO 20,$\kappa =$1.6,Sortino.R,0.866760480677236
