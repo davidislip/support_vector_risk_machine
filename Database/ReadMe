@@ -1,0 +1,29 @@
+## FORMS Lab Repository
+
+Welcome to the FORMS Lab Repository! This repository serves as a standardized starting point for doing research in asset allocation. It contains a SQLite database of financial data and an interactive Jupyter notebook for doing backtesting analysis. 
+
+There are many other backtesting frameworks out there. However, they change frequently and contain too many bells and whistles. 
+
+
+#### Repository Contents
+
+1. Database: The financial_db.db SQLite database. This database encompasses a wide array of financial metrics, including stock prices, fundamentals, and more
+
+2. images: backtesting visual outputs go here
+
+3. Resources: In the resources directory, you'll see some info on Wharton Research Data Services
+
+4. services: The services directory contains some helper functions relating to pulling the data, estimation, and optimization
+
+5. flat_files: If the database is too much work to deal with then there are some csv files containing factor returns and asset prices.
+
+6. Template_Main.ipynb: a notebook illustrating the backtesting procedure. Calling from the database, defining a strategy, and testing it
+7. MIE377_Project_Main.ipynb: a notebook illustrating the backtesting procedure. Reading the flat files, defining the project function and testing it. 
+
+#### Get Started
+
+1. Clone the repo
+2. Download the SQLite database/follow the notebooks to construct the database locally
+3. Save the database to the Database\ folder
+4. Go to cvxpy website and follow the prerequisite instructions for cvxpy (C++ build tools are required for cvxpy)
+5. Create the environment: conda env create -f environment.yml
