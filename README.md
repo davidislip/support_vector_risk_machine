@@ -12,5 +12,4 @@ The SingleInstance notebook produces the plots for the single instances demonstr
 
 The Results notebook analyzes the output of the Experiments
 
-
-
+The Results Gaps and Times notebook analyzes the runtimes and optimality gaps.
