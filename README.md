@@ -1,5 +1,5 @@
 # support_vector_risk_machine
- 
+
 Welcome to the supporting code for integrating support vector machines and capital allocation. 
 
 For licensing reasons with WRDS and Tiingo, we cannot share the raw data. To get started you will want to create your own database that contains all the financial data you will need. We use SQLLITE and have supplementary scripts located under the database folder to pull and store from a variety of sources. Please follow the instructions there to obtain all the data you require. 
