@@ -1,4 +1,4 @@
-## FORMS Lab Repository
+#### FORMS Lab Repository
 
 Welcome to the FORMS Lab Repository! This repository serves as a standardized starting point for doing research in asset allocation. It contains a SQLite database of financial data and an interactive Jupyter notebook for doing backtesting analysis. 
 
